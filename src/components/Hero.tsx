@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, MapPin, CheckCircle2, Scale, Clock } from 'lucide-react';
+import { ArrowRight, MapPin, CheckCircle2, Scale } from 'lucide-react';
 import { WhatsAppIcon } from './WhatsAppIcon';
 import { getWhatsAppUrl, OFFICE_INFO } from '@/lib/utils';
 
@@ -159,11 +159,6 @@ export const Hero: React.FC = () => {
 
                 {/* Direct Help Prompt */}
                 <div className="pt-3 border-t border-neutral-800/90 text-center">
-                  <div className="flex items-center justify-center gap-1.5 text-[11px] text-neutral-300 mb-3">
-                    <Clock className="w-3 h-3 text-gold-400" />
-                    <span>Horário: 09:00 às 17:00 • Retorno Rápido</span>
-                  </div>
-
                   <a
                     href={getWhatsAppUrl("Olá! Gostaria de agendar uma conversa com as advogadas.")}
                     target="_blank"
