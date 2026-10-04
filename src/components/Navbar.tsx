@@ -37,8 +37,8 @@ export const Navbar: React.FC = () => {
         }`}
       >
         <div className="max-w-7xl mx-auto flex items-center justify-between">
-          {/* Brand Logo with generous separation from menu links */}
-          <a href="#inicio" className="flex items-center gap-2.5 sm:gap-3 group shrink-0 mr-6 sm:mr-8 lg:mr-10 xl:mr-14">
+          {/* Brand Logo */}
+          <a href="#inicio" className="flex items-center gap-2.5 sm:gap-3 group shrink-0 mr-4 lg:mr-6 xl:mr-8">
             <img 
               src="/logo.jpg" 
               alt="Souza & Selly Advocacia" 
@@ -54,13 +54,13 @@ export const Navbar: React.FC = () => {
             </div>
           </a>
 
-          {/* Desktop Navigation Links (Large Screens) with proper spacing */}
-          <div className="hidden lg:flex items-center gap-2 xl:gap-4.5 2xl:gap-6 mx-auto">
+          {/* Desktop Navigation Links - Centered with balanced margins on both sides */}
+          <div className="hidden lg:flex items-center justify-center gap-1.5 lg:gap-2.5 xl:gap-5 2xl:gap-6 flex-1 px-4 lg:px-6 xl:px-8">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className="text-xs xl:text-sm font-medium text-neutral-300 hover:text-gold-400 transition-colors relative py-1 px-1.5 after:content-[''] after:absolute after:bottom-0 after:left-1.5 after:right-1.5 after:w-0 hover:after:w-[calc(100%-12px)] after:h-[2px] after:bg-gold-500 after:transition-all after:duration-300 whitespace-nowrap"
+                className="text-xs xl:text-sm font-medium text-neutral-300 hover:text-gold-400 transition-colors relative py-1 px-1 xl:px-1.5 after:content-[''] after:absolute after:bottom-0 after:left-1 after:right-1 after:w-0 hover:after:w-[calc(100%-8px)] after:h-[2px] after:bg-gold-500 after:transition-all after:duration-300 whitespace-nowrap"
               >
                 <span className="hidden xl:inline">{link.label}</span>
                 <span className="xl:hidden">{link.shortLabel}</span>
@@ -68,18 +68,18 @@ export const Navbar: React.FC = () => {
             ))}
           </div>
 
-          {/* Desktop CTA Button */}
-          <div className="hidden sm:flex items-center gap-3 shrink-0 ml-4 lg:ml-6">
+          {/* Desktop CTA Button with protected left margin */}
+          <div className="hidden sm:flex items-center shrink-0 ml-4 lg:ml-6 xl:ml-8">
             <a
               href={getWhatsAppUrl()}
               target="_blank"
               rel="noopener noreferrer"
-              className="relative inline-flex items-center justify-center gap-2 px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider text-black bg-gold-metallic hover:opacity-95 transition-all duration-300 shadow-lg shadow-gold-500/20 hover:shadow-gold-500/40 hover:-translate-y-0.5 active:translate-y-0 overflow-hidden group"
+              className="relative inline-flex items-center justify-center gap-2 px-3.5 xl:px-5 py-2 sm:py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider text-black bg-gold-metallic hover:opacity-95 transition-all duration-300 shadow-lg shadow-gold-500/20 hover:shadow-gold-500/40 hover:-translate-y-0.5 active:translate-y-0 overflow-hidden group shrink-0"
             >
               <span className="absolute inset-0 w-1/2 h-full bg-white/20 skew-x-12 -translate-x-full group-hover:translate-x-[300%] transition-transform duration-1000 ease-out" />
               <WhatsAppIcon className="w-3.5 h-3.5 sm:w-4 sm:h-4 fill-black/80" />
-              <span className="hidden md:inline">Consulta no WhatsApp</span>
-              <span className="md:hidden">WhatsApp</span>
+              <span className="hidden xl:inline">Consulta no WhatsApp</span>
+              <span className="xl:hidden">WhatsApp</span>
             </a>
           </div>
 
