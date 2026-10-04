@@ -1,5 +1,5 @@
 import React from 'react';
-import { Scale, MapPin, Phone, Clock, Mail, Shield, ArrowUp } from 'lucide-react';
+import { MapPin, Phone, Clock, Mail, ArrowUp, MessageCircle } from 'lucide-react';
 import { OFFICE_INFO, getWhatsAppUrl } from '@/lib/utils';
 
 export const Footer: React.FC = () => {
@@ -10,121 +10,108 @@ export const Footer: React.FC = () => {
   return (
     <footer className="bg-[#070709] border-t border-neutral-800 text-neutral-400 text-xs relative overflow-hidden">
       {/* Top golden accent line */}
-      <div className="h-[2px] bg-gradient-to-r from-transparent via-gold-500/60 to-transparent" />
+      <div className="h-[1px] bg-gradient-to-r from-transparent via-gold-500/50 to-transparent" />
 
-      <div className="max-w-6xl mx-auto px-4 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10">
+      <div className="max-w-6xl mx-auto px-4 lg:px-8 py-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-6 lg:gap-8">
           
           {/* Brand Info */}
-          <div className="lg:col-span-4 space-y-4">
-            <div className="flex items-center gap-3">
+          <div className="lg:col-span-4 space-y-2.5">
+            <div className="flex items-center gap-2.5">
               <img
                 src="/logo.jpg"
                 alt="Souza & Selly Advocacia"
-                className="w-12 h-12 rounded-full object-cover border border-gold-500/50 shadow-md shadow-gold-500/10"
+                className="w-8 h-8 rounded-full object-cover border border-gold-500/50 shadow-sm shadow-gold-500/10"
               />
               <div>
-                <h3 className="font-serif text-base font-bold text-white">Souza & Selly</h3>
-                <p className="text-[10px] tracking-widest uppercase font-semibold text-gold-400">
+                <h3 className="font-serif text-sm font-bold text-white leading-tight">Souza & Selly</h3>
+                <p className="text-[9px] tracking-wider uppercase font-semibold text-gold-400">
                   Advocacia Especializada
                 </p>
               </div>
             </div>
 
-            <p className="text-neutral-400 text-xs leading-relaxed font-light">
-              8 anos de compromisso com a justiça, dignidade e respeito. Especialistas em Direito Previdenciário, Trabalhista e Cível, com sede em Fortaleza e atuação próxima em todo o estado do Ceará.
+            <p className="text-neutral-400 text-[11px] leading-relaxed font-light">
+              8 anos de compromisso com a justiça, dignidade e respeito. Atuação em Direito Previdenciário, Trabalhista e Cível em todo o Ceará com atendimento presencial e humanizado.
             </p>
 
-            <div className="pt-2 text-neutral-300 space-y-1">
-              <p className="font-semibold text-white">Sócias Fundadoras:</p>
-              <p>• Dra. Samara Selly – Pós-graduada em Previdenciário e Trabalho</p>
-              <p>• Dra. Mariana Souza – Pós-graduada em Previdenciário e Tributário</p>
+            <div className="pt-1 text-neutral-300 text-[11px] space-y-0.5">
+              <p className="text-neutral-400 text-[10px] font-semibold uppercase tracking-wider">Sócias Fundadoras:</p>
+              <p className="text-neutral-300">• Dra. Samara Selly – <span className="text-neutral-400">Previdenciário & Trabalho</span></p>
+              <p className="text-neutral-300">• Dra. Mariana Souza – <span className="text-neutral-400">Previdenciário & Tributário</span></p>
             </div>
           </div>
 
           {/* Quick Nav Links */}
-          <div className="lg:col-span-2 space-y-3">
-            <h4 className="font-serif text-sm font-bold text-white uppercase tracking-wider">
+          <div className="lg:col-span-2 space-y-2">
+            <h4 className="font-serif text-xs font-bold text-white uppercase tracking-wider">
               Navegação
             </h4>
-            <ul className="space-y-2 text-xs">
-              <li>
-                <a href="#inicio" className="hover:text-gold-400 transition-colors">Início</a>
-              </li>
-              <li>
-                <a href="#diferencial" className="hover:text-gold-400 transition-colors">Diferencial Interior</a>
-              </li>
-              <li>
-                <a href="#areas" className="hover:text-gold-400 transition-colors">Áreas de Atuação</a>
-              </li>
-              <li>
-                <a href="#advogadas" className="hover:text-gold-400 transition-colors">Dra. Samara & Mariana</a>
-              </li>
-              <li>
-                <a href="#depoimentos" className="hover:text-gold-400 transition-colors">Depoimentos do CE</a>
-              </li>
-              <li>
-                <a href="#localizacao" className="hover:text-gold-400 transition-colors">Sede em Fortaleza</a>
-              </li>
-              <li>
-                <a href="#faq" className="hover:text-gold-400 transition-colors">Dúvidas Frequentes</a>
-              </li>
+            <ul className="space-y-1 text-[11px]">
+              <li><a href="#inicio" className="hover:text-gold-400 transition-colors">Início</a></li>
+              <li><a href="#diferencial" className="hover:text-gold-400 transition-colors">Diferencial Interior</a></li>
+              <li><a href="#areas" className="hover:text-gold-400 transition-colors">Áreas de Atuação</a></li>
+              <li><a href="#advogadas" className="hover:text-gold-400 transition-colors">Dra. Samara & Mariana</a></li>
+              <li><a href="#depoimentos" className="hover:text-gold-400 transition-colors">Depoimentos do CE</a></li>
+              <li><a href="#localizacao" className="hover:text-gold-400 transition-colors">Sede em Fortaleza</a></li>
+              <li><a href="#faq" className="hover:text-gold-400 transition-colors">Dúvidas Frequentes</a></li>
             </ul>
           </div>
 
           {/* Practice Areas */}
-          <div className="lg:col-span-3 space-y-3">
-            <h4 className="font-serif text-sm font-bold text-white uppercase tracking-wider">
+          <div className="lg:col-span-3 space-y-2">
+            <h4 className="font-serif text-xs font-bold text-white uppercase tracking-wider">
               Áreas de Atuação
             </h4>
-            <ul className="space-y-2 text-xs">
+            <ul className="space-y-1 text-[11px] text-neutral-300">
               <li>• Aposentadoria Rural e Urbana (INSS)</li>
-              <li>• BPC / LOAS (Idosos e PCD / Autismo)</li>
-              <li>• Auxílio-Doença e Aposentadoria por Invalidez</li>
-              <li>• Reversão de Negativas do INSS com Retroativos</li>
-              <li>• Rescisão Trabalhista e Acidentes de Trabalho</li>
-              <li>• Horas Extras e Dano Moral Ocupacional</li>
-              <li>• Direito Cível, Família, Divórcio e Inventários</li>
+              <li>• BPC / LOAS (Idosos e PCD)</li>
+              <li>• Auxílio-Doença e Invalidez</li>
+              <li>• Reversão de Negativas do INSS</li>
+              <li>• Rescisão e Acidentes de Trabalho</li>
+              <li>• Horas Extras e Dano Moral</li>
+              <li>• Direito Cível, Família e Inventários</li>
             </ul>
           </div>
 
           {/* Contact and Sede */}
-          <div className="lg:col-span-3 space-y-3">
-            <h4 className="font-serif text-sm font-bold text-white uppercase tracking-wider">
+          <div className="lg:col-span-3 space-y-2">
+            <h4 className="font-serif text-xs font-bold text-white uppercase tracking-wider">
               Sede & Contato
             </h4>
             
-            <div className="space-y-2.5 text-xs">
-              <div className="flex items-start gap-2.5">
-                <MapPin className="w-4 h-4 text-gold-400 shrink-0 mt-0.5" />
-                <span>{OFFICE_INFO.fullAddress}</span>
+            <div className="space-y-1.5 text-[11px]">
+              <div className="flex items-start gap-2">
+                <MapPin className="w-3.5 h-3.5 text-gold-400 shrink-0 mt-0.5" />
+                <span className="leading-tight">{OFFICE_INFO.fullAddress}</span>
               </div>
 
-              <div className="flex items-center gap-2.5">
-                <Clock className="w-4 h-4 text-gold-400 shrink-0" />
+              <div className="flex items-center gap-2">
+                <Clock className="w-3.5 h-3.5 text-gold-400 shrink-0" />
                 <span>{OFFICE_INFO.hours}</span>
               </div>
 
-              <div className="flex items-center gap-2.5">
-                <Phone className="w-4 h-4 text-gold-400 shrink-0" />
+              <div className="flex items-center gap-2">
+                <Phone className="w-3.5 h-3.5 text-gold-400 shrink-0" />
                 <a href={getWhatsAppUrl()} className="hover:text-gold-400 transition-colors">
                   {OFFICE_INFO.phone}
                 </a>
               </div>
 
-              <div className="flex items-center gap-2.5">
-                <Mail className="w-4 h-4 text-gold-400 shrink-0" />
-                <span>{OFFICE_INFO.email}</span>
+              <div className="flex items-center gap-2">
+                <Mail className="w-3.5 h-3.5 text-gold-400 shrink-0" />
+                <span className="truncate">{OFFICE_INFO.email}</span>
               </div>
             </div>
 
-            <div className="pt-3">
+            <div className="pt-1.5">
               <a
                 href={getWhatsAppUrl("Olá! Gostaria de falar com as advogadas.")}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg text-xs font-bold uppercase tracking-wider text-black bg-gold-metallic hover:opacity-95 transition-all"
+                className="w-full inline-flex items-center justify-center gap-1.5 px-3 py-2 rounded-lg text-[11px] font-bold uppercase tracking-wider text-black bg-gold-metallic hover:opacity-95 transition-all shadow-sm"
               >
+                <MessageCircle className="w-3 h-3" />
                 <span>Falar no WhatsApp</span>
               </a>
             </div>
@@ -133,20 +120,20 @@ export const Footer: React.FC = () => {
         </div>
 
         {/* Legal Disclaimer & Ethics Note */}
-        <div className="mt-12 pt-8 border-t border-neutral-900 text-[11px] text-neutral-400 space-y-3 leading-relaxed">
+        <div className="mt-6 pt-4 border-t border-neutral-900/90 text-[10px] text-neutral-400 space-y-2 leading-relaxed">
           <p>
-            <strong>Aviso Legal & Ética Profissional:</strong> Este site tem finalidade exclusivamente informativa e institucional, em rigorosa consonância com o Código de Ética e Disciplina da OAB (Provimento 205/2021 do CFOAB). Nenhuma informação veiculada substitui a consulta jurídica formal individualizada. Não realizamos promessas de ganho de causa ou captação indevida de clientela.
+            <strong>Aviso Legal & Ética OAB:</strong> Conteúdo informativo em conformidade com o Provimento 205/2021 do CFOAB. Não substitui consulta jurídica formal nem realiza promessas de resultado.
           </p>
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-4 text-neutral-400">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-2 pt-2 text-neutral-400 text-[10px]">
             <p>
               © {new Date().getFullYear()} Souza & Selly Advocacia. Todos os direitos reservados.
             </p>
             <button
               onClick={scrollToTop}
-              className="inline-flex items-center gap-1.5 hover:text-gold-400 transition-colors text-neutral-400"
+              className="inline-flex items-center gap-1 hover:text-gold-400 transition-colors text-neutral-400"
             >
               <span>Voltar ao topo</span>
-              <ArrowUp className="w-3.5 h-3.5" />
+              <ArrowUp className="w-3 h-3" />
             </button>
           </div>
         </div>
