@@ -1,5 +1,6 @@
 import React from 'react';
-import { Award, GraduationCap, CheckCircle2, MessageCircle, Scale, Shield } from 'lucide-react';
+import { Award, GraduationCap, CheckCircle2, Scale, Shield } from 'lucide-react';
+import { WhatsAppIcon } from './WhatsAppIcon';
 import { LAWYERS } from '@/data/lawyers';
 import { getWhatsAppUrl } from '@/lib/utils';
 
@@ -124,7 +125,7 @@ export const LawyersSection: React.FC = () => {
                   rel="noopener noreferrer"
                   className="w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl text-xs font-bold uppercase tracking-wider text-neutral-200 bg-[#1A1A22] hover:bg-gold-500 hover:text-black border border-gold-500/40 hover:border-gold-500 transition-all duration-300 shadow-md"
                 >
-                  <MessageCircle className="w-4 h-4" />
+                  <WhatsAppIcon className="w-4 h-4 fill-current" />
                   <span>Falar com {lawyer.name.split(' ')[0]} {lawyer.name.split(' ')[1]}</span>
                 </a>
               </div>

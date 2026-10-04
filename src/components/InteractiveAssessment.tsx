@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { HelpCircle, CheckCircle2, ArrowRight, RotateCcw, MessageCircle, Sparkles, MapPin, Scale } from 'lucide-react';
+import { HelpCircle, CheckCircle2, ArrowRight, RotateCcw, Sparkles, MapPin, Scale } from 'lucide-react';
+import { WhatsAppIcon } from './WhatsAppIcon';
 import confetti from 'canvas-confetti';
 import { getWhatsAppUrl } from '@/lib/utils';
 
@@ -263,7 +264,7 @@ Gostaria de agendar uma análise preliminar do meu caso.`;
                   rel="noopener noreferrer"
                   className="w-full inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl text-sm font-bold uppercase tracking-wider text-black bg-gold-metallic hover:opacity-95 shadow-xl shadow-gold-500/30 transition-all"
                 >
-                  <MessageCircle className="w-5 h-5 fill-black/20" />
+                  <WhatsAppIcon className="w-5 h-5 fill-black/80" />
                   <span>Enviar Caso para as Advogadas</span>
                 </a>
 

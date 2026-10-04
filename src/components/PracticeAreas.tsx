@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { ShieldCheck, Briefcase, Scale, AlertTriangle, CheckCircle, ArrowRight, MessageCircle } from 'lucide-react';
+import { ShieldCheck, Briefcase, Scale, AlertTriangle, CheckCircle, ArrowRight } from 'lucide-react';
+import { WhatsAppIcon } from './WhatsAppIcon';
 import { PRACTICE_AREAS, PracticeArea } from '@/data/practiceAreas';
 import { getWhatsAppUrl } from '@/lib/utils';
 
@@ -117,7 +118,7 @@ export const PracticeAreas: React.FC = () => {
                   rel="noopener noreferrer"
                   className="w-full inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl text-xs font-bold uppercase tracking-wider text-black bg-gold-metallic hover:opacity-95 shadow-md shadow-gold-500/20 transition-all group"
                 >
-                  <MessageCircle className="w-3.5 h-3.5 fill-black/20" />
+                  <WhatsAppIcon className="w-3.5 h-3.5 fill-black/80" />
                   <span>Consultar Meu Caso em {activeArea.title}</span>
                   <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                 </a>

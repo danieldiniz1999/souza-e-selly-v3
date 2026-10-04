@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { MessageCircle, Menu, X } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
+import { WhatsAppIcon } from './WhatsAppIcon';
 import { getWhatsAppUrl } from '@/lib/utils';
 
 export const Navbar: React.FC = () => {
@@ -75,7 +76,7 @@ export const Navbar: React.FC = () => {
               className="relative inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider text-black bg-gold-metallic hover:opacity-95 transition-all duration-300 shadow-lg shadow-gold-500/20 hover:shadow-gold-500/40 hover:-translate-y-0.5 active:translate-y-0 overflow-hidden group"
             >
               <span className="absolute inset-0 w-1/2 h-full bg-white/20 skew-x-12 -translate-x-full group-hover:translate-x-[300%] transition-transform duration-1000 ease-out" />
-              <MessageCircle className="w-4 h-4 fill-black/20" />
+              <WhatsAppIcon className="w-4 h-4 fill-black/80" />
               <span>Consulta no WhatsApp</span>
             </a>
           </div>
@@ -111,7 +112,7 @@ export const Navbar: React.FC = () => {
                   rel="noopener noreferrer"
                   className="w-full inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl text-xs font-semibold uppercase tracking-wider text-black bg-gold-metallic shadow-lg shadow-gold-500/20"
                 >
-                  <MessageCircle className="w-4 h-4" />
+                  <WhatsAppIcon className="w-4 h-4 fill-black/80" />
                   <span>Falar com as Advogadas</span>
                 </a>
               </div>

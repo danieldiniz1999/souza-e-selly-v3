@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { MessageCircle, X } from 'lucide-react';
-import { getWhatsAppUrl, OFFICE_INFO } from '@/lib/utils';
+import { X } from 'lucide-react';
+import { WhatsAppIcon } from './WhatsAppIcon';
+import { getWhatsAppUrl } from '@/lib/utils';
 
 export const WhatsAppFloating: React.FC = () => {
   const [showPopup, setShowPopup] = useState(false);
@@ -63,7 +64,7 @@ export const WhatsAppFloating: React.FC = () => {
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center gap-1.5 w-full py-1.5 px-2.5 rounded-lg text-[11px] font-bold uppercase tracking-wider text-black bg-gold-metallic hover:opacity-95 shadow transition-all"
           >
-            <MessageCircle className="w-3 h-3 fill-black/20" />
+            <WhatsAppIcon className="w-3.5 h-3.5 fill-black/80" />
             <span>Falar no WhatsApp</span>
           </a>
         </div>
@@ -75,16 +76,16 @@ export const WhatsAppFloating: React.FC = () => {
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Falar no WhatsApp com as advogadas"
-        className="relative group flex items-center justify-center w-12 h-12 sm:w-13 sm:h-13 rounded-full bg-gradient-to-tr from-[#1E824C] to-[#2ECC71] text-white shadow-xl shadow-emerald-500/25 hover:scale-105 active:scale-95 transition-all duration-300 border border-emerald-400/50"
+        className="relative group flex items-center justify-center w-13 h-13 sm:w-14 sm:h-14 rounded-full bg-[#25D366] hover:bg-[#20bd5a] text-white shadow-xl shadow-[#25D366]/40 hover:scale-105 active:scale-95 transition-all duration-300 border-2 border-white/20"
       >
         {/* Pulsing ring */}
-        <span className="absolute -inset-1 rounded-full bg-emerald-500/30 animate-ping opacity-75 pointer-events-none" />
+        <span className="absolute -inset-1 rounded-full bg-[#25D366]/40 animate-ping opacity-75 pointer-events-none" />
 
-        {/* WhatsApp Icon */}
-        <MessageCircle className="w-6 h-6 fill-white" />
+        {/* Authentic WhatsApp Icon */}
+        <WhatsAppIcon className="w-7 h-7 text-white fill-current" />
 
         {/* Unread notification badge */}
-        <span className="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-red-600 text-white text-[9px] font-extrabold flex items-center justify-center border border-[#09090B] shadow">
+        <span className="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-red-600 text-white text-[9px] font-extrabold flex items-center justify-center border-2 border-[#09090B] shadow">
           1
         </span>
       </a>

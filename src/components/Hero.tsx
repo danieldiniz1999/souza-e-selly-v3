@@ -1,5 +1,6 @@
 import React from 'react';
-import { MessageCircle, ArrowRight, MapPin, CheckCircle2, Scale, Clock } from 'lucide-react';
+import { ArrowRight, MapPin, CheckCircle2, Scale, Clock } from 'lucide-react';
+import { WhatsAppIcon } from './WhatsAppIcon';
 import { getWhatsAppUrl, OFFICE_INFO } from '@/lib/utils';
 
 export const Hero: React.FC = () => {
@@ -65,7 +66,7 @@ export const Hero: React.FC = () => {
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl text-xs font-bold uppercase tracking-wider text-black bg-gold-metallic shadow-lg shadow-gold-500/20 hover:shadow-gold-500/35 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 group"
               >
-                <MessageCircle className="w-4 h-4 fill-black/20 group-hover:scale-110 transition-transform" />
+                <WhatsAppIcon className="w-4 h-4 fill-black/80 group-hover:scale-110 transition-transform" />
                 <span>Avaliar Meu Caso no WhatsApp</span>
                 <ArrowRight className="w-3.5 h-3.5 ml-0.5 group-hover:translate-x-1 transition-transform" />
               </a>
@@ -169,7 +170,7 @@ export const Hero: React.FC = () => {
                     rel="noopener noreferrer"
                     className="w-full inline-flex items-center justify-center gap-2 px-3 py-2.5 rounded-lg text-xs font-bold uppercase tracking-wider text-neutral-200 bg-[#212128] hover:bg-gold-500 hover:text-black border border-gold-500/30 transition-all duration-300"
                   >
-                    <MessageCircle className="w-3.5 h-3.5" />
+                    <WhatsAppIcon className="w-3.5 h-3.5 fill-current" />
                     <span>Iniciar Atendimento Humanizado</span>
                   </a>
                 </div>
