@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { Phone, MessageCircle, Menu, X, Shield, Clock, MapPin } from 'lucide-react';
-import { OFFICE_INFO, getWhatsAppUrl } from '@/lib/utils';
+import { MessageCircle, Menu, X } from 'lucide-react';
+import { getWhatsAppUrl } from '@/lib/utils';
 
 export const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [isBusinessHours, setIsBusinessHours] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -13,20 +12,6 @@ export const Navbar: React.FC = () => {
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  useEffect(() => {
-    // Check if current time is between 09:00 and 17:00 (Fortaleza / BRT timezone)
-    const checkHours = () => {
-      const now = new Date();
-      const hours = now.getHours();
-      const day = now.getDay();
-      const isWeekday = day >= 1 && day <= 5;
-      setIsBusinessHours(isWeekday && hours >= 9 && hours < 17);
-    };
-    checkHours();
-    const interval = setInterval(checkHours, 60000);
-    return () => clearInterval(interval);
   }, []);
 
   const navLinks = [
@@ -42,37 +27,6 @@ export const Navbar: React.FC = () => {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
-      {/* Top Banner - Horário & Atendimento */}
-      <div className="bg-[#0B0B0E] border-b border-[#23232A] text-xs py-1.5 px-4">
-        <div className="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-2">
-          <div className="flex items-center gap-4 text-neutral-400">
-            <span className="flex items-center gap-1.5">
-              <span className={`w-2 h-2 rounded-full ${isBusinessHours ? 'bg-emerald-500 animate-pulse' : 'bg-amber-500'}`} />
-              <span className="font-medium text-neutral-200">
-                {isBusinessHours ? 'Atendimento Online Aberto' : 'Plantão Digital Ativo'}
-              </span>
-              <span className="hidden sm:inline text-neutral-400">({OFFICE_INFO.hours})</span>
-            </span>
-            <span className="hidden md:flex items-center gap-1 text-neutral-400">
-              <MapPin className="w-3.5 h-3.5 text-gold-500" />
-              Parquelândia, Fortaleza - CE
-            </span>
-          </div>
-
-          <div className="flex items-center gap-4 text-neutral-300 ml-auto">
-            <a 
-              href={getWhatsAppUrl("Olá! Gostaria de agendar uma consulta com as advogadas.")}
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="flex items-center gap-1.5 hover:text-gold-400 transition-colors"
-            >
-              <MessageCircle className="w-3.5 h-3.5 text-gold-500" />
-              <span>{OFFICE_INFO.phone}</span>
-            </a>
-          </div>
-        </div>
-      </div>
-
       {/* Main Bar */}
       <nav 
         className={`px-4 lg:px-8 transition-all duration-300 ${

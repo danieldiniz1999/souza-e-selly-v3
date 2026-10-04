@@ -1,5 +1,5 @@
 import React from 'react';
-import { ShieldCheck, MessageCircle, ArrowRight, Award, MapPin, Users, CheckCircle2, Scale, Clock } from 'lucide-react';
+import { MessageCircle, ArrowRight, MapPin, CheckCircle2, Scale, Clock } from 'lucide-react';
 import { getWhatsAppUrl, OFFICE_INFO } from '@/lib/utils';
 
 export const Hero: React.FC = () => {
@@ -172,12 +172,6 @@ export const Hero: React.FC = () => {
                     <MessageCircle className="w-3.5 h-3.5" />
                     <span>Iniciar Atendimento Humanizado</span>
                   </a>
-                </div>
-
-                {/* Floating Satisfaction Stamp */}
-                <div className="absolute -bottom-2 -right-2 bg-gradient-to-br from-gold-400 to-gold-600 text-black px-3 py-1 rounded-lg text-[10px] font-extrabold uppercase tracking-wide shadow-lg shadow-gold-500/25 flex items-center gap-1">
-                  <ShieldCheck className="w-3.5 h-3.5" />
-                  <span>8 Anos no Ceará</span>
                 </div>
 
               </div>
