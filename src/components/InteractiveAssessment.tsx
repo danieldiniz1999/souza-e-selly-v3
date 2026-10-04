@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { HelpCircle, CheckCircle2, ArrowRight, RotateCcw, Sparkles, MapPin, Scale } from 'lucide-react';
+import { CheckCircle2, ArrowRight, RotateCcw, Sparkles, MapPin, Scale, FileText, Clock, AlertTriangle, ShieldCheck } from 'lucide-react';
 import { WhatsAppIcon } from './WhatsAppIcon';
 import confetti from 'canvas-confetti';
 import { getWhatsAppUrl } from '@/lib/utils';
@@ -7,51 +7,153 @@ import { getWhatsAppUrl } from '@/lib/utils';
 export const InteractiveAssessment: React.FC = () => {
   const [step, setStep] = useState(1);
   const [selectedArea, setSelectedArea] = useState('');
+  const [selectedDetail, setSelectedDetail] = useState('');
+  const [selectedDocs, setSelectedDocs] = useState('');
+  const [selectedUrgency, setSelectedUrgency] = useState('');
   const [selectedLocation, setSelectedLocation] = useState('');
-  const [selectedStatus, setSelectedStatus] = useState('');
 
+  const TOTAL_STEPS = 5;
+
+  // Step 1: Areas
   const areas = [
-    { id: 'INSS / Previdenciário', label: 'INSS negou benefício, Aposentadoria Rural/Urbana ou BPC/LOAS', icon: '🏛️' },
-    { id: 'Direito do Trabalho', label: 'Fui demitido, sofri acidente de trabalho ou tenho verbas atrasadas', icon: '👷' },
-    { id: 'Cível / Família / Indenização', label: 'Inventário, divórcio, contratos, cobrança abusiva ou danos morais', icon: '⚖️' },
-    { id: 'Outro Caso Urgente', label: 'Outra questão que preciso de avaliação urgente das advogadas', icon: '⚡' }
+    { 
+      id: 'INSS / Previdenciário', 
+      label: 'Negativa de benefício, Aposentadoria Rural/Urbana, BPC/LOAS ou pensão', 
+      icon: '🏛️' 
+    },
+    { 
+      id: 'Direito do Trabalho', 
+      label: 'Demissão, verbas rescisórias pendentes, acidente ou direitos atrasados', 
+      icon: '👷' 
+    },
+    { 
+      id: 'Cível & Família', 
+      label: 'Inventário, divórcio, pensão alimentícia, contratos ou danos morais', 
+      icon: '⚖️' 
+    },
+    { 
+      id: 'Outro Caso Urgente', 
+      label: 'Notificação judicial, cobrança indevida ou situação com prazo correndo', 
+      icon: '⚡' 
+    }
   ];
 
+  // Step 2: Dynamic specific demands based on selected area
+  const areaDetails: Record<string, string[]> = {
+    'INSS / Previdenciário': [
+      'Benefício negado ou cortado pelo INSS (quero reverter na Justiça Federal)',
+      'BPC / LOAS (Benefício para Idosos ou Pessoas com Deficiência / Autismo)',
+      'Aposentadoria Rural ou Segurado Especial (Trabalhador do campo / pescador)',
+      'Aposentadoria por Idade, Tempo de Contribuição ou Especial (Insalubre)',
+      'Auxílio-Doença, Incapacidade Temporária ou Aposentadoria por Invalidez',
+      'Pensão por Morte, Auxílio-Reclusão ou Revisão de Valor de Benefício'
+    ],
+    'Direito do Trabalho': [
+      'Demissão sem recebimento integral de rescisão, FGTS ou multa de 40%',
+      'Acidente de trabalho, sequela física ou doença ocupacional (LER/Burnout)',
+      'Trabalho sem carteira assinada (quero reconhecer vínculo e FGTS atrasado)',
+      'Horas extras não quitadas, intervalo suprimido ou adicional de insalubridade',
+      'Assédio moral, perseguição ou constrangimento no trabalho (Rescisão Indireta)',
+      'Estabilidade de gestante ou acidente violada'
+    ],
+    'Cível & Família': [
+      'Inventário e partilha de herança familiar (judicial ou em cartório)',
+      'Divórcio, partilha de bens do casal ou dissolução de união estável',
+      'Fixação, execução ou revisão de pensão alimentícia e guarda de filhos',
+      'Cobrança indevida, negativação irregular (SPC/Serasa) ou abusos bancários',
+      'Indenização por danos morais, materiais ou perda financeira injusta',
+      'Contratos, compra e venda ou regularização fundiária/imóveis'
+    ],
+    'Outro Caso Urgente': [
+      'Recebi uma intimação ou notificação com prazo judicial correndo',
+      'Bloqueio judicial de conta bancária ou execução de bens',
+      'Análise preventiva de documentos ou contratos importantes',
+      'Outra situação emergencial que requer atuação rápida de advogadas'
+    ]
+  };
+
+  // Step 3: Documentation status
+  const docStatuses = [
+    { 
+      title: 'Já possuo documentos e comprovantes em mãos', 
+      desc: 'Tenho carteira de trabalho, laudos, carta de negativa do INSS ou rescisão pronta' 
+    },
+    { 
+      title: 'Tenho parte dos documentos e preciso de orientação', 
+      desc: 'Possuo alguns comprovantes, mas preciso de ajuda para saber o que falta' 
+    },
+    { 
+      title: 'Não tenho quase nada e preciso que busquem por mim', 
+      desc: 'Preciso que as advogadas verifiquem meu histórico e orientem como emitir' 
+    },
+    { 
+      title: 'Recebi uma negativa recente com prazo fatal correndo', 
+      desc: 'Tenho a carta de indeferimento ou notificação oficial recente' 
+    }
+  ];
+
+  // Step 4: Urgency level
+  const urgencyLevels = [
+    { 
+      title: 'Alta Urgência', 
+      desc: 'Estou sem renda, com benefício cortado, prazo fatal correndo ou fui demitido recentemente',
+      badge: 'Prioridade Máxima',
+      badgeColor: 'bg-red-500/15 text-red-400 border-red-500/30'
+    },
+    { 
+      title: 'Moderada', 
+      desc: 'Quero ingressar com o processo nas próximas semanas de forma planejada e segura',
+      badge: 'Atendimento Normal',
+      badgeColor: 'bg-gold-500/15 text-gold-300 border-gold-500/30'
+    },
+    { 
+      title: 'Preventiva / Avaliação', 
+      desc: 'Quero tirar dúvidas e entender meus direitos antes de dar qualquer entrada formal',
+      badge: 'Orientação Consultiva',
+      badgeColor: 'bg-blue-500/15 text-blue-300 border-blue-500/30'
+    }
+  ];
+
+  // Step 5: Locations across Ceará
   const locations = [
     'Fortaleza ou Região Metropolitana',
-    'Sertão Central (Quixadá, Quixeramobim e região)',
+    'Sertão Central (Quixadá, Quixeramobim, Banabuiú e região)',
     'Região do Cariri (Juazeiro do Norte, Crato, Barbalha)',
-    'Região Norte (Sobral, Tianguá e municípios vizinhos)',
-    'Sertão dos Crateús e Inhamuns',
-    'Centro-Sul (Iguatu, Icó e região)',
+    'Região Norte (Sobral, Tianguá, Camocim e municípios vizinhos)',
+    'Sertão dos Crateús e Inhamuns (Crateús, Tauá e região)',
+    'Centro-Sul (Iguatu, Icó, Cedro e região)',
     'Outro município no interior do Ceará'
   ];
 
-  const statuses = [
-    'Já dei entrada e o pedido foi negado ou cancelado',
-    'Ainda não dei entrada e quero fazer tudo certo desde o início',
-    'Sofri um prejuízo ou demissão recente e tenho prazo correndo',
-    'Gostaria de uma visita presencial das advogadas no meu município'
-  ];
-
+  // Navigation handlers
   const handleNextStep1 = (area: string) => {
     setSelectedArea(area);
     setStep(2);
   };
 
-  const handleNextStep2 = (loc: string) => {
-    setSelectedLocation(loc);
+  const handleNextStep2 = (detail: string) => {
+    setSelectedDetail(detail);
     setStep(3);
   };
 
-  const handleFinish = (status: string) => {
-    setSelectedStatus(status);
+  const handleNextStep3 = (docs: string) => {
+    setSelectedDocs(docs);
     setStep(4);
+  };
+
+  const handleNextStep4 = (urgency: string) => {
+    setSelectedUrgency(urgency);
+    setStep(5);
+  };
+
+  const handleFinish = (loc: string) => {
+    setSelectedLocation(loc);
+    setStep(6);
 
     try {
       confetti({
-        particleCount: 60,
-        spread: 70,
+        particleCount: 65,
+        spread: 75,
         origin: { y: 0.6 },
         colors: ['#C5A059', '#E6C878', '#FFFFFF']
       });
@@ -63,16 +165,21 @@ export const InteractiveAssessment: React.FC = () => {
   const handleReset = () => {
     setStep(1);
     setSelectedArea('');
+    setSelectedDetail('');
+    setSelectedDocs('');
+    setSelectedUrgency('');
     setSelectedLocation('');
-    setSelectedStatus('');
   };
 
-  const generatedWhatsAppMsg = `Olá, Dra. Samara e Dra. Mariana! Realizei a triagem no site oficial de vocês:
-- Minha área de interesse: ${selectedArea}
-- Minha localização: ${selectedLocation}
-- Minha situação atual: ${selectedStatus}
+  // WhatsApp pre-formatted rich message
+  const generatedWhatsAppMsg = `Olá, Dra. Samara e Dra. Mariana! Realizei a triagem completa no site oficial de vocês:
+• Área: ${selectedArea}
+• Demanda específica: ${selectedDetail}
+• Documentação: ${selectedDocs}
+• Urgência: ${selectedUrgency}
+• Região no Ceará: ${selectedLocation}
 
-Gostaria de agendar uma análise preliminar do meu caso.`;
+Gostaria de uma orientação jurídica personalizada sobre a viabilidade do meu caso.`;
 
   return (
     <section id="triagem" className="py-16 bg-[#0B0B0E] relative overflow-hidden">
@@ -82,137 +189,108 @@ Gostaria de agendar uma análise preliminar do meu caso.`;
       <div className="max-w-3xl mx-auto px-4 lg:px-8 relative z-10">
         
         {/* Header */}
-        <div className="text-center mb-10">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold-500/10 border border-gold-500/30 text-gold-400 text-[10px] font-semibold uppercase tracking-wider mb-3">
+        <div className="text-center mb-8">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold-500/10 border border-gold-500/30 text-gold-400 text-[10px] font-semibold uppercase tracking-wider mb-2.5">
             <img src="/logo.jpg" alt="Souza & Selly" className="w-3.5 h-3.5 rounded-full object-cover border border-gold-500/50" />
-            <span>Triagem Jurídica Rápida em 30 Segundos</span>
+            <span>Triagem Jurídica Completa • Passo a Passo</span>
           </div>
 
-          <h2 className="font-serif text-2xl sm:text-3xl font-bold text-white mb-3">
-            Descubra se o seu caso tem <span className="text-gold-metallic">Direito a Reparação</span>
+          <h2 className="font-serif text-2xl sm:text-3xl font-bold text-white mb-2 leading-tight">
+            Descubra a Viabilidade do seu <span className="text-gold-metallic">Direito</span>
           </h2>
           
           <p className="text-neutral-400 text-xs sm:text-sm font-light max-w-lg mx-auto">
-            Responda 3 perguntas simples e receba um direcionamento direto com a equipe de especialistas no WhatsApp.
+            Siga as 5 etapas guiadas para mapear sua situação e receber um atendimento totalmente mastigado e direto com as advogadas.
           </p>
         </div>
 
-        {/* Card Box */}
-        <div className="rounded-2xl bg-[#121217] border border-gold-500/30 p-5 sm:p-8 shadow-xl relative">
+        {/* Card Container */}
+        <div className="rounded-2xl bg-[#121217] border border-gold-500/30 p-5 sm:p-7 shadow-xl relative transition-all duration-300">
           
           {/* Progress Indicator */}
-          {step < 4 && (
+          {step <= TOTAL_STEPS && (
             <div className="mb-6">
               <div className="flex justify-between items-center text-xs text-neutral-400 mb-1.5">
-                <span>Passo {step} de 3</span>
-                <span className="text-gold-400 font-semibold">{step === 1 ? '33%' : step === 2 ? '66%' : '100%'} concluído</span>
+                <span className="font-medium text-neutral-300">
+                  Etapa <strong className="text-white font-bold">{step}</strong> de {TOTAL_STEPS}
+                </span>
+                <span className="text-gold-400 font-semibold text-[11px]">
+                  {Math.round((step / TOTAL_STEPS) * 100)}% concluído
+                </span>
               </div>
-              <div className="w-full h-1 bg-neutral-800 rounded-full overflow-hidden">
+              <div className="w-full h-1.5 bg-neutral-800 rounded-full overflow-hidden">
                 <div 
                   className="h-full bg-gold-metallic transition-all duration-500 ease-out"
-                  style={{ width: `${(step / 3) * 100}%` }}
+                  style={{ width: `${(step / TOTAL_STEPS) * 100}%` }}
                 />
               </div>
             </div>
           )}
 
-          {/* Step 1: Area */}
+          {/* STEP 1: Main Practice Area */}
           {step === 1 && (
             <div className="animate-fade-in-up">
-              <h3 className="font-serif text-lg sm:text-xl font-bold text-white mb-1.5">
-                1. Qual é o motivo principal da sua busca por justiça?
+              <h3 className="font-serif text-base sm:text-lg font-bold text-white mb-1">
+                1. Qual é a sua principal necessidade jurídica?
               </h3>
-              <p className="text-neutral-400 text-xs mb-5 font-light">
-                Selecione a opção que melhor descreve o que você está vivenciando:
+              <p className="text-neutral-400 text-xs mb-4 font-light">
+                Selecione a área central do seu caso para personalizarmos os próximos passos:
               </p>
 
-              <div className="grid gap-2.5">
+              <div className="grid gap-2">
                 {areas.map((a) => (
                   <button
                     key={a.id}
                     onClick={() => handleNextStep1(a.id)}
-                    className="flex items-center gap-3.5 p-3.5 sm:p-4 rounded-xl bg-[#181820] border border-neutral-800 hover:border-gold-500/50 hover:bg-[#1E1E28] transition-all text-left group"
+                    className="flex items-center gap-3 p-3 rounded-xl bg-[#181820] border border-neutral-800 hover:border-gold-500/50 hover:bg-[#1E1E28] transition-all text-left group"
                   >
-                    <span className="text-xl sm:text-2xl shrink-0">{a.icon}</span>
-                    <div className="flex-1">
+                    <span className="text-xl shrink-0 p-1 rounded-lg bg-neutral-800/80">{a.icon}</span>
+                    <div className="flex-1 min-w-0">
                       <h4 className="text-xs sm:text-sm font-bold text-white group-hover:text-gold-300 transition-colors">
                         {a.id}
                       </h4>
-                      <p className="text-[11px] text-neutral-400 mt-0.5 font-light">
+                      <p className="text-[11px] text-neutral-400 mt-0.5 font-light truncate sm:whitespace-normal">
                         {a.label}
                       </p>
                     </div>
-                    <ArrowRight className="w-5 h-5 text-neutral-500 group-hover:text-gold-400 group-hover:translate-x-1 transition-all shrink-0" />
+                    <ArrowRight className="w-4 h-4 text-neutral-500 group-hover:text-gold-400 group-hover:translate-x-1 transition-all shrink-0" />
                   </button>
                 ))}
               </div>
             </div>
           )}
 
-          {/* Step 2: Location in Ceará */}
+          {/* STEP 2: Specific Demand (Dynamic based on Step 1) */}
           {step === 2 && (
             <div className="animate-fade-in-up">
-              <div className="flex items-center gap-2 mb-2">
+              <div className="flex items-center justify-between mb-3">
                 <button 
                   onClick={() => setStep(1)}
                   className="text-xs text-gold-400 hover:underline flex items-center gap-1"
                 >
-                  ← Voltar
+                  ← Voltar à etapa anterior
                 </button>
+                <span className="text-[10px] text-neutral-400 uppercase tracking-wider font-semibold">
+                  Área: {selectedArea}
+                </span>
               </div>
 
-              <h3 className="font-serif text-xl sm:text-2xl font-bold text-white mb-2">
-                2. Onde você mora atualmente no Ceará?
+              <h3 className="font-serif text-base sm:text-lg font-bold text-white mb-1">
+                2. Qual situação melhor descreve a sua demanda?
               </h3>
-              <p className="text-neutral-400 text-xs sm:text-sm mb-6">
-                Isso nos ajuda a planejar se seu atendimento será na sede ou em nossas visitas no interior:
+              <p className="text-neutral-400 text-xs mb-4 font-light">
+                Escolha o detalhe que mais se aproxima do que você está enfrentando:
               </p>
 
-              <div className="grid sm:grid-cols-2 gap-3">
-                {locations.map((loc, idx) => (
+              <div className="grid gap-2">
+                {(areaDetails[selectedArea] || areaDetails['Outro Caso Urgente']).map((item, idx) => (
                   <button
                     key={idx}
-                    onClick={() => handleNextStep2(loc)}
-                    className="flex items-center gap-3 p-4 rounded-xl bg-[#181820] border border-neutral-800 hover:border-gold-500/50 hover:bg-[#1E1E28] transition-all text-left group"
+                    onClick={() => handleNextStep2(item)}
+                    className="flex items-center justify-between gap-3 p-3 rounded-xl bg-[#181820] border border-neutral-800 hover:border-gold-500/50 hover:bg-[#1E1E28] transition-all text-left group"
                   >
-                    <MapPin className="w-4 h-4 text-gold-400 shrink-0" />
-                    <span className="text-xs sm:text-sm text-neutral-200 group-hover:text-white font-medium">
-                      {loc}
-                    </span>
-                  </button>
-                ))}
-              </div>
-            </div>
-          )}
-
-          {/* Step 3: Status */}
-          {step === 3 && (
-            <div className="animate-fade-in-up">
-              <div className="flex items-center gap-2 mb-2">
-                <button 
-                  onClick={() => setStep(2)}
-                  className="text-xs text-gold-400 hover:underline flex items-center gap-1"
-                >
-                  ← Voltar
-                </button>
-              </div>
-
-              <h3 className="font-serif text-xl sm:text-2xl font-bold text-white mb-2">
-                3. Qual o momento do seu caso?
-              </h3>
-              <p className="text-neutral-400 text-xs sm:text-sm mb-6">
-                Última pergunta para direcionar com prioridade à advogada responsável:
-              </p>
-
-              <div className="grid gap-3.5">
-                {statuses.map((stat, idx) => (
-                  <button
-                    key={idx}
-                    onClick={() => handleFinish(stat)}
-                    className="flex items-center justify-between p-4 sm:p-5 rounded-2xl bg-[#181820] border border-neutral-800 hover:border-gold-500/50 hover:bg-[#1E1E28] transition-all text-left group"
-                  >
-                    <span className="text-xs sm:text-sm text-neutral-200 group-hover:text-gold-200 font-medium">
-                      {stat}
+                    <span className="text-xs text-neutral-200 group-hover:text-white font-medium leading-relaxed">
+                      {item}
                     </span>
                     <ArrowRight className="w-4 h-4 text-neutral-500 group-hover:text-gold-400 group-hover:translate-x-1 transition-all shrink-0" />
                   </button>
@@ -221,64 +299,212 @@ Gostaria de agendar uma análise preliminar do meu caso.`;
             </div>
           )}
 
-          {/* Step 4: Final Screen with Pre-filled WhatsApp CTA */}
+          {/* STEP 3: Document Status */}
+          {step === 3 && (
+            <div className="animate-fade-in-up">
+              <div className="flex items-center justify-between mb-3">
+                <button 
+                  onClick={() => setStep(2)}
+                  className="text-xs text-gold-400 hover:underline flex items-center gap-1"
+                >
+                  ← Voltar à etapa anterior
+                </button>
+                <span className="text-[10px] text-neutral-400 uppercase tracking-wider font-semibold">
+                  Documentação
+                </span>
+              </div>
+
+              <h3 className="font-serif text-base sm:text-lg font-bold text-white mb-1">
+                3. Você já possui documentos ou laudos em mãos?
+              </h3>
+              <p className="text-neutral-400 text-xs mb-4 font-light">
+                Não se preocupe caso não tenha tudo: nós auxiliamos em todo o levantamento necessário.
+              </p>
+
+              <div className="grid gap-2">
+                {docStatuses.map((doc, idx) => (
+                  <button
+                    key={idx}
+                    onClick={() => handleNextStep3(doc.title)}
+                    className="flex items-start gap-3 p-3 rounded-xl bg-[#181820] border border-neutral-800 hover:border-gold-500/50 hover:bg-[#1E1E28] transition-all text-left group"
+                  >
+                    <FileText className="w-4 h-4 text-gold-400 shrink-0 mt-0.5" />
+                    <div className="flex-1">
+                      <h4 className="text-xs font-bold text-white group-hover:text-gold-300 transition-colors">
+                        {doc.title}
+                      </h4>
+                      <p className="text-[11px] text-neutral-400 mt-0.5 font-light">
+                        {doc.desc}
+                      </p>
+                    </div>
+                    <ArrowRight className="w-4 h-4 text-neutral-500 group-hover:text-gold-400 group-hover:translate-x-1 transition-all shrink-0 mt-1" />
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* STEP 4: Urgency / Timing */}
           {step === 4 && (
-            <div className="text-center animate-fade-in-up py-4">
-              <div className="flex items-center justify-center gap-3 mb-4">
+            <div className="animate-fade-in-up">
+              <div className="flex items-center justify-between mb-3">
+                <button 
+                  onClick={() => setStep(3)}
+                  className="text-xs text-gold-400 hover:underline flex items-center gap-1"
+                >
+                  ← Voltar à etapa anterior
+                </button>
+                <span className="text-[10px] text-neutral-400 uppercase tracking-wider font-semibold">
+                  Urgência
+                </span>
+              </div>
+
+              <h3 className="font-serif text-base sm:text-lg font-bold text-white mb-1">
+                4. Qual é o nível de urgência do seu caso?
+              </h3>
+              <p className="text-neutral-400 text-xs mb-4 font-light">
+                Isso ajuda nossa equipe a definir a velocidade e a prioridade de atendimento:
+              </p>
+
+              <div className="grid gap-2">
+                {urgencyLevels.map((u, idx) => (
+                  <button
+                    key={idx}
+                    onClick={() => handleNextStep4(u.title)}
+                    className="flex items-start justify-between gap-3 p-3.5 rounded-xl bg-[#181820] border border-neutral-800 hover:border-gold-500/50 hover:bg-[#1E1E28] transition-all text-left group"
+                  >
+                    <div className="flex items-start gap-3">
+                      <Clock className="w-4 h-4 text-gold-400 shrink-0 mt-0.5" />
+                      <div>
+                        <h4 className="text-xs font-bold text-white group-hover:text-gold-300 transition-colors">
+                          {u.title}
+                        </h4>
+                        <p className="text-[11px] text-neutral-400 mt-0.5 font-light">
+                          {u.desc}
+                        </p>
+                      </div>
+                    </div>
+                    <span className={`text-[10px] font-bold px-2 py-0.5 rounded-md border shrink-0 ${u.badgeColor}`}>
+                      {u.badge}
+                    </span>
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* STEP 5: Location in Ceará */}
+          {step === 5 && (
+            <div className="animate-fade-in-up">
+              <div className="flex items-center justify-between mb-3">
+                <button 
+                  onClick={() => setStep(4)}
+                  className="text-xs text-gold-400 hover:underline flex items-center gap-1"
+                >
+                  ← Voltar à etapa anterior
+                </button>
+                <span className="text-[10px] text-neutral-400 uppercase tracking-wider font-semibold">
+                  Localização no Ceará
+                </span>
+              </div>
+
+              <h3 className="font-serif text-base sm:text-lg font-bold text-white mb-1">
+                5. Onde você reside atualmente no Ceará?
+              </h3>
+              <p className="text-neutral-400 text-xs mb-4 font-light">
+                Com base nisso, organizamos se seu atendimento será na sede em Fortaleza ou em uma de nossas visitas presenciais no interior:
+              </p>
+
+              <div className="grid sm:grid-cols-2 gap-2">
+                {locations.map((loc, idx) => (
+                  <button
+                    key={idx}
+                    onClick={() => handleFinish(loc)}
+                    className="flex items-center gap-2.5 p-3 rounded-xl bg-[#181820] border border-neutral-800 hover:border-gold-500/50 hover:bg-[#1E1E28] transition-all text-left group"
+                  >
+                    <MapPin className="w-3.5 h-3.5 text-gold-400 shrink-0" />
+                    <span className="text-xs text-neutral-200 group-hover:text-white font-medium">
+                      {loc}
+                    </span>
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* STEP 6: Final Result Diagnostic Card */}
+          {step === 6 && (
+            <div className="text-center animate-fade-in-up py-2">
+              <div className="flex items-center justify-center gap-2 mb-3">
                 <img
                   src="/logo.jpg"
                   alt="Souza & Selly Advocacia"
-                  className="w-14 h-14 rounded-full object-cover border-2 border-gold-500/60 shadow-lg shadow-gold-500/20"
+                  className="w-12 h-12 rounded-full object-cover border-2 border-gold-500/60 shadow-lg shadow-gold-500/20"
                 />
               </div>
 
-              <h3 className="font-serif text-xl sm:text-2xl font-bold text-white mb-2">
-                Triagem Concluída com Sucesso!
+              <div className="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-emerald-400 text-[10px] font-bold uppercase tracking-wider mb-2">
+                <Sparkles className="w-3 h-3" />
+                <span>Triagem Concluída com Êxito</span>
+              </div>
+
+              <h3 className="font-serif text-lg sm:text-xl font-bold text-white mb-1.5">
+                Caso Pré-Qualificado para Atendimento!
               </h3>
               
-              <p className="text-sm text-neutral-300 max-w-lg mx-auto mb-6">
-                Identificamos que seu caso tem elementos importantes para análise imediata pela <strong className="text-white">Dra. Samara Selly</strong> e <strong className="text-white">Dra. Mariana Souza</strong>.
+              <p className="text-xs text-neutral-300 max-w-lg mx-auto mb-4 font-light">
+                Seus dados foram organizados. A <strong className="text-white font-semibold">Dra. Samara Selly</strong> e a <strong className="text-white font-semibold">Dra. Mariana Souza</strong> já receberão o seu caso mastigado para orientação direta.
               </p>
 
-              {/* Summary Pill Card */}
-              <div className="p-4 rounded-2xl bg-[#181820] border border-neutral-800 text-left max-w-lg mx-auto mb-8 space-y-2 text-xs">
-                <div className="flex justify-between border-b border-neutral-800/80 pb-2">
-                  <span className="text-neutral-400">Área selecionada:</span>
-                  <span className="text-gold-300 font-semibold">{selectedArea}</span>
+              {/* Comprehensive Summary Card */}
+              <div className="p-3.5 rounded-xl bg-[#181820] border border-neutral-800 text-left max-w-lg mx-auto mb-5 space-y-2 text-xs">
+                <div className="flex justify-between items-center border-b border-neutral-800/80 pb-1.5">
+                  <span className="text-neutral-400 text-[11px]">Área do Direito:</span>
+                  <span className="text-gold-300 font-semibold text-[11px]">{selectedArea}</span>
                 </div>
-                <div className="flex justify-between border-b border-neutral-800/80 pb-2">
-                  <span className="text-neutral-400">Região:</span>
-                  <span className="text-white font-medium">{selectedLocation}</span>
+                <div className="border-b border-neutral-800/80 pb-1.5">
+                  <span className="text-neutral-400 text-[11px] block mb-0.5">Demanda Específica:</span>
+                  <span className="text-white font-medium text-[11px] leading-tight block">{selectedDetail}</span>
                 </div>
-                <div className="flex justify-between">
-                  <span className="text-neutral-400">Situação:</span>
-                  <span className="text-neutral-200 font-medium truncate max-w-[220px]">{selectedStatus}</span>
+                <div className="flex justify-between items-center border-b border-neutral-800/80 pb-1.5">
+                  <span className="text-neutral-400 text-[11px]">Situação dos Documentos:</span>
+                  <span className="text-neutral-200 font-medium text-[11px] truncate max-w-[220px]">{selectedDocs}</span>
+                </div>
+                <div className="flex justify-between items-center border-b border-neutral-800/80 pb-1.5">
+                  <span className="text-neutral-400 text-[11px]">Nível de Urgência:</span>
+                  <span className="text-amber-400 font-semibold text-[11px]">{selectedUrgency}</span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span className="text-neutral-400 text-[11px]">Região no Ceará:</span>
+                  <span className="text-white font-medium text-[11px]">{selectedLocation}</span>
                 </div>
               </div>
 
-              {/* Big Action CTA */}
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-4 max-w-md mx-auto">
+              {/* Action Buttons */}
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-3 max-w-md mx-auto">
                 <a
                   href={getWhatsAppUrl(generatedWhatsAppMsg)}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl text-sm font-bold uppercase tracking-wider text-black bg-gold-metallic hover:opacity-95 shadow-xl shadow-gold-500/30 transition-all"
+                  className="w-full inline-flex items-center justify-center gap-2.5 px-6 py-3 rounded-xl text-xs font-bold uppercase tracking-wider text-black bg-gold-metallic hover:opacity-95 shadow-xl shadow-gold-500/25 transition-all group"
                 >
-                  <WhatsAppIcon className="w-5 h-5 fill-black/80" />
-                  <span>Enviar Caso para as Advogadas</span>
+                  <WhatsAppIcon className="w-4 h-4 fill-black/80" />
+                  <span>Enviar Diagnóstico para as Advogadas</span>
+                  <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                 </a>
 
                 <button
                   onClick={handleReset}
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-4 rounded-xl text-xs font-semibold text-neutral-400 hover:text-white bg-[#181820] border border-neutral-800 transition-colors"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-1.5 px-4 py-3 rounded-xl text-xs font-semibold text-neutral-400 hover:text-white bg-[#181820] border border-neutral-800 transition-colors shrink-0"
                 >
-                  <RotateCcw className="w-4 h-4" />
+                  <RotateCcw className="w-3.5 h-3.5" />
                   <span>Refazer</span>
                 </button>
               </div>
 
-              <p className="text-[11px] text-neutral-500 mt-4">
-                🔒 Seus dados e informações são mantidos sob estrito sigilo profissional e LGPD.
+              <p className="text-[10px] text-neutral-500 mt-3 flex items-center justify-center gap-1">
+                <ShieldCheck className="w-3.5 h-3.5 text-gold-500" />
+                <span>Sigilo profissional garantido pelo Código de Ética da OAB e LGPD.</span>
               </p>
             </div>
           )}
