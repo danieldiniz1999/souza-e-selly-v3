@@ -11,9 +11,9 @@ export const MetricsSection: React.FC = () => {
       icon: Award
     },
     {
-      value: "+1.800",
+      value: "+3.000",
       unit: "Famílias",
-      label: "Clientes Atendidos",
+      label: "Famílias Atendidas",
       desc: "Vidas transformadas com benefícios e indenizações justas.",
       icon: Users
     },
