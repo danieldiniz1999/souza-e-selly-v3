@@ -47,24 +47,31 @@ export const PracticeAreas: React.FC = () => {
         </div>
 
         {/* Areas Interactive Selector Tabs */}
-        <div className="flex flex-wrap justify-center gap-1.5 sm:gap-2 mb-6 sm:mb-7">
+        <div className="flex flex-wrap justify-center gap-2 sm:gap-2.5 mb-6 sm:mb-8">
           {PRACTICE_AREAS.map((area) => {
             const isSelected = area.id === activeAreaId;
             return (
               <button
                 key={area.id}
                 onClick={() => setActiveAreaId(area.id)}
-                className={`flex items-center gap-2 px-3 sm:px-3.5 py-2 rounded-xl text-xs font-semibold transition-all duration-300 border ${
+                className={`group/tab relative overflow-hidden flex items-center gap-2.5 px-3.5 sm:px-4 py-2.5 rounded-xl text-xs font-semibold transition-all duration-300 border cursor-pointer ${
                   isSelected
-                    ? 'bg-gradient-to-r from-[#1E1C16] to-[#141418] text-white border-gold-500 shadow-md shadow-gold-500/15 ring-1 ring-gold-500/30'
-                    : 'bg-[#121215] text-neutral-400 border-neutral-800 hover:border-gold-500/40 hover:text-neutral-200'
+                    ? 'bg-gradient-to-r from-[#221f18] to-[#16161d] text-white border-gold-400 shadow-lg shadow-gold-500/20 ring-1 ring-gold-400/40 -translate-y-0.5'
+                    : 'bg-[#121216] text-neutral-400 border-neutral-800/90 hover:border-gold-500/60 hover:text-neutral-100 hover:bg-[#181822] hover:-translate-y-1 hover:shadow-md hover:shadow-black/50'
                 }`}
               >
-                <div className={`p-1.5 rounded-lg ${isSelected ? 'bg-gold-500/20 text-gold-400' : 'bg-neutral-800/80 text-neutral-400'}`}>
+                {/* Subtle shine sweep on tab hover */}
+                <div className="pointer-events-none absolute inset-0 -translate-x-full group-hover/tab:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/[0.06] to-transparent" />
+
+                <div className={`p-1.5 rounded-lg transition-all duration-300 relative z-10 ${
+                  isSelected 
+                    ? 'bg-gold-500/25 text-gold-300 ring-1 ring-gold-500/40' 
+                    : 'bg-neutral-800/80 text-neutral-400 group-hover/tab:bg-gold-500/15 group-hover/tab:text-gold-400 group-hover/tab:scale-110'
+                }`}>
                   {getIcon(area.iconName, "w-3.5 h-3.5 sm:w-4 sm:h-4")}
                 </div>
-                <div className="text-left">
-                  <div className="text-xs font-bold leading-tight">{area.title}</div>
+                <div className="text-left relative z-10">
+                  <div className="text-xs font-bold leading-tight group-hover/tab:text-gold-200 transition-colors">{area.title}</div>
                   <div className="text-[10px] font-normal text-neutral-400 hidden sm:block">
                     {area.id === 'previdenciario' && 'INSS & Aposentadorias'}
                     {area.id === 'trabalhista' && 'Direitos & Rescisões'}
@@ -77,7 +84,7 @@ export const PracticeAreas: React.FC = () => {
         </div>
 
         {/* Selected Area Deep Dive Showcase */}
-        <div className="rounded-2xl bg-[#101014] border border-gold-500/30 p-4 sm:p-5 lg:p-6 shadow-xl relative overflow-hidden transition-all duration-300">
+        <div className="rounded-2xl bg-[#101014] border border-gold-500/30 hover:border-gold-500/50 p-4 sm:p-5 lg:p-6 shadow-xl hover:shadow-[0_20px_50px_-15px_rgba(197,160,89,0.2)] relative overflow-hidden transition-all duration-500">
           
           <div className="grid lg:grid-cols-12 gap-5 sm:gap-6 items-start">
             
@@ -116,7 +123,7 @@ export const PracticeAreas: React.FC = () => {
                   href={getWhatsAppUrl(`Olá, advogadas! Gostaria de conversar com vocês sobre um caso de ${activeArea.title}.`)}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full inline-flex items-center justify-center gap-1.5 sm:gap-2 px-3.5 sm:px-4 py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider text-black bg-gold-metallic hover:opacity-95 shadow-md shadow-gold-500/20 transition-all group"
+                  className="w-full inline-flex items-center justify-center gap-1.5 sm:gap-2 px-3.5 sm:px-4 py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider text-black bg-gold-metallic hover:scale-105 hover:shadow-[0_0_20px_rgba(197,160,89,0.4)] active:scale-95 transition-all duration-300 group"
                 >
                   <WhatsAppIcon className="w-3.5 h-3.5 fill-black/80 shrink-0" />
                   <span className="truncate">Consultar {activeArea.title}</span>
@@ -134,19 +141,19 @@ export const PracticeAreas: React.FC = () => {
               {activeArea.items.map((item, idx) => (
                 <div 
                   key={idx} 
-                  className="p-3 sm:p-3.5 rounded-xl bg-[#15151B] border border-neutral-800/80 hover:border-gold-500/35 transition-all"
+                  className="group/item p-3 sm:p-3.5 rounded-xl bg-[#15151B] border border-neutral-800/80 hover:border-gold-500/50 hover:bg-[#1a1a23] hover:translate-x-1 hover:shadow-md transition-all duration-300 cursor-pointer"
                 >
                   <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-1">
-                    <h4 className="font-serif text-xs sm:text-sm font-bold text-white flex items-center gap-1.5">
-                      <span className="w-1.5 h-1.5 rounded-full bg-gold-400 shrink-0" />
+                    <h4 className="font-serif text-xs sm:text-sm font-bold text-white flex items-center gap-1.5 group-hover/item:text-gold-200 transition-colors">
+                      <span className="w-1.5 h-1.5 rounded-full bg-gold-400 shrink-0 group-hover/item:scale-125 transition-transform" />
                       {item.title}
                     </h4>
-                    <span className="inline-flex items-center gap-1 text-[10px] font-semibold text-gold-300 bg-gold-500/10 px-2 py-0.5 rounded-md border border-gold-500/20 w-fit shrink-0">
+                    <span className="inline-flex items-center gap-1 text-[10px] font-semibold text-gold-300 bg-gold-500/10 px-2 py-0.5 rounded-md border border-gold-500/20 w-fit shrink-0 group-hover/item:border-gold-500/40 transition-colors">
                       <CheckCircle className="w-2.5 h-2.5 text-gold-400 shrink-0" />
                       <span>{item.benefit}</span>
                     </span>
                   </div>
-                  <p className="text-[11px] text-neutral-300 leading-relaxed font-light pl-3 sm:pl-0">
+                  <p className="text-[11px] text-neutral-300 group-hover/item:text-neutral-200 leading-relaxed font-light pl-3 sm:pl-0 transition-colors">
                     {item.description}
                   </p>
                 </div>

@@ -31,16 +31,19 @@ export const OfficeLocation: React.FC = () => {
         <div className="grid lg:grid-cols-12 gap-5 sm:gap-6 items-stretch">
           
           {/* Left: Office Details */}
-          <div className="lg:col-span-5 rounded-2xl bg-[#121217] border border-gold-500/30 p-4 sm:p-6 flex flex-col justify-between shadow-xl">
-            <div>
+          <div className="group/sede relative lg:col-span-5 rounded-2xl bg-[#121217] border border-gold-500/30 hover:border-gold-400/80 p-4 sm:p-6 flex flex-col justify-between shadow-xl hover:shadow-[0_20px_50px_-10px_rgba(197,160,89,0.25)] hover:-translate-y-1.5 transition-all duration-500 ease-out overflow-hidden">
+            {/* Subtle luxury shimmer sweep on hover */}
+            <div className="pointer-events-none absolute -inset-full top-0 block -skew-x-12 bg-gradient-to-r from-transparent via-white/[0.05] to-transparent opacity-0 group-hover/sede:opacity-100 group-hover/sede:animate-shimmer transition-opacity duration-700 z-0" />
+
+            <div className="relative z-10">
               <div className="flex items-center gap-2.5 sm:gap-3 mb-4 sm:mb-5">
                 <img
                   src="/logo.jpg"
                   alt="Souza & Selly Advocacia"
-                  className="w-10 h-10 sm:w-11 sm:h-11 rounded-full object-cover border border-gold-500/50 shadow-md shadow-gold-500/10 shrink-0"
+                  className="w-10 h-10 sm:w-11 sm:h-11 rounded-full object-cover border border-gold-500/50 group-hover/sede:scale-105 group-hover/sede:border-gold-400 group-hover/sede:shadow-[0_0_15px_rgba(197,160,89,0.35)] shadow-md shadow-gold-500/10 shrink-0 transition-all duration-300"
                 />
                 <div>
-                  <h3 className="font-serif text-sm sm:text-base font-bold text-white">Sede Fortaleza</h3>
+                  <h3 className="font-serif text-sm sm:text-base font-bold text-white group-hover/sede:text-gold-200 transition-colors">Sede Fortaleza</h3>
                   <p className="text-[11px] text-gold-400 font-medium">Bairro Parquelândia</p>
                 </div>
               </div>
@@ -49,11 +52,11 @@ export const OfficeLocation: React.FC = () => {
               <div className="space-y-2.5 sm:space-y-3 mb-5 sm:mb-6">
                 
                 {/* Address */}
-                <div className="p-3 sm:p-3.5 rounded-xl bg-[#171720] border border-neutral-800">
+                <div className="group/addr p-3 sm:p-3.5 rounded-xl bg-[#171720] border border-neutral-800 hover:border-gold-500/60 hover:bg-[#1d1d28] hover:translate-x-1 hover:shadow-md transition-all duration-300 cursor-pointer">
                   <div className="flex items-start gap-2.5">
-                    <Navigation className="w-3.5 h-3.5 text-gold-400 mt-0.5 shrink-0" />
+                    <Navigation className="w-3.5 h-3.5 text-gold-400 group-hover/addr:scale-110 group-hover/addr:text-gold-300 mt-0.5 shrink-0 transition-transform duration-300" />
                     <div>
-                      <h4 className="text-[11px] font-bold uppercase tracking-wider text-neutral-300 mb-0.5">
+                      <h4 className="text-[11px] font-bold uppercase tracking-wider text-neutral-300 group-hover/addr:text-gold-200 mb-0.5 transition-colors">
                         Endereço Completo:
                       </h4>
                       <p className="text-xs text-neutral-200 font-medium leading-relaxed">
@@ -67,11 +70,11 @@ export const OfficeLocation: React.FC = () => {
                 </div>
 
                 {/* Hours */}
-                <div className="p-3 sm:p-3.5 rounded-xl bg-[#171720] border border-neutral-800">
+                <div className="group/hours p-3 sm:p-3.5 rounded-xl bg-[#171720] border border-neutral-800 hover:border-gold-500/60 hover:bg-[#1d1d28] hover:translate-x-1 hover:shadow-md transition-all duration-300 cursor-pointer">
                   <div className="flex items-start gap-2.5">
-                    <Clock className="w-3.5 h-3.5 text-gold-400 mt-0.5 shrink-0" />
+                    <Clock className="w-3.5 h-3.5 text-gold-400 group-hover/hours:scale-110 group-hover/hours:text-gold-300 mt-0.5 shrink-0 transition-transform duration-300" />
                     <div>
-                      <h4 className="text-[11px] font-bold uppercase tracking-wider text-neutral-300 mb-0.5">
+                      <h4 className="text-[11px] font-bold uppercase tracking-wider text-neutral-300 group-hover/hours:text-gold-200 mb-0.5 transition-colors">
                         Horário de Atendimento:
                       </h4>
                       <p className="text-xs text-neutral-200 font-medium">
@@ -85,9 +88,9 @@ export const OfficeLocation: React.FC = () => {
                 </div>
 
                 {/* Interior reminder */}
-                <div className="p-3 sm:p-3.5 rounded-xl bg-gold-500/10 border border-gold-500/30">
+                <div className="group/inter p-3 sm:p-3.5 rounded-xl bg-gold-500/10 border border-gold-500/30 hover:border-gold-400/70 hover:bg-gold-500/15 hover:translate-x-1 hover:shadow-md transition-all duration-300 cursor-pointer">
                   <div className="flex items-start gap-2.5">
-                    <Car className="w-3.5 h-3.5 text-gold-400 mt-0.5 shrink-0" />
+                    <Car className="w-3.5 h-3.5 text-gold-400 group-hover/inter:scale-110 mt-0.5 shrink-0 transition-transform duration-300" />
                     <div>
                       <h4 className="text-[11px] font-bold uppercase tracking-wider text-gold-300 mb-0.5">
                         Você mora no interior do Ceará?
@@ -103,12 +106,12 @@ export const OfficeLocation: React.FC = () => {
             </div>
 
             {/* Google Maps External Action */}
-            <div className="space-y-2 pt-3 border-t border-neutral-800">
+            <div className="space-y-2 pt-3 border-t border-neutral-800 relative z-10">
               <a
                 href={OFFICE_INFO.googleMapsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 sm:py-3 rounded-xl text-xs font-bold uppercase tracking-wider text-neutral-200 bg-[#1D1D26] hover:bg-[#252530] border border-neutral-700 hover:border-gold-500/50 transition-all"
+                className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 sm:py-3 rounded-xl text-xs font-bold uppercase tracking-wider text-neutral-200 bg-[#1D1D26] hover:bg-[#252535] border border-neutral-700 hover:border-gold-500/60 hover:text-white hover:scale-[1.02] active:scale-[0.98] transition-all duration-300"
               >
                 <ExternalLink className="w-3.5 h-3.5 text-gold-400" />
                 <span>Traçar Rota no Google Maps</span>
@@ -118,7 +121,7 @@ export const OfficeLocation: React.FC = () => {
                 href={getWhatsAppUrl("Olá! Gostaria de agendar um horário para atendimento presencial na sede da Parquelândia.")}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 sm:py-3 rounded-xl text-xs font-bold uppercase tracking-wider text-black bg-gold-metallic hover:opacity-95 shadow-md shadow-gold-500/20 transition-all"
+                className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 sm:py-3 rounded-xl text-xs font-bold uppercase tracking-wider text-black bg-gold-metallic hover:scale-[1.02] hover:shadow-[0_0_25px_rgba(197,160,89,0.5)] active:scale-[0.98] transition-all duration-300"
               >
                 <span>Agendar Horário na Sede</span>
               </a>
@@ -127,9 +130,9 @@ export const OfficeLocation: React.FC = () => {
           </div>
 
           {/* Right: Embedded Interactive Stylized Map */}
-          <div className="lg:col-span-7 rounded-2xl bg-[#121217] border border-gold-500/30 overflow-hidden shadow-xl min-h-[300px] sm:min-h-[360px] flex flex-col relative">
+          <div className="group/map lg:col-span-7 rounded-2xl bg-[#121217] border border-gold-500/30 hover:border-gold-400/80 overflow-hidden shadow-xl hover:shadow-[0_20px_50px_-10px_rgba(197,160,89,0.25)] hover:-translate-y-1.5 transition-all duration-500 ease-out min-h-[300px] sm:min-h-[360px] flex flex-col relative">
             {/* Map Top Bar */}
-            <div className="p-3 sm:p-3.5 bg-[#181820] border-b border-neutral-800 flex items-center justify-between text-xs text-neutral-300">
+            <div className="p-3 sm:p-3.5 bg-[#181820] group-hover/map:bg-[#1c1c28] border-b border-neutral-800 flex items-center justify-between text-xs text-neutral-300 transition-colors duration-300">
               <div className="flex items-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
                 <span className="font-semibold text-white text-xs">Sede Souza & Selly</span>
@@ -151,7 +154,7 @@ export const OfficeLocation: React.FC = () => {
               />
               
               {/* Overlay Badge - Safe for narrow screens */}
-              <div className="absolute bottom-2.5 left-2.5 right-2.5 sm:right-auto sm:max-w-xs bg-black/90 backdrop-blur-md border border-gold-500/50 px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-xl shadow-lg pointer-events-none">
+              <div className="absolute bottom-2.5 left-2.5 right-2.5 sm:right-auto sm:max-w-xs bg-black/90 backdrop-blur-md border border-gold-500/50 group-hover/map:border-gold-400 group-hover/map:scale-105 px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-xl shadow-lg transition-all duration-300 pointer-events-none">
                 <p className="text-xs font-bold text-white flex items-center gap-1.5">
                   <MapPin className="w-3 h-3 text-gold-400 shrink-0" />
                   <span>Av. Jovita Feitosa, 3072 - Parquelândia</span>

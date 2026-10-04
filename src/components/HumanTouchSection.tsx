@@ -41,12 +41,12 @@ export const HumanTouchSection: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-3.5 sm:gap-4 lg:gap-5 mb-8 sm:mb-12">
           
           {/* Card 1 */}
-          <div className="card-luxury p-4 sm:p-5 lg:p-6 rounded-xl flex flex-col justify-between group">
+          <div className="card-luxury p-4 sm:p-5 lg:p-6 rounded-xl flex flex-col justify-between group hover:-translate-y-1.5 hover:border-gold-500/60 hover:shadow-[0_15px_35px_-10px_rgba(197,160,89,0.22)] transition-all duration-300">
             <div>
-              <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-lg bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-gold-400 mb-3 sm:mb-4 group-hover:scale-105 transition-transform">
+              <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-lg bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-gold-400 mb-3 sm:mb-4 group-hover:scale-110 group-hover:bg-gold-500/20 group-hover:border-gold-400/50 transition-all duration-300">
                 <Car className="w-4 h-4 sm:w-5 sm:h-5" />
               </div>
-              <h3 className="font-serif text-sm sm:text-base font-bold text-white mb-1.5 sm:mb-2">
+              <h3 className="font-serif text-sm sm:text-base font-bold text-white mb-1.5 sm:mb-2 group-hover:text-gold-200 transition-colors">
                 Visitas Presenciais no Interior
               </h3>
               <p className="text-neutral-400 text-xs leading-relaxed mb-3 font-light">
@@ -60,12 +60,12 @@ export const HumanTouchSection: React.FC = () => {
           </div>
 
           {/* Card 2 */}
-          <div className="card-luxury p-4 sm:p-5 lg:p-6 rounded-xl flex flex-col justify-between group border-gold-500/40 shadow-md shadow-gold-500/5">
+          <div className="card-luxury p-4 sm:p-5 lg:p-6 rounded-xl flex flex-col justify-between group border-gold-500/40 shadow-md shadow-gold-500/5 hover:-translate-y-1.5 hover:border-gold-400 hover:shadow-[0_20px_40px_-10px_rgba(197,160,89,0.3)] transition-all duration-300">
             <div>
-              <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-lg bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-gold-400 mb-3 sm:mb-4 group-hover:scale-105 transition-transform">
+              <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-lg bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-gold-400 mb-3 sm:mb-4 group-hover:scale-110 group-hover:bg-gold-500/20 group-hover:border-gold-400/50 transition-all duration-300">
                 <HeartHandshake className="w-4 h-4 sm:w-5 sm:h-5" />
               </div>
-              <h3 className="font-serif text-sm sm:text-base font-bold text-white mb-1.5 sm:mb-2">
+              <h3 className="font-serif text-sm sm:text-base font-bold text-white mb-1.5 sm:mb-2 group-hover:text-gold-200 transition-colors">
                 Escuta Sem "Juridiquês"
               </h3>
               <p className="text-neutral-400 text-xs leading-relaxed mb-3 font-light">
@@ -79,12 +79,12 @@ export const HumanTouchSection: React.FC = () => {
           </div>
 
           {/* Card 3 */}
-          <div className="card-luxury p-4 sm:p-5 lg:p-6 rounded-xl flex flex-col justify-between group">
+          <div className="card-luxury p-4 sm:p-5 lg:p-6 rounded-xl flex flex-col justify-between group hover:-translate-y-1.5 hover:border-gold-500/60 hover:shadow-[0_15px_35px_-10px_rgba(197,160,89,0.22)] transition-all duration-300">
             <div>
-              <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-lg bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-gold-400 mb-3 sm:mb-4 group-hover:scale-105 transition-transform">
+              <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-lg bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-gold-400 mb-3 sm:mb-4 group-hover:scale-110 group-hover:bg-gold-500/20 group-hover:border-gold-400/50 transition-all duration-300">
                 <Users2 className="w-4 h-4 sm:w-5 sm:h-5" />
               </div>
-              <h3 className="font-serif text-sm sm:text-base font-bold text-white mb-1.5 sm:mb-2">
+              <h3 className="font-serif text-sm sm:text-base font-bold text-white mb-1.5 sm:mb-2 group-hover:text-gold-200 transition-colors">
                 Busca Ativa de Provas
               </h3>
               <p className="text-neutral-400 text-xs leading-relaxed mb-3 font-light">
@@ -100,7 +100,7 @@ export const HumanTouchSection: React.FC = () => {
         </div>
 
         {/* Regions Grid Showcase */}
-        <div className="rounded-2xl bg-[#141418] border border-gold-500/25 p-4 sm:p-6 lg:p-8 relative overflow-hidden">
+        <div className="rounded-2xl bg-[#141418] border border-gold-500/25 hover:border-gold-500/40 p-4 sm:p-6 lg:p-8 relative overflow-hidden transition-all duration-300">
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 sm:gap-4 mb-4 sm:mb-6 pb-4 sm:pb-6 border-b border-neutral-800">
             <div>
               <span className="text-[10px] uppercase tracking-widest text-gold-400 font-semibold">Presença em Todo o Território Cearense</span>
@@ -113,7 +113,7 @@ export const HumanTouchSection: React.FC = () => {
               href={getWhatsAppUrl("Olá! Moro no interior do Ceará e gostaria de saber quando as advogadas estarão na minha região.")}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 px-4 sm:px-5 py-2.5 rounded-lg text-xs font-bold uppercase tracking-wider text-black bg-gold-metallic hover:opacity-95 shadow-md shadow-gold-500/20 transition-all shrink-0 w-full sm:w-auto"
+              className="inline-flex items-center justify-center gap-2 px-4 sm:px-5 py-2.5 rounded-lg text-xs font-bold uppercase tracking-wider text-black bg-gold-metallic hover:scale-105 hover:shadow-[0_0_20px_rgba(197,160,89,0.4)] active:scale-95 transition-all duration-300 shrink-0 w-full sm:w-auto"
             >
               <span>Consultar Agenda no Interior</span>
               <ArrowRight className="w-3.5 h-3.5" />
@@ -122,12 +122,20 @@ export const HumanTouchSection: React.FC = () => {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2.5 sm:gap-4">
             {regions.map((reg, idx) => (
-              <div key={idx} className="p-3 sm:p-3.5 rounded-lg bg-[#1B1B22]/70 border border-neutral-800 hover:border-gold-500/40 transition-colors">
-                <div className="flex items-center gap-2 mb-1">
-                  <MapPin className="w-3.5 h-3.5 text-gold-500 shrink-0" />
-                  <h4 className="text-xs font-bold text-white">{reg.name}</h4>
+              <div 
+                key={idx} 
+                className="group/reg relative overflow-hidden p-3.5 rounded-xl bg-[#1B1B22]/80 border border-neutral-800/90 hover:border-gold-500/70 hover:bg-[#20202c] hover:-translate-y-1 hover:shadow-lg hover:shadow-black/60 transition-all duration-300 ease-out cursor-pointer"
+              >
+                {/* Subtle shine ray sweep on hover */}
+                <div className="pointer-events-none absolute inset-0 -translate-x-full group-hover/reg:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/[0.06] to-transparent" />
+
+                <div className="flex items-center gap-2 mb-1.5 relative z-10">
+                  <div className="p-1 rounded-md bg-gold-500/10 border border-gold-500/20 group-hover/reg:border-gold-400/50 group-hover/reg:bg-gold-500/20 transition-colors">
+                    <MapPin className="w-3.5 h-3.5 text-gold-400 group-hover/reg:scale-110 transition-transform duration-300 shrink-0" />
+                  </div>
+                  <h4 className="text-xs font-bold text-white group-hover/reg:text-gold-200 transition-colors duration-200">{reg.name}</h4>
                 </div>
-                <p className="text-[11px] text-neutral-400 leading-relaxed pl-5 font-light">
+                <p className="text-[11px] text-neutral-400 group-hover/reg:text-neutral-300 leading-relaxed pl-7 font-light relative z-10 transition-colors duration-200">
                   {reg.desc}
                 </p>
               </div>
