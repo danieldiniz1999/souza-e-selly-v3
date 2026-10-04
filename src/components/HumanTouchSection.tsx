@@ -18,16 +18,16 @@ export const HumanTouchSection: React.FC = () => {
       <div className="absolute top-1/2 left-0 w-80 h-80 bg-gold-500/10 rounded-full blur-[140px] pointer-events-none" />
       <div className="absolute bottom-0 right-0 w-80 h-80 bg-gold-600/5 rounded-full blur-[140px] pointer-events-none" />
 
-      <div className="max-w-6xl mx-auto px-4 lg:px-8 relative z-10">
+      <div className="max-w-6xl mx-auto px-3.5 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
-        <div className="text-center max-w-2xl mx-auto mb-12">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-gold-500/10 border border-gold-500/30 text-gold-400 text-[10px] font-semibold uppercase tracking-wider mb-3">
+        <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-12">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-gold-500/10 border border-gold-500/30 text-gold-400 text-[10px] font-semibold uppercase tracking-wider mb-2.5 sm:mb-3">
             <Car className="w-3 h-3" />
             <span>Nosso Diferencial Mais Humano</span>
           </div>
           
-          <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-white leading-tight mb-4">
+          <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-white leading-tight mb-3 sm:mb-4">
             A justiça não tem fronteiras: <br className="hidden sm:inline" />
             <span className="text-gold-metallic">Nós vamos até você no interior do Ceará.</span>
           </h2>
@@ -37,62 +37,62 @@ export const HumanTouchSection: React.FC = () => {
           </p>
         </div>
 
-        {/* 3 Pillars of Humanized Law */}
-        <div className="grid md:grid-cols-3 gap-5 mb-12">
+        {/* 3 Pillars of Humanized Law: 1 col on mobile, 3 cols on tablet/PC */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-3.5 sm:gap-4 lg:gap-5 mb-8 sm:mb-12">
           
           {/* Card 1 */}
-          <div className="card-luxury p-6 rounded-xl flex flex-col justify-between group">
+          <div className="card-luxury p-4 sm:p-5 lg:p-6 rounded-xl flex flex-col justify-between group">
             <div>
-              <div className="w-11 h-11 rounded-lg bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-gold-400 mb-4 group-hover:scale-105 transition-transform">
-                <Car className="w-5 h-5" />
+              <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-lg bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-gold-400 mb-3 sm:mb-4 group-hover:scale-105 transition-transform">
+                <Car className="w-4 h-4 sm:w-5 sm:h-5" />
               </div>
-              <h3 className="font-serif text-base font-bold text-white mb-2">
+              <h3 className="font-serif text-sm sm:text-base font-bold text-white mb-1.5 sm:mb-2">
                 Visitas Presenciais no Interior
               </h3>
               <p className="text-neutral-400 text-xs leading-relaxed mb-3 font-light">
                 Não deixamos a distância ser um obstáculo. Realizamos roteiros periódicos pelo interior cearense para coletar documentos, conversar com os clientes e entender a realidade de cada família.
               </p>
             </div>
-            <div className="pt-3 border-t border-neutral-800/80 flex items-center gap-1.5 text-[11px] text-gold-300 font-medium">
-              <CheckCircle2 className="w-3.5 h-3.5 text-gold-500" />
+            <div className="pt-2.5 sm:pt-3 border-t border-neutral-800/80 flex items-center gap-1.5 text-[11px] text-gold-300 font-medium">
+              <CheckCircle2 className="w-3.5 h-3.5 text-gold-500 shrink-0" />
               <span>Acolhimento no seu município</span>
             </div>
           </div>
 
           {/* Card 2 */}
-          <div className="card-luxury p-6 rounded-xl flex flex-col justify-between group border-gold-500/40 shadow-md shadow-gold-500/5">
+          <div className="card-luxury p-4 sm:p-5 lg:p-6 rounded-xl flex flex-col justify-between group border-gold-500/40 shadow-md shadow-gold-500/5">
             <div>
-              <div className="w-11 h-11 rounded-lg bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-gold-400 mb-4 group-hover:scale-105 transition-transform">
-                <HeartHandshake className="w-5 h-5" />
+              <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-lg bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-gold-400 mb-3 sm:mb-4 group-hover:scale-105 transition-transform">
+                <HeartHandshake className="w-4 h-4 sm:w-5 sm:h-5" />
               </div>
-              <h3 className="font-serif text-base font-bold text-white mb-2">
+              <h3 className="font-serif text-sm sm:text-base font-bold text-white mb-1.5 sm:mb-2">
                 Escuta Sem "Juridiquês"
               </h3>
               <p className="text-neutral-400 text-xs leading-relaxed mb-3 font-light">
                 Nada de termos difíceis ou promessas vazias. Explicamos cada etapa do processo de maneira transparente e carinhosa, para que você entenda exatamente o que está acontecendo com sua causa.
               </p>
             </div>
-            <div className="pt-3 border-t border-neutral-800/80 flex items-center gap-1.5 text-[11px] text-gold-300 font-medium">
-              <CheckCircle2 className="w-3.5 h-3.5 text-gold-500" />
+            <div className="pt-2.5 sm:pt-3 border-t border-neutral-800/80 flex items-center gap-1.5 text-[11px] text-gold-300 font-medium">
+              <CheckCircle2 className="w-3.5 h-3.5 text-gold-500 shrink-0" />
               <span>Transparência do início ao fim</span>
             </div>
           </div>
 
           {/* Card 3 */}
-          <div className="card-luxury p-6 rounded-xl flex flex-col justify-between group">
+          <div className="card-luxury p-4 sm:p-5 lg:p-6 rounded-xl flex flex-col justify-between group">
             <div>
-              <div className="w-11 h-11 rounded-lg bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-gold-400 mb-4 group-hover:scale-105 transition-transform">
-                <Users2 className="w-5 h-5" />
+              <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-lg bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-gold-400 mb-3 sm:mb-4 group-hover:scale-105 transition-transform">
+                <Users2 className="w-4 h-4 sm:w-5 sm:h-5" />
               </div>
-              <h3 className="font-serif text-base font-bold text-white mb-2">
+              <h3 className="font-serif text-sm sm:text-base font-bold text-white mb-1.5 sm:mb-2">
                 Busca Ativa de Provas
               </h3>
               <p className="text-neutral-400 text-xs leading-relaxed mb-3 font-light">
                 Aposentadoria rural, BPC/LOAS ou horas extras exigem provas robustas. Nós ajudamos você a localizar certidões antigas, contratos, testemunhas e laudos médicos necessários.
               </p>
             </div>
-            <div className="pt-3 border-t border-neutral-800/80 flex items-center gap-1.5 text-[11px] text-gold-300 font-medium">
-              <CheckCircle2 className="w-3.5 h-3.5 text-gold-500" />
+            <div className="pt-2.5 sm:pt-3 border-t border-neutral-800/80 flex items-center gap-1.5 text-[11px] text-gold-300 font-medium">
+              <CheckCircle2 className="w-3.5 h-3.5 text-gold-500 shrink-0" />
               <span>Construção de prova sólida</span>
             </div>
           </div>
@@ -100,11 +100,11 @@ export const HumanTouchSection: React.FC = () => {
         </div>
 
         {/* Regions Grid Showcase */}
-        <div className="rounded-2xl bg-[#141418] border border-gold-500/25 p-6 lg:p-8 relative overflow-hidden">
-          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-6 pb-6 border-b border-neutral-800">
+        <div className="rounded-2xl bg-[#141418] border border-gold-500/25 p-4 sm:p-6 lg:p-8 relative overflow-hidden">
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 sm:gap-4 mb-4 sm:mb-6 pb-4 sm:pb-6 border-b border-neutral-800">
             <div>
               <span className="text-[10px] uppercase tracking-widest text-gold-400 font-semibold">Presença em Todo o Território Cearense</span>
-              <h3 className="font-serif text-xl sm:text-2xl font-bold text-white mt-0.5">
+              <h3 className="font-serif text-lg sm:text-xl lg:text-2xl font-bold text-white mt-0.5">
                 Onde você estiver no Ceará, estamos prontos para atuar
               </h3>
             </div>
@@ -113,17 +113,17 @@ export const HumanTouchSection: React.FC = () => {
               href={getWhatsAppUrl("Olá! Moro no interior do Ceará e gostaria de saber quando as advogadas estarão na minha região.")}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg text-xs font-bold uppercase tracking-wider text-black bg-gold-metallic hover:opacity-95 shadow-md shadow-gold-500/20 transition-all shrink-0"
+              className="inline-flex items-center justify-center gap-2 px-4 sm:px-5 py-2.5 rounded-lg text-xs font-bold uppercase tracking-wider text-black bg-gold-metallic hover:opacity-95 shadow-md shadow-gold-500/20 transition-all shrink-0 w-full sm:w-auto"
             >
               <span>Consultar Agenda no Interior</span>
               <ArrowRight className="w-3.5 h-3.5" />
             </a>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2.5 sm:gap-4">
             {regions.map((reg, idx) => (
-              <div key={idx} className="p-3.5 rounded-lg bg-[#1B1B22]/70 border border-neutral-800 hover:border-gold-500/40 transition-colors">
-                <div className="flex items-center gap-2 mb-1.5">
+              <div key={idx} className="p-3 sm:p-3.5 rounded-lg bg-[#1B1B22]/70 border border-neutral-800 hover:border-gold-500/40 transition-colors">
+                <div className="flex items-center gap-2 mb-1">
                   <MapPin className="w-3.5 h-3.5 text-gold-500 shrink-0" />
                   <h4 className="text-xs font-bold text-white">{reg.name}</h4>
                 </div>

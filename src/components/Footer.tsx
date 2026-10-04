@@ -13,11 +13,11 @@ export const Footer: React.FC = () => {
       {/* Top golden accent line */}
       <div className="h-[1px] bg-gradient-to-r from-transparent via-gold-500/50 to-transparent" />
 
-      <div className="max-w-6xl mx-auto px-4 lg:px-8 py-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-6 lg:gap-8">
+      <div className="max-w-6xl mx-auto px-3.5 sm:px-6 lg:px-8 py-8 sm:py-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-6 lg:gap-8">
           
           {/* Brand Info */}
-          <div className="lg:col-span-4 space-y-2.5">
+          <div className="sm:col-span-2 lg:col-span-4 space-y-2.5">
             <div className="flex items-center gap-2.5">
               <img
                 src="/logo.jpg"
@@ -44,7 +44,7 @@ export const Footer: React.FC = () => {
           </div>
 
           {/* Quick Nav Links */}
-          <div className="lg:col-span-2 space-y-2">
+          <div className="sm:col-span-1 lg:col-span-2 space-y-2">
             <h4 className="font-serif text-xs font-bold text-white uppercase tracking-wider">
               Navegação
             </h4>
@@ -60,7 +60,7 @@ export const Footer: React.FC = () => {
           </div>
 
           {/* Practice Areas */}
-          <div className="lg:col-span-3 space-y-2">
+          <div className="sm:col-span-1 lg:col-span-3 space-y-2">
             <h4 className="font-serif text-xs font-bold text-white uppercase tracking-wider">
               Áreas de Atuação
             </h4>
@@ -76,7 +76,7 @@ export const Footer: React.FC = () => {
           </div>
 
           {/* Contact and Sede */}
-          <div className="lg:col-span-3 space-y-2">
+          <div className="sm:col-span-2 lg:col-span-3 space-y-2">
             <h4 className="font-serif text-xs font-bold text-white uppercase tracking-wider">
               Sede & Contato
             </h4>

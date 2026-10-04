@@ -6,21 +6,21 @@ import { getWhatsAppUrl } from '@/lib/utils';
 
 export const LawyersSection: React.FC = () => {
   return (
-    <section id="advogadas" className="py-16 bg-[#09090B] relative overflow-hidden">
+    <section id="advogadas" className="py-12 sm:py-16 lg:py-20 bg-[#09090B] relative overflow-hidden">
       {/* Background accents */}
       <div className="absolute top-1/2 right-10 w-80 h-80 bg-gold-500/5 rounded-full blur-[140px] pointer-events-none" />
       <div className="absolute bottom-10 left-10 w-72 h-72 bg-gold-600/5 rounded-full blur-[130px] pointer-events-none" />
 
-      <div className="max-w-6xl mx-auto px-4 lg:px-8 relative z-10">
+      <div className="max-w-6xl mx-auto px-3.5 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
-        <div className="text-center max-w-2xl mx-auto mb-10">
+        <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-10">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-gold-500/10 border border-gold-500/30 text-gold-400 text-[10px] font-semibold uppercase tracking-wider mb-2.5">
             <Award className="w-3 h-3" />
             <span>Sócias Fundadoras</span>
           </div>
 
-          <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-white leading-tight mb-3">
+          <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-white leading-tight mb-2.5 sm:mb-3">
             Quem Luta Pelos Seus Direitos: <br className="hidden sm:inline" />
             <span className="text-gold-metallic">Dra. Samara Selly e Dra. Mariana Souza</span>
           </h2>
@@ -31,14 +31,14 @@ export const LawyersSection: React.FC = () => {
         </div>
 
         {/* Lawyers Grid: Horizontal Cards with Photo Left & Info Right */}
-        <div className="grid lg:grid-cols-2 gap-6 items-stretch">
+        <div className="grid lg:grid-cols-2 gap-5 sm:gap-6 items-stretch">
           {LAWYERS.map((lawyer) => (
             <div 
               key={lawyer.id}
               className="rounded-2xl bg-[#111116] border border-gold-500/30 overflow-hidden shadow-xl flex flex-col sm:flex-row group hover:border-gold-500/50 transition-all duration-300"
             >
               {/* Photo Column on Left */}
-              <div className="relative w-full sm:w-44 md:w-48 lg:w-44 xl:w-48 shrink-0 overflow-hidden bg-neutral-900 min-h-[220px] sm:min-h-full">
+              <div className="relative w-full sm:w-44 md:w-52 lg:w-40 xl:w-48 shrink-0 overflow-hidden bg-neutral-900 h-64 sm:h-auto sm:min-h-full">
                 <img
                   src={lawyer.imageUrl}
                   alt={lawyer.name}
@@ -58,7 +58,7 @@ export const LawyersSection: React.FC = () => {
               </div>
 
               {/* Information Column on Right */}
-              <div className="flex-1 p-4 sm:p-5 flex flex-col justify-between space-y-3">
+              <div className="flex-1 p-3.5 sm:p-4.5 lg:p-5 flex flex-col justify-between space-y-2.5 sm:space-y-3">
                 <div>
                   {/* Header */}
                   <div className="mb-2">

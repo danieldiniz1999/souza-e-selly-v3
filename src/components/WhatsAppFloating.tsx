@@ -25,11 +25,11 @@ export const WhatsAppFloating: React.FC = () => {
   };
 
   return (
-    <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end">
+    <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 flex flex-col items-end pointer-events-none">
       
       {/* Friendly Bubble Tooltip */}
       {showPopup && (
-        <div className="mb-2.5 max-w-[260px] p-3 rounded-xl bg-[#141419] border border-gold-500/40 shadow-xl backdrop-blur-md animate-fade-in-up relative text-left">
+        <div className="pointer-events-auto mb-2.5 max-w-[calc(100vw-32px)] sm:max-w-[270px] p-3 rounded-xl bg-[#141419]/95 border border-gold-500/40 shadow-xl backdrop-blur-md animate-fade-in-up relative text-left">
           <button
             onClick={handleDismiss}
             className="absolute top-2 right-2 text-neutral-400 hover:text-white p-0.5"
@@ -76,13 +76,13 @@ export const WhatsAppFloating: React.FC = () => {
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Falar no WhatsApp com as advogadas"
-        className="relative group flex items-center justify-center w-13 h-13 sm:w-14 sm:h-14 rounded-full bg-[#25D366] hover:bg-[#20bd5a] text-white shadow-xl shadow-[#25D366]/40 hover:scale-105 active:scale-95 transition-all duration-300 border-2 border-white/20"
+        className="pointer-events-auto relative group flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-[#25D366] hover:bg-[#20bd5a] text-white shadow-xl shadow-[#25D366]/40 hover:scale-105 active:scale-95 transition-all duration-300 border-2 border-white/20"
       >
         {/* Pulsing ring */}
         <span className="absolute -inset-1 rounded-full bg-[#25D366]/40 animate-ping opacity-75 pointer-events-none" />
 
         {/* Authentic WhatsApp Icon */}
-        <WhatsAppIcon className="w-7 h-7 text-white fill-current" />
+        <WhatsAppIcon className="w-6 h-6 sm:w-7 sm:h-7 text-white fill-current" />
 
         {/* Unread notification badge */}
         <span className="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-red-600 text-white text-[9px] font-extrabold flex items-center justify-center border-2 border-[#09090B] shadow">

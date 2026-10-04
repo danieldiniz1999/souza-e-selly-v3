@@ -10,10 +10,15 @@
     --bg-dark: #09090B;
   }
 
+  html,
   body {
     background-color: #09090B;
     color: #F3F4F6;
     overflow-x: hidden;
+    width: 100%;
+    max-width: 100%;
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
   }
 }
 

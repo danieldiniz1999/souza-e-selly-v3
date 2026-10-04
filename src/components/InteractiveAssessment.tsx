@@ -186,10 +186,10 @@ Gostaria de uma orientação jurídica personalizada sobre a viabilidade do meu 
       {/* Background glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[350px] bg-gold-500/10 rounded-full blur-[160px] pointer-events-none" />
 
-      <div className="max-w-3xl mx-auto px-4 lg:px-8 relative z-10">
+      <div className="max-w-3xl mx-auto px-3.5 sm:px-6 lg:px-8 relative z-10">
         
         {/* Header */}
-        <div className="text-center mb-8">
+        <div className="text-center mb-6 sm:mb-8">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold-500/10 border border-gold-500/30 text-gold-400 text-[10px] font-semibold uppercase tracking-wider mb-2.5">
             <img src="/logo.jpg" alt="Souza & Selly" className="w-3.5 h-3.5 rounded-full object-cover border border-gold-500/50" />
             <span>Triagem Jurídica Completa • Passo a Passo</span>
@@ -205,7 +205,7 @@ Gostaria de uma orientação jurídica personalizada sobre a viabilidade do meu 
         </div>
 
         {/* Card Container */}
-        <div className="rounded-2xl bg-[#121217] border border-gold-500/30 p-5 sm:p-7 shadow-xl relative transition-all duration-300">
+        <div className="rounded-2xl bg-[#121217] border border-gold-500/30 p-4 sm:p-6 lg:p-7 shadow-xl relative transition-all duration-300">
           
           {/* Progress Indicator */}
           {step <= TOTAL_STEPS && (
@@ -457,25 +457,25 @@ Gostaria de uma orientação jurídica personalizada sobre a viabilidade do meu 
               </p>
 
               {/* Comprehensive Summary Card */}
-              <div className="p-3.5 rounded-xl bg-[#181820] border border-neutral-800 text-left max-w-lg mx-auto mb-5 space-y-2 text-xs">
-                <div className="flex justify-between items-center border-b border-neutral-800/80 pb-1.5">
-                  <span className="text-neutral-400 text-[11px]">Área do Direito:</span>
+              <div className="p-3.5 sm:p-4 rounded-xl bg-[#181820] border border-neutral-800 text-left max-w-lg mx-auto mb-5 space-y-2 text-xs">
+                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center border-b border-neutral-800/80 pb-1.5 gap-0.5 sm:gap-2">
+                  <span className="text-neutral-400 text-[11px] shrink-0">Área do Direito:</span>
                   <span className="text-gold-300 font-semibold text-[11px]">{selectedArea}</span>
                 </div>
                 <div className="border-b border-neutral-800/80 pb-1.5">
                   <span className="text-neutral-400 text-[11px] block mb-0.5">Demanda Específica:</span>
                   <span className="text-white font-medium text-[11px] leading-tight block">{selectedDetail}</span>
                 </div>
-                <div className="flex justify-between items-center border-b border-neutral-800/80 pb-1.5">
-                  <span className="text-neutral-400 text-[11px]">Situação dos Documentos:</span>
-                  <span className="text-neutral-200 font-medium text-[11px] truncate max-w-[220px]">{selectedDocs}</span>
+                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center border-b border-neutral-800/80 pb-1.5 gap-0.5 sm:gap-2">
+                  <span className="text-neutral-400 text-[11px] shrink-0">Situação dos Documentos:</span>
+                  <span className="text-neutral-200 font-medium text-[11px]">{selectedDocs}</span>
                 </div>
-                <div className="flex justify-between items-center border-b border-neutral-800/80 pb-1.5">
-                  <span className="text-neutral-400 text-[11px]">Nível de Urgência:</span>
+                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center border-b border-neutral-800/80 pb-1.5 gap-0.5 sm:gap-2">
+                  <span className="text-neutral-400 text-[11px] shrink-0">Nível de Urgência:</span>
                   <span className="text-amber-400 font-semibold text-[11px]">{selectedUrgency}</span>
                 </div>
-                <div className="flex justify-between items-center">
-                  <span className="text-neutral-400 text-[11px]">Região no Ceará:</span>
+                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-0.5 sm:gap-2">
+                  <span className="text-neutral-400 text-[11px] shrink-0">Região no Ceará:</span>
                   <span className="text-white font-medium text-[11px]">{selectedLocation}</span>
                 </div>
               </div>

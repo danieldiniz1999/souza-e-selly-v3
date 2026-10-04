@@ -51,37 +51,37 @@ export const MetricsSection: React.FC = () => {
           </h2>
         </div>
 
-        {/* 4 Cards Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
+        {/* 4 Cards Responsive Grid: 2x2 on mobile/tablet, 4 across on desktop */}
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-4 lg:gap-5">
           {metrics.map((item, idx) => {
             const Icon = item.icon;
             return (
               <div 
                 key={idx}
-                className="card-luxury p-5 rounded-xl flex flex-col justify-between group text-center sm:text-left relative overflow-hidden"
+                className="card-luxury p-3.5 sm:p-5 rounded-xl flex flex-col justify-between group text-center sm:text-left relative overflow-hidden"
               >
                 {/* Accent top border */}
                 <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-gold-500/50 to-transparent group-hover:via-gold-400 transition-all" />
 
                 <div>
-                  <div className="w-10 h-10 rounded-lg bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-gold-400 mb-4 mx-auto sm:mx-0 group-hover:scale-105 transition-transform">
-                    <Icon className="w-5 h-5" />
+                  <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-gold-400 mb-2.5 sm:mb-4 mx-auto sm:mx-0 group-hover:scale-105 transition-transform">
+                    <Icon className="w-4 h-4 sm:w-5 sm:h-5" />
                   </div>
 
-                  <div className="font-serif text-2xl sm:text-3xl font-extrabold text-white tracking-tight mb-0.5">
+                  <div className="font-serif text-xl sm:text-2xl lg:text-3xl font-extrabold text-white tracking-tight mb-0.5">
                     <span className="text-gold-metallic">{item.value}</span>
                   </div>
 
-                  <div className="text-[11px] font-bold uppercase tracking-wider text-gold-400 mb-1.5">
+                  <div className="text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-gold-400 mb-1">
                     {item.label}
                   </div>
 
-                  <p className="text-xs text-neutral-400 leading-relaxed font-light">
+                  <p className="text-[11px] sm:text-xs text-neutral-400 leading-relaxed font-light">
                     {item.desc}
                   </p>
                 </div>
 
-                <div className="mt-4 pt-3 border-t border-neutral-800/80 text-[10px] text-neutral-400">
+                <div className="mt-3 sm:mt-4 pt-2.5 sm:pt-3 border-t border-neutral-800/80 text-[9px] sm:text-[10px] text-neutral-400">
                   Dados verificados do escritório
                 </div>
               </div>
