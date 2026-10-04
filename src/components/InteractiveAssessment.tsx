@@ -74,39 +74,39 @@ export const InteractiveAssessment: React.FC = () => {
 Gostaria de agendar uma análise preliminar do meu caso.`;
 
   return (
-    <section id="triagem" className="py-24 bg-[#0B0B0E] relative overflow-hidden">
+    <section id="triagem" className="py-16 bg-[#0B0B0E] relative overflow-hidden">
       {/* Background glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] bg-gold-500/10 rounded-full blur-[160px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[350px] bg-gold-500/10 rounded-full blur-[160px] pointer-events-none" />
 
-      <div className="max-w-4xl mx-auto px-4 lg:px-8 relative z-10">
+      <div className="max-w-3xl mx-auto px-4 lg:px-8 relative z-10">
         
         {/* Header */}
-        <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gold-500/10 border border-gold-500/30 text-gold-400 text-xs font-semibold uppercase tracking-wider mb-4">
-            <Sparkles className="w-3.5 h-3.5" />
+        <div className="text-center mb-10">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-gold-500/10 border border-gold-500/30 text-gold-400 text-[10px] font-semibold uppercase tracking-wider mb-3">
+            <Sparkles className="w-3 h-3" />
             <span>Triagem Jurídica Rápida em 30 Segundos</span>
           </div>
 
-          <h2 className="font-serif text-3xl sm:text-4xl font-bold text-white mb-4">
+          <h2 className="font-serif text-2xl sm:text-3xl font-bold text-white mb-3">
             Descubra se o seu caso tem <span className="text-gold-metallic">Direito a Reparação</span>
           </h2>
           
-          <p className="text-neutral-400 text-sm sm:text-base font-light max-w-xl mx-auto">
+          <p className="text-neutral-400 text-xs sm:text-sm font-light max-w-lg mx-auto">
             Responda 3 perguntas simples e receba um direcionamento direto com a equipe de especialistas no WhatsApp.
           </p>
         </div>
 
         {/* Card Box */}
-        <div className="rounded-3xl bg-[#121217] border border-gold-500/30 p-6 sm:p-10 shadow-2xl relative">
+        <div className="rounded-2xl bg-[#121217] border border-gold-500/30 p-5 sm:p-8 shadow-xl relative">
           
           {/* Progress Indicator */}
           {step < 4 && (
-            <div className="mb-8">
-              <div className="flex justify-between items-center text-xs text-neutral-400 mb-2">
+            <div className="mb-6">
+              <div className="flex justify-between items-center text-xs text-neutral-400 mb-1.5">
                 <span>Passo {step} de 3</span>
                 <span className="text-gold-400 font-semibold">{step === 1 ? '33%' : step === 2 ? '66%' : '100%'} concluído</span>
               </div>
-              <div className="w-full h-1.5 bg-neutral-800 rounded-full overflow-hidden">
+              <div className="w-full h-1 bg-neutral-800 rounded-full overflow-hidden">
                 <div 
                   className="h-full bg-gold-metallic transition-all duration-500 ease-out"
                   style={{ width: `${(step / 3) * 100}%` }}
@@ -118,26 +118,26 @@ Gostaria de agendar uma análise preliminar do meu caso.`;
           {/* Step 1: Area */}
           {step === 1 && (
             <div className="animate-fade-in-up">
-              <h3 className="font-serif text-xl sm:text-2xl font-bold text-white mb-2">
+              <h3 className="font-serif text-lg sm:text-xl font-bold text-white mb-1.5">
                 1. Qual é o motivo principal da sua busca por justiça?
               </h3>
-              <p className="text-neutral-400 text-xs sm:text-sm mb-6">
+              <p className="text-neutral-400 text-xs mb-5 font-light">
                 Selecione a opção que melhor descreve o que você está vivenciando:
               </p>
 
-              <div className="grid gap-3.5">
+              <div className="grid gap-2.5">
                 {areas.map((a) => (
                   <button
                     key={a.id}
                     onClick={() => handleNextStep1(a.id)}
-                    className="flex items-center gap-4 p-4 sm:p-5 rounded-2xl bg-[#181820] border border-neutral-800 hover:border-gold-500/50 hover:bg-[#1E1E28] transition-all text-left group"
+                    className="flex items-center gap-3.5 p-3.5 sm:p-4 rounded-xl bg-[#181820] border border-neutral-800 hover:border-gold-500/50 hover:bg-[#1E1E28] transition-all text-left group"
                   >
-                    <span className="text-2xl sm:text-3xl shrink-0">{a.icon}</span>
+                    <span className="text-xl sm:text-2xl shrink-0">{a.icon}</span>
                     <div className="flex-1">
-                      <h4 className="text-sm sm:text-base font-bold text-white group-hover:text-gold-300 transition-colors">
+                      <h4 className="text-xs sm:text-sm font-bold text-white group-hover:text-gold-300 transition-colors">
                         {a.id}
                       </h4>
-                      <p className="text-xs text-neutral-400 mt-0.5">
+                      <p className="text-[11px] text-neutral-400 mt-0.5 font-light">
                         {a.label}
                       </p>
                     </div>

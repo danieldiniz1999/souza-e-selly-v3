@@ -19,63 +19,63 @@ export const FaqSection: React.FC = () => {
   );
 
   return (
-    <section id="faq" className="py-24 bg-[#09090B] relative overflow-hidden">
+    <section id="faq" className="py-16 bg-[#09090B] relative overflow-hidden">
       {/* Background accents */}
-      <div className="absolute bottom-10 left-10 w-96 h-96 bg-gold-500/5 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute bottom-10 left-10 w-80 h-80 bg-gold-500/5 rounded-full blur-[140px] pointer-events-none" />
 
-      <div className="max-w-4xl mx-auto px-4 lg:px-8 relative z-10">
+      <div className="max-w-3xl mx-auto px-4 lg:px-8 relative z-10">
         
         {/* Header */}
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gold-500/10 border border-gold-500/30 text-gold-400 text-xs font-semibold uppercase tracking-wider mb-4">
-            <HelpCircle className="w-3.5 h-3.5" />
+        <div className="text-center mb-12">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-gold-500/10 border border-gold-500/30 text-gold-400 text-[10px] font-semibold uppercase tracking-wider mb-3">
+            <HelpCircle className="w-3 h-3" />
             <span>Tire Suas Dúvidas</span>
           </div>
 
-          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight mb-6">
+          <h2 className="font-serif text-2xl sm:text-3xl font-bold text-white leading-tight mb-3">
             Perguntas Frequentes & <span className="text-gold-metallic">Respostas Claras</span>
           </h2>
 
-          <p className="text-neutral-300 text-base font-light leading-relaxed mb-8 max-w-xl mx-auto">
+          <p className="text-neutral-300 text-xs sm:text-sm font-light leading-relaxed mb-6 max-w-lg mx-auto">
             Transparência absoluta antes de qualquer contratação. Veja as dúvidas mais comuns de nossos clientes no Ceará.
           </p>
 
           {/* Quick Search Bar */}
-          <div className="relative max-w-md mx-auto">
-            <Search className="w-4 h-4 text-neutral-400 absolute left-4 top-1/2 -translate-y-1/2" />
+          <div className="relative max-w-sm mx-auto">
+            <Search className="w-3.5 h-3.5 text-neutral-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
             <input
               type="text"
-              placeholder="Buscar dúvida (ex: interior, inss, honorários, documentos)..."
+              placeholder="Buscar dúvida (ex: interior, inss, honorários)..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full bg-[#121217] border border-neutral-800 rounded-xl pl-11 pr-4 py-3 text-xs text-white placeholder-neutral-500 focus:outline-none focus:border-gold-500 transition-colors"
+              className="w-full bg-[#121217] border border-neutral-800 rounded-xl pl-10 pr-3 py-2.5 text-xs text-white placeholder-neutral-500 focus:outline-none focus:border-gold-500 transition-colors"
             />
           </div>
         </div>
 
         {/* Accordion List */}
-        <div className="space-y-4 mb-14">
+        <div className="space-y-3 mb-10">
           {filteredFaqs.length > 0 ? (
             filteredFaqs.map((faq) => {
               const isOpen = openId === faq.id;
               return (
                 <div
                   key={faq.id}
-                  className={`rounded-2xl border transition-all duration-300 overflow-hidden ${
+                  className={`rounded-xl border transition-all duration-300 overflow-hidden ${
                     isOpen
-                      ? 'bg-[#14141A] border-gold-500/40 shadow-lg shadow-gold-500/5'
+                      ? 'bg-[#14141A] border-gold-500/40 shadow-md shadow-gold-500/5'
                       : 'bg-[#101014] border-neutral-800/80 hover:border-neutral-700'
                   }`}
                 >
                   <button
                     onClick={() => toggleAccordion(faq.id)}
-                    className="w-full p-5 sm:p-6 text-left flex items-center justify-between gap-4 transition-colors"
+                    className="w-full p-4 sm:p-4.5 text-left flex items-center justify-between gap-3.5 transition-colors"
                   >
-                    <div className="flex items-center gap-3">
+                    <div className="flex items-center gap-2.5">
                       <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-gold-500/10 text-gold-400 border border-gold-500/20 shrink-0 hidden sm:inline-block">
                         {faq.category}
                       </span>
-                      <span className="font-serif text-sm sm:text-base font-bold text-white leading-snug">
+                      <span className="font-serif text-xs sm:text-sm font-bold text-white leading-snug">
                         {faq.question}
                       </span>
                     </div>

@@ -34,45 +34,45 @@ export const MetricsSection: React.FC = () => {
   ];
 
   return (
-    <section id="numeros" className="py-20 bg-[#0C0C0F] border-y border-neutral-800/80 relative overflow-hidden">
+    <section id="numeros" className="py-14 bg-[#0C0C0F] border-y border-neutral-800/80 relative overflow-hidden">
       {/* Background glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-5xl h-64 bg-gold-500/5 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-5xl h-56 bg-gold-500/5 rounded-full blur-[140px] pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-4 lg:px-8 relative z-10">
+      <div className="max-w-6xl mx-auto px-4 lg:px-8 relative z-10">
         
         {/* Title */}
-        <div className="text-center max-w-2xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold-500/10 border border-gold-500/30 text-gold-400 text-xs font-semibold uppercase tracking-wider mb-3">
-            <TrendingUp className="w-3.5 h-3.5" />
+        <div className="text-center max-w-xl mx-auto mb-10">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-gold-500/10 border border-gold-500/30 text-gold-400 text-[10px] font-semibold uppercase tracking-wider mb-2.5">
+            <TrendingUp className="w-3 h-3" />
             <span>Autoridade Comprovada</span>
           </div>
-          <h2 className="font-serif text-2xl sm:text-4xl font-bold text-white">
+          <h2 className="font-serif text-xl sm:text-3xl font-bold text-white">
             Resultados que traduzem nosso <span className="text-gold-metallic">Compromisso</span>
           </h2>
         </div>
 
         {/* 4 Cards Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
           {metrics.map((item, idx) => {
             const Icon = item.icon;
             return (
               <div 
                 key={idx}
-                className="card-luxury p-6 rounded-2xl flex flex-col justify-between group text-center sm:text-left relative overflow-hidden"
+                className="card-luxury p-5 rounded-xl flex flex-col justify-between group text-center sm:text-left relative overflow-hidden"
               >
                 {/* Accent top border */}
-                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-gold-500/50 to-transparent group-hover:via-gold-400 transition-all" />
+                <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-gold-500/50 to-transparent group-hover:via-gold-400 transition-all" />
 
                 <div>
-                  <div className="w-12 h-12 rounded-xl bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-gold-400 mb-6 mx-auto sm:mx-0 group-hover:scale-110 transition-transform">
-                    <Icon className="w-6 h-6" />
+                  <div className="w-10 h-10 rounded-lg bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-gold-400 mb-4 mx-auto sm:mx-0 group-hover:scale-105 transition-transform">
+                    <Icon className="w-5 h-5" />
                   </div>
 
-                  <div className="font-serif text-3xl sm:text-4xl font-extrabold text-white tracking-tight mb-1">
+                  <div className="font-serif text-2xl sm:text-3xl font-extrabold text-white tracking-tight mb-0.5">
                     <span className="text-gold-metallic">{item.value}</span>
                   </div>
 
-                  <div className="text-xs font-bold uppercase tracking-wider text-gold-400 mb-2">
+                  <div className="text-[11px] font-bold uppercase tracking-wider text-gold-400 mb-1.5">
                     {item.label}
                   </div>
 
@@ -81,7 +81,7 @@ export const MetricsSection: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="mt-6 pt-4 border-t border-neutral-800/80 text-[11px] text-neutral-500">
+                <div className="mt-4 pt-3 border-t border-neutral-800/80 text-[10px] text-neutral-400">
                   Dados verificados do escritório
                 </div>
               </div>

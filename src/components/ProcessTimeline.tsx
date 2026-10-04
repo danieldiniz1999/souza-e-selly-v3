@@ -35,55 +35,55 @@ export const ProcessTimeline: React.FC = () => {
   ];
 
   return (
-    <section className="py-24 bg-[#0C0C0F] border-t border-neutral-800/80 relative overflow-hidden">
+    <section className="py-16 bg-[#0C0C0F] border-t border-neutral-800/80 relative overflow-hidden">
       {/* Background accents */}
-      <div className="absolute top-1/2 right-1/4 w-96 h-96 bg-gold-500/5 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute top-1/2 right-1/4 w-80 h-80 bg-gold-500/5 rounded-full blur-[140px] pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-4 lg:px-8 relative z-10">
+      <div className="max-w-6xl mx-auto px-4 lg:px-8 relative z-10">
         
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-20">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gold-500/10 border border-gold-500/30 text-gold-400 text-xs font-semibold uppercase tracking-wider mb-4">
+        <div className="text-center max-w-2xl mx-auto mb-12">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-gold-500/10 border border-gold-500/30 text-gold-400 text-[10px] font-semibold uppercase tracking-wider mb-3">
             <span>Passo a Passo Transparente</span>
           </div>
 
-          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight mb-6">
+          <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-white leading-tight mb-4">
             Como Funciona Seu Atendimento: <br className="hidden sm:inline" />
             <span className="text-gold-metallic">Simples, Humano e Seguro</span>
           </h2>
 
-          <p className="text-neutral-300 text-base sm:text-lg font-light leading-relaxed">
+          <p className="text-neutral-300 text-xs sm:text-sm font-light leading-relaxed">
             Eliminamos todo o medo de burocracias. Você não precisa entender de leis difíceis: cuidamos de cada detalhe com rigor e carinho.
           </p>
         </div>
 
         {/* Steps Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 mb-12">
           {steps.map((s, idx) => {
             const Icon = s.icon;
             return (
               <div 
                 key={idx}
-                className="card-luxury p-7 rounded-2xl flex flex-col justify-between group relative overflow-hidden"
+                className="card-luxury p-5 rounded-xl flex flex-col justify-between group relative overflow-hidden"
               >
                 <div>
                   {/* Top Step Number and Badge */}
-                  <div className="flex items-center justify-between mb-6">
-                    <span className="font-serif text-3xl font-extrabold text-gold-500/40 group-hover:text-gold-400 transition-colors">
+                  <div className="flex items-center justify-between mb-4">
+                    <span className="font-serif text-2xl font-extrabold text-gold-500/40 group-hover:text-gold-400 transition-colors">
                       {s.step}
                     </span>
-                    <span className="text-[10px] uppercase font-bold tracking-wider px-2.5 py-1 rounded-md bg-[#1B1B24] border border-neutral-800 text-gold-300">
+                    <span className="text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded bg-[#1B1B24] border border-neutral-800 text-gold-300">
                       {s.pill}
                     </span>
                   </div>
 
                   {/* Icon */}
-                  <div className="w-12 h-12 rounded-xl bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-gold-400 mb-5 group-hover:scale-110 transition-transform">
-                    <Icon className="w-6 h-6" />
+                  <div className="w-10 h-10 rounded-lg bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-gold-400 mb-3.5 group-hover:scale-105 transition-transform">
+                    <Icon className="w-5 h-5" />
                   </div>
 
                   {/* Title */}
-                  <h3 className="font-serif text-lg font-bold text-white mb-3">
+                  <h3 className="font-serif text-base font-bold text-white mb-2">
                     {s.title}
                   </h3>
 
@@ -93,7 +93,7 @@ export const ProcessTimeline: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="mt-6 pt-4 border-t border-neutral-800/80 text-[11px] text-gold-400/80 font-medium flex items-center gap-1">
+                <div className="mt-4 pt-3 border-t border-neutral-800/80 text-[10px] text-gold-400/80 font-medium flex items-center gap-1">
                   <span>Etapa {s.step} de 04</span>
                 </div>
               </div>
@@ -107,10 +107,10 @@ export const ProcessTimeline: React.FC = () => {
             href={getWhatsAppUrl("Olá! Gostaria de dar o primeiro passo e enviar meu caso para avaliação.")}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 px-8 py-4 rounded-xl text-xs sm:text-sm font-bold uppercase tracking-wider text-black bg-gold-metallic hover:opacity-95 shadow-xl shadow-gold-500/20 transition-all"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-xs font-bold uppercase tracking-wider text-black bg-gold-metallic hover:opacity-95 shadow-md shadow-gold-500/20 transition-all"
           >
             <span>Dar o Primeiro Passo Agora</span>
-            <ArrowRight className="w-4 h-4" />
+            <ArrowRight className="w-3.5 h-3.5" />
           </a>
         </div>
 

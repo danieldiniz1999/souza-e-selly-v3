@@ -12,7 +12,7 @@ export const Footer: React.FC = () => {
       {/* Top golden accent line */}
       <div className="h-[2px] bg-gradient-to-r from-transparent via-gold-500/60 to-transparent" />
 
-      <div className="max-w-7xl mx-auto px-4 lg:px-8 py-16">
+      <div className="max-w-6xl mx-auto px-4 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10">
           
           {/* Brand Info */}
