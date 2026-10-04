@@ -1,6 +1,7 @@
 export interface FaqItem {
   id: string;
   category: string;
+  categoryKey: 'todos' | 'previdenciario' | 'trabalhista' | 'civel' | 'atendimento';
   question: string;
   answer: string;
 }
@@ -8,44 +9,86 @@ export interface FaqItem {
 export const FAQS: FaqItem[] = [
   {
     id: "faq-interior",
-    category: "Atendimento no Interior",
-    question: "Moro no interior do Ceará. Como funciona o atendimento se não puder ir a Fortaleza?",
-    answer: "Esse é o maior diferencial do nosso escritório! Além do atendimento 100% digital e seguro via WhatsApp e videochamadas, as Dras. Samara Selly e Mariana Souza realizam visitas e viagens periódicas pelo interior do Ceará para ouvir clientes, recolher documentos e prestar suporte presencial a quem tem dificuldade de locomoção. A distância jamais será um obstáculo para você ter justiça."
+    category: "Atendimento no CE",
+    categoryKey: "atendimento",
+    question: "Moro no interior do Ceará. Como funciona o atendimento sem ir a Fortaleza?",
+    answer: "Esse é o maior diferencial da Souza & Selly: além de atendimento 100% digital seguro por WhatsApp e chamadas de vídeo, a Dra. Samara e a Dra. Mariana viajam regularmente pelo interior do Ceará para visitar clientes, coletar documentos e prestar apoio presencial humanizado."
   },
   {
     id: "faq-inss-negado",
     category: "Previdenciário",
-    question: "Meu benefício do INSS foi negado ou cancelado. Ainda há esperança de reverter?",
-    answer: "Sim, absolutamente! A grande maioria das negativas do INSS acontece por falha na análise burocrática do próprio órgão ou documentação incompleta. Na Justiça Federal, o juiz avalia seu direito com peritos imparciais e provas mais amplas. Quando revertemos a decisão, você recebe todos os meses atrasados desde a data em que fez o pedido original no INSS."
+    categoryKey: "previdenciario",
+    question: "Meu benefício do INSS foi negado ou cessado. Ainda é possível reverter?",
+    answer: "Sim! A imensa maioria dos indeferimentos do INSS ocorre por falhas formais do sistema ou perícias apressadas. Na Justiça Federal, seu direito é avaliado com laudos imparciais. Ao reverter, você recebe todos os atrasados retroativos desde a data do primeiro pedido."
+  },
+  {
+    id: "faq-bpc-loas",
+    category: "Previdenciário",
+    categoryKey: "previdenciario",
+    question: "Quem tem direito ao BPC/LOAS? Preciso ter contribuído com o INSS?",
+    answer: "Não precisa ter contribuído! O BPC/LOAS é um benefício de 1 salário mínimo mensal garantido a idosos a partir de 65 anos ou pessoas de qualquer idade com deficiência (incluindo autismo/TEA e doenças incapacitantes) em situação de vulnerabilidade familiar."
+  },
+  {
+    id: "faq-rural",
+    category: "Previdenciário",
+    categoryKey: "previdenciario",
+    question: "Trabalhei na agricultura/campo. Como comprovo aposentadoria rural?",
+    answer: "Ajudamos você a reunir certidões civis com profissão de lavrador, declarações de sindicatos, notas de produtor, contratos de comodato ou parceria e prova testemunhal sólida, garantindo a aposentadoria por idade rural sem burocracia."
   },
   {
     id: "faq-honorarios",
-    category: "Honorários & Contratação",
-    question: "Como funciona a contratação e o pagamento dos honorários advocatícios?",
-    answer: "Trabalhamos com total clareza e transparência, em estrita observância ao Código de Ética e à Tabela de Honorários da OAB/CE. Na grande maioria das ações previdenciárias e trabalhistas, adotamos o modelo de êxito: você só paga honorários contratuais quando o seu benefício ou indenização for efetivamente liberado e pago."
+    category: "Honorários",
+    categoryKey: "atendimento",
+    question: "Como funciona o pagamento dos honorários? Preciso pagar algo antes?",
+    answer: "Atuamos com ética estrita da OAB/CE. Na grande maioria dos casos previdenciários e trabalhistas, adotamos o contrato no êxito: você só paga os honorários ao final, quando o seu benefício ou a sua indenização for deferida e liberada para recebimento."
   },
   {
-    id: "faq-horario",
-    category: "Atendimento",
-    question: "Qual é o horário de atendimento do escritório?",
-    answer: "Nosso atendimento oficial ocorre de segunda a sexta-feira, das 09:00 às 17:00. Caso nos envie uma mensagem fora desse horário pelo WhatsApp, sua demanda é registrada de forma prioritária e entra na fila de retorno imediato assim que a equipe inicia o expediente às 09:00."
+    id: "faq-sem-carteira",
+    category: "Trabalhista",
+    categoryKey: "trabalhista",
+    question: "Trabalhei sem carteira assinada. Posso cobrar direitos e FGTS atrasado?",
+    answer: "Sim! Trabalhar sem carteira é uma fraude aos direitos do trabalhador. Na Justiça do Trabalho comprovamos o vínculo através de mensagens, testemunhas e comprovantes de pagamento para obrigar a empresa a assinar a carteira e pagar todo o FGTS + 40%, férias e 13º."
   },
   {
-    id: "faq-documentos",
-    category: "Primeiros Passos",
-    question: "Quais documentos preciso ter em mãos para a análise inicial?",
-    answer: "Para a primeira análise, você não precisa se preocupar com complexidade. Apenas: RG/CPF, comprovante de residência atualizado, carteira de trabalho (se tiver) e a carta de indeferimento do INSS ou o termo de rescisão da empresa. Caso falte algum documento, nós orientamos exatamente como obtê-lo."
+    id: "faq-acidente-trabalho",
+    category: "Trabalhista",
+    categoryKey: "trabalhista",
+    question: "Sofri acidente de trabalho ou adquiri doença no serviço. Quais meus direitos?",
+    answer: "Você tem direito à estabilidade provisória de 12 meses após a alta médica, indenização por danos morais e materiais da empresa, reembolso de despesas de tratamento e, em casos de redução permanente da capacidade, pensão mensal vitalícia."
   },
   {
     id: "faq-prazo-trabalhista",
     category: "Trabalhista",
-    question: "Fui demitido ou sofri acidente de trabalho. Quanto tempo tenho para agir?",
-    answer: "Pela legislação brasileira, você possui um prazo decadencial de até 2 anos a contar da data de demissão para ingressar com a reclamatória trabalhista. Contudo, quanto mais cedo você agir, mais fácil será reunir testemunhas e preservar registros essenciais para o ganho de causa."
+    categoryKey: "trabalhista",
+    question: "Fui demitido ou saí da empresa. Quanto tempo tenho para entrar com a ação?",
+    answer: "O prazo máximo da lei é de 2 anos a contar da data de saída da empresa, podendo cobrar os últimos 5 anos de direitos trabalhistas. No entanto, quanto antes ingressar, mais fácil reunir testemunhas e documentos comprovatórios."
   },
   {
-    id: "faq-visita-fortaleza",
-    category: "Localização",
-    question: "Posso ser atendido presencialmente no escritório em Fortaleza?",
-    answer: "Com certeza! Nossa sede fica na Av. Jovita Feitosa, nº 3072, Bairro Parquelândia, Fortaleza - Ceará. Contamos com recepção acolhedora, estacionamento e sala reservada para reuniões particulares. Basta agendar um horário com nossa equipe."
+    id: "faq-inventario",
+    category: "Cível & Família",
+    categoryKey: "civel",
+    question: "Como funciona o inventário de bens da família? É possível fazer rápido em cartório?",
+    answer: "Se todos os herdeiros forem maiores, capazes e estiverem em acordo sobre a partilha, o inventário pode ser feito diretamente em cartório de notas (extrajudicial) em questão de semanas, reduzindo custos e liberando os bens da família com agilidade."
+  },
+  {
+    id: "faq-pensao-alimentos",
+    category: "Cível & Família",
+    categoryKey: "civel",
+    question: "Pensão alimentícia atrasada ou insuficiente. Como regularizar na Justiça?",
+    answer: "Ingressamos com ação de fixação ou revisão de pensão, ou execução de alimentos com pedido de bloqueio ou prisão civil do devedor em caso de inadimplência, garantindo prioritariamente o sustento, dignidade e educação dos filhos."
+  },
+  {
+    id: "faq-documentos",
+    category: "Primeiros Passos",
+    categoryKey: "atendimento",
+    question: "Quais documentos preciso enviar para a primeira avaliação jurídica?",
+    answer: "Para a triagem inicial, você só precisa de fotos do RG/CPF, comprovante de residência atual e os documentos básicos do caso (carteira de trabalho, laudos médicos ou carta de negativa do INSS). O que faltar, nós orientamos como emitir."
+  },
+  {
+    id: "faq-horario-local",
+    category: "Atendimento",
+    categoryKey: "atendimento",
+    question: "Qual o horário de atendimento e onde fica o escritório físico em Fortaleza?",
+    answer: "Atendemos de segunda a sexta, das 09:00 às 17:00, com suporte contínuo no WhatsApp. Nossa sede fica na Av. Jovita Feitosa, nº 3072, Bairro Parquelândia, Fortaleza/CE (CEP 60455-410), com estrutura acolhedora para atendimento presencial agendado."
   }
 ];
