@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --gold-primary: #C5A059;
+    --gold-light: #E6C878;
+    --gold-dark: #8A672B;
+    --bg-dark: #09090B;
+  }
+
+  body {
+    background-color: #09090B;
+    color: #F3F4F6;
+    overflow-x: hidden;
+  }
+}
+
+/* Custom Luxury Gradients & Textures */
+.text-gold-metallic {
+  background: linear-gradient(135deg, #FFF 0%, #F5DEB3 20%, #C5A059 50%, #E6C878 80%, #9C7934 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.bg-gold-metallic {
+  background: linear-gradient(135deg, #ECC880 0%, #C5A059 50%, #9E7A32 100%);
+}
+
+.border-gold-glow {
+  border-color: rgba(197, 160, 89, 0.35);
+  box-shadow: 0 0 20px -5px rgba(197, 160, 89, 0.2);
+}
+
+.card-luxury {
+  background: linear-gradient(180deg, rgba(26, 26, 32, 0.75) 0%, rgba(13, 13, 16, 0.95) 100%);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(197, 160, 89, 0.15);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card-luxury:hover {
+  border-color: rgba(197, 160, 89, 0.45);
+  box-shadow: 0 10px 30px -10px rgba(197, 160, 89, 0.25);
+  transform: translateY(-4px);
+}
+
+/* Subtle gold noise / mesh effect */
+.bg-mesh-dark {
+  background-color: #09090B;
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(197, 160, 89, 0.08) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(197, 160, 89, 0.05) 0px, transparent 50%),
+    radial-gradient(at 50% 50%, rgba(20, 20, 26, 0.5) 0px, transparent 100%);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #09090B;
+}
+::-webkit-scrollbar-thumb {
+  background: #27272E;
+  border-radius: 4px;
+  border: 1px solid rgba(197, 160, 89, 0.2);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #C5A059;
+}

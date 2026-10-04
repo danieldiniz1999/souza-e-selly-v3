@@ -1,0 +1,95 @@
+import React from 'react';
+import { Award, Users, Scale, MapPin, TrendingUp, ShieldCheck } from 'lucide-react';
+
+export const MetricsSection: React.FC = () => {
+  const metrics = [
+    {
+      value: "8+",
+      unit: "Anos",
+      label: "De Atuação Ininterrupta",
+      desc: "Histórico consolidado de combate a injustiças no Ceará.",
+      icon: Award
+    },
+    {
+      value: "+1.800",
+      unit: "Famílias",
+      label: "Clientes Atendidos",
+      desc: "Vidas transformadas com benefícios e indenizações justas.",
+      icon: Users
+    },
+    {
+      value: "+65",
+      unit: "Municípios",
+      label: "Cidades Alcançadas",
+      desc: "Presença ativa da capital ao sertão e litoral cearense.",
+      icon: MapPin
+    },
+    {
+      value: "98.7%",
+      unit: "Índice",
+      label: "De Satisfação",
+      desc: "Avaliações máximas por acolhimento, agilidade e transparência.",
+      icon: ShieldCheck
+    }
+  ];
+
+  return (
+    <section id="numeros" className="py-20 bg-[#0C0C0F] border-y border-neutral-800/80 relative overflow-hidden">
+      {/* Background glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-5xl h-64 bg-gold-500/5 rounded-full blur-[140px] pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto px-4 lg:px-8 relative z-10">
+        
+        {/* Title */}
+        <div className="text-center max-w-2xl mx-auto mb-16">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold-500/10 border border-gold-500/30 text-gold-400 text-xs font-semibold uppercase tracking-wider mb-3">
+            <TrendingUp className="w-3.5 h-3.5" />
+            <span>Autoridade Comprovada</span>
+          </div>
+          <h2 className="font-serif text-2xl sm:text-4xl font-bold text-white">
+            Resultados que traduzem nosso <span className="text-gold-metallic">Compromisso</span>
+          </h2>
+        </div>
+
+        {/* 4 Cards Grid */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {metrics.map((item, idx) => {
+            const Icon = item.icon;
+            return (
+              <div 
+                key={idx}
+                className="card-luxury p-6 rounded-2xl flex flex-col justify-between group text-center sm:text-left relative overflow-hidden"
+              >
+                {/* Accent top border */}
+                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-gold-500/50 to-transparent group-hover:via-gold-400 transition-all" />
+
+                <div>
+                  <div className="w-12 h-12 rounded-xl bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-gold-400 mb-6 mx-auto sm:mx-0 group-hover:scale-110 transition-transform">
+                    <Icon className="w-6 h-6" />
+                  </div>
+
+                  <div className="font-serif text-3xl sm:text-4xl font-extrabold text-white tracking-tight mb-1">
+                    <span className="text-gold-metallic">{item.value}</span>
+                  </div>
+
+                  <div className="text-xs font-bold uppercase tracking-wider text-gold-400 mb-2">
+                    {item.label}
+                  </div>
+
+                  <p className="text-xs text-neutral-400 leading-relaxed font-light">
+                    {item.desc}
+                  </p>
+                </div>
+
+                <div className="mt-6 pt-4 border-t border-neutral-800/80 text-[11px] text-neutral-500">
+                  Dados verificados do escritório
+                </div>
+              </div>
+            );
+          })}
+        </div>
+
+      </div>
+    </section>
+  );
+};
