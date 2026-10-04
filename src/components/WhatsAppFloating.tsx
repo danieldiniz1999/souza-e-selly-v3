@@ -37,11 +37,20 @@ export const WhatsAppFloating: React.FC = () => {
             <X className="w-3 h-3" />
           </button>
 
-          <div className="flex items-center gap-1.5 mb-1.5">
-            <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-            <span className="text-[10px] font-bold uppercase tracking-wider text-gold-400">
-              Souza & Selly Advocacia
-            </span>
+          <div className="flex items-center gap-2 mb-2 pb-1.5 border-b border-neutral-800">
+            <img 
+              src="/logo.jpg" 
+              alt="Logo Souza & Selly Advocacia" 
+              className="w-7 h-7 rounded-full object-cover border border-gold-500/50 shadow-sm shrink-0" 
+            />
+            <div className="flex-1 min-w-0">
+              <div className="flex items-center gap-1.5">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                <span className="text-[10px] font-bold uppercase tracking-wider text-gold-400 truncate">
+                  Souza & Selly Advocacia
+                </span>
+              </div>
+            </div>
           </div>
 
           <p className="text-[11px] text-neutral-200 leading-relaxed mb-2.5 font-light">

@@ -26,8 +26,8 @@ export const Hero: React.FC = () => {
           <div className="lg:col-span-7 flex flex-col items-start text-left">
             
             {/* Top Authority Pill */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#18181D] border border-gold-500/35 shadow-md shadow-gold-500/5 mb-5">
-              <Award className="w-3.5 h-3.5 text-gold-400" />
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#18181D] border border-gold-500/35 shadow-md shadow-gold-500/5 mb-5">
+              <img src="/logo.jpg" alt="Souza & Selly" className="w-4 h-4 rounded-full object-cover border border-gold-500/50 shrink-0" />
               <span className="text-[11px] font-semibold text-neutral-200 tracking-wide">
                 8 Anos de Excelência Jurídica • Atendimento em Todo o Ceará
               </span>
@@ -110,9 +110,11 @@ export const Hero: React.FC = () => {
                 {/* Header of the Card */}
                 <div className="flex items-center justify-between pb-4 border-b border-neutral-800">
                   <div className="flex items-center gap-2.5">
-                    <div className="w-10 h-10 rounded-lg bg-[#1C1A14] border border-gold-500/60 flex items-center justify-center text-gold-400 shadow-sm">
-                      <Scale className="w-5 h-5" />
-                    </div>
+                    <img
+                      src="/logo.jpg"
+                      alt="Logo Souza & Selly Advocacia"
+                      className="w-10 h-10 rounded-full object-cover border border-gold-500/60 shadow-md shadow-gold-500/10"
+                    />
                     <div>
                       <h3 className="font-serif text-base font-bold text-white">Souza & Selly</h3>
                       <p className="text-[11px] text-gold-400 font-medium">Banca Jurídica Especializada</p>

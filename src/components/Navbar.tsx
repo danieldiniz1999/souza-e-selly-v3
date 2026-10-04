@@ -84,11 +84,13 @@ export const Navbar: React.FC = () => {
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           {/* Brand Logo */}
           <a href="#inicio" className="flex items-center gap-3 group">
-            <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-[#1C1A14] to-[#0A0A0C] border border-gold-500/50 flex items-center justify-center shadow-lg shadow-gold-500/10 group-hover:border-gold-400 transition-colors">
-              <span className="font-serif font-bold text-lg text-gold-metallic tracking-wider">S&S</span>
-            </div>
+            <img 
+              src="/logo.jpg" 
+              alt="Souza & Selly Advocacia" 
+              className="w-10 h-10 rounded-full object-cover border border-gold-500/50 shadow-md shadow-gold-500/10 group-hover:border-gold-400 group-hover:scale-105 transition-all" 
+            />
             <div className="flex flex-col">
-              <span className="font-serif text-lg font-bold tracking-tight text-white group-hover:text-gold-300 transition-colors">
+              <span className="font-serif text-base sm:text-lg font-bold tracking-tight text-white group-hover:text-gold-300 transition-colors">
                 Souza & Selly
               </span>
               <span className="text-[10px] tracking-widest uppercase font-semibold text-gold-500">

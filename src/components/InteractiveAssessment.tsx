@@ -82,8 +82,8 @@ Gostaria de agendar uma análise preliminar do meu caso.`;
         
         {/* Header */}
         <div className="text-center mb-10">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-gold-500/10 border border-gold-500/30 text-gold-400 text-[10px] font-semibold uppercase tracking-wider mb-3">
-            <Sparkles className="w-3 h-3" />
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold-500/10 border border-gold-500/30 text-gold-400 text-[10px] font-semibold uppercase tracking-wider mb-3">
+            <img src="/logo.jpg" alt="Souza & Selly" className="w-3.5 h-3.5 rounded-full object-cover border border-gold-500/50" />
             <span>Triagem Jurídica Rápida em 30 Segundos</span>
           </div>
 
@@ -223,11 +223,15 @@ Gostaria de agendar uma análise preliminar do meu caso.`;
           {/* Step 4: Final Screen with Pre-filled WhatsApp CTA */}
           {step === 4 && (
             <div className="text-center animate-fade-in-up py-4">
-              <div className="w-16 h-16 rounded-full bg-emerald-500/15 border border-emerald-500/40 text-emerald-400 flex items-center justify-center mx-auto mb-4">
-                <CheckCircle2 className="w-9 h-9" />
+              <div className="flex items-center justify-center gap-3 mb-4">
+                <img
+                  src="/logo.jpg"
+                  alt="Souza & Selly Advocacia"
+                  className="w-14 h-14 rounded-full object-cover border-2 border-gold-500/60 shadow-lg shadow-gold-500/20"
+                />
               </div>
 
-              <h3 className="font-serif text-2xl sm:text-3xl font-bold text-white mb-2">
+              <h3 className="font-serif text-xl sm:text-2xl font-bold text-white mb-2">
                 Triagem Concluída com Sucesso!
               </h3>
               

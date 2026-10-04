@@ -34,11 +34,13 @@ export const OfficeLocation: React.FC = () => {
           <div className="lg:col-span-5 rounded-2xl bg-[#121217] border border-gold-500/30 p-6 flex flex-col justify-between shadow-xl">
             <div>
               <div className="flex items-center gap-3 mb-5">
-                <div className="w-10 h-10 rounded-lg bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-gold-400">
-                  <MapPin className="w-5 h-5" />
-                </div>
+                <img
+                  src="/logo.jpg"
+                  alt="Souza & Selly Advocacia"
+                  className="w-11 h-11 rounded-full object-cover border border-gold-500/50 shadow-md shadow-gold-500/10 shrink-0"
+                />
                 <div>
-                  <h3 className="font-serif text-lg font-bold text-white">Sede Fortaleza</h3>
+                  <h3 className="font-serif text-base font-bold text-white">Sede Fortaleza</h3>
                   <p className="text-[11px] text-gold-400 font-medium">Bairro Parquelândia</p>
                 </div>
               </div>

@@ -18,11 +18,13 @@ export const Footer: React.FC = () => {
           {/* Brand Info */}
           <div className="lg:col-span-4 space-y-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-lg bg-[#15151A] border border-gold-500/50 flex items-center justify-center text-gold-400">
-                <span className="font-serif font-bold text-lg text-gold-metallic">S&S</span>
-              </div>
+              <img
+                src="/logo.jpg"
+                alt="Souza & Selly Advocacia"
+                className="w-12 h-12 rounded-full object-cover border border-gold-500/50 shadow-md shadow-gold-500/10"
+              />
               <div>
-                <h3 className="font-serif text-lg font-bold text-white">Souza & Selly</h3>
+                <h3 className="font-serif text-base font-bold text-white">Souza & Selly</h3>
                 <p className="text-[10px] tracking-widest uppercase font-semibold text-gold-400">
                   Advocacia Especializada
                 </p>
