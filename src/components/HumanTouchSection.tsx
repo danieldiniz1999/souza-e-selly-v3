@@ -33,7 +33,7 @@ export const HumanTouchSection: React.FC = () => {
           </h2>
           
           <p className="text-neutral-300 text-xs sm:text-sm font-light leading-relaxed">
-            Sabemos que quem mora no interior muitas vezes não tem condições físicas ou financeiras de viajar até a capital para lutar por seus direitos. Por isso, a <strong className="text-white">Dra. Samara Selly</strong> e a <strong className="text-white">Dra. Mariana Souza</strong> viajam pelo estado para ouvir cada história de perto.
+            Sabemos que quem mora no interior muitas vezes não tem condições físicas ou financeiras de viajar até a capital para lutar por seus direitos. Por isso, a <strong className="text-white">Dra. Samara Selly</strong> e a <strong className="text-white">Dra. Maria Souza</strong> viajam pelo estado para ouvir cada história de perto.
           </p>
         </div>
 

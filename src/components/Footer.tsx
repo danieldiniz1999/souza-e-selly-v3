@@ -39,7 +39,7 @@ export const Footer: React.FC = () => {
             <div className="pt-1 text-neutral-300 text-[11px] space-y-0.5">
               <p className="text-neutral-400 text-[10px] font-semibold uppercase tracking-wider">Sócias Fundadoras:</p>
               <p className="text-neutral-300">• Dra. Samara Selly – <span className="text-neutral-400">Previdenciário & Trabalho</span></p>
-              <p className="text-neutral-300">• Dra. Mariana Souza – <span className="text-neutral-400">Previdenciário & Tributário</span></p>
+              <p className="text-neutral-300">• Dra. Maria Souza – <span className="text-neutral-400">Previdenciário & Tributário</span></p>
             </div>
           </div>
 
@@ -52,7 +52,7 @@ export const Footer: React.FC = () => {
               <li><a href="#inicio" className="hover:text-gold-400 transition-colors">Início</a></li>
               <li><a href="#diferencial" className="hover:text-gold-400 transition-colors">Diferencial Interior</a></li>
               <li><a href="#areas" className="hover:text-gold-400 transition-colors">Áreas de Atuação</a></li>
-              <li><a href="#advogadas" className="hover:text-gold-400 transition-colors">Dra. Samara & Mariana</a></li>
+              <li><a href="#advogadas" className="hover:text-gold-400 transition-colors">Dra. Samara & Maria</a></li>
               <li><a href="#depoimentos" className="hover:text-gold-400 transition-colors">Depoimentos do CE</a></li>
               <li><a href="#localizacao" className="hover:text-gold-400 transition-colors">Sede em Fortaleza</a></li>
               <li><a href="#faq" className="hover:text-gold-400 transition-colors">Dúvidas Frequentes</a></li>

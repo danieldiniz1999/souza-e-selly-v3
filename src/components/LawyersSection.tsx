@@ -22,7 +22,7 @@ export const LawyersSection: React.FC = () => {
 
           <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-white leading-tight mb-2.5 sm:mb-3">
             Quem Luta Pelos Seus Direitos: <br className="hidden sm:inline" />
-            <span className="text-gold-metallic">Dra. Samara Selly e Dra. Mariana Souza</span>
+            <span className="text-gold-metallic">Dra. Samara Selly e Dra. Maria Souza</span>
           </h2>
 
           <p className="text-neutral-300 text-xs sm:text-sm font-light leading-relaxed">

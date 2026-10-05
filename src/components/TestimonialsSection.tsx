@@ -26,7 +26,7 @@ export const TestimonialsSection: React.FC = () => {
           </h2>
 
           <p className="text-neutral-300 text-xs sm:text-sm font-light leading-relaxed">
-            De Fortaleza aos cantos mais distantes do sertão cearense, conheça quem confiou na Dra. Samara Selly e na Dra. Mariana Souza para transformar injustiças em vitórias.
+            De Fortaleza aos cantos mais distantes do sertão cearense, conheça quem confiou na Dra. Samara Selly e na Dra. Maria Souza para transformar injustiças em vitórias.
           </p>
         </div>
 

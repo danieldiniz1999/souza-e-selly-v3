@@ -71,7 +71,7 @@ export const Hero: React.FC = () => {
             <p className="text-xs sm:text-sm lg:text-base text-neutral-300 leading-relaxed mb-5 sm:mb-6 max-w-xl font-light">
               Com sede em Fortaleza e atuação próxima em todo o interior do Ceará, a{' '}
               <strong className="text-white font-semibold">Dra. Samara Selly</strong> e a{' '}
-              <strong className="text-white font-semibold">Dra. Mariana Souza</strong>{' '}
+              <strong className="text-white font-semibold">Dra. Maria Souza</strong>{' '}
               lutam incansavelmente por quem teve seu benefício do INSS negado, sofreu injustiça no trabalho ou necessita de defesa cível segura.
             </p>
 
@@ -88,7 +88,7 @@ export const Hero: React.FC = () => {
             {/* Action Buttons */}
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 sm:gap-3 w-full sm:w-auto mb-6 sm:mb-8">
               <a
-                href={getWhatsAppUrl("Olá! Gostaria de uma avaliação gratuita do meu caso com a Dra. Samara e Dra. Mariana.")}
+                href={getWhatsAppUrl("Olá! Gostaria de uma avaliação gratuita do meu caso com a Dra. Samara e Dra. Maria.")}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-gold inline-flex items-center justify-center gap-2 px-4 sm:px-6 py-3 sm:py-3.5 rounded-xl text-xs font-bold uppercase tracking-wider text-black group"
@@ -205,15 +205,15 @@ export const Hero: React.FC = () => {
                       </div>
                     </div>
 
-                    {/* Dra Mariana */}
+                    {/* Dra Maria */}
                     <div className="group/subcard p-3 rounded-xl bg-[#17171C] border border-neutral-800/80 hover:border-gold-500/60 hover:bg-[#1a1a23] hover:translate-x-1.5 hover:shadow-lg hover:shadow-black/50 transition-all duration-300 flex items-center gap-3 cursor-pointer">
                       <img
                         src="https://images.unsplash.com/photo-1580894732444-8ecded7900cd?auto=format&fit=crop&w=120&q=80"
-                        alt="Dra. Mariana Souza"
+                        alt="Dra. Maria Souza"
                         className="w-11 h-11 rounded-lg object-cover border border-gold-500/40 group-hover/subcard:border-gold-400 group-hover/subcard:scale-105 shrink-0 transition-all duration-300 shadow-sm"
                       />
                       <div className="flex-1 min-w-0">
-                        <h4 className="text-xs font-bold text-white group-hover/subcard:text-gold-300 transition-colors duration-200 truncate">Dra. Mariana Souza</h4>
+                        <h4 className="text-xs font-bold text-white group-hover/subcard:text-gold-300 transition-colors duration-200 truncate">Dra. Maria Souza</h4>
                         <p className="text-[11px] text-gold-400 truncate">Pós em Previdenciário & Tributário</p>
                         <p className="text-[10px] text-neutral-400">Estratégia jurídica e patrimonial</p>
                       </div>

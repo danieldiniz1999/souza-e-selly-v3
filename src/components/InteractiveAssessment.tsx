@@ -172,7 +172,7 @@ export const InteractiveAssessment: React.FC = () => {
   };
 
   // WhatsApp pre-formatted rich message
-  const generatedWhatsAppMsg = `Olá, Dra. Samara e Dra. Mariana! Realizei a triagem completa no site oficial de vocês:
+  const generatedWhatsAppMsg = `Olá, Dra. Samara e Dra. Maria! Realizei a triagem completa no site oficial de vocês:
 • Área: ${selectedArea}
 • Demanda específica: ${selectedDetail}
 • Documentação: ${selectedDocs}
@@ -453,7 +453,7 @@ Gostaria de uma orientação jurídica personalizada sobre a viabilidade do meu 
               </h3>
               
               <p className="text-xs text-neutral-300 max-w-lg mx-auto mb-4 font-light">
-                Seus dados foram organizados. A <strong className="text-white font-semibold">Dra. Samara Selly</strong> e a <strong className="text-white font-semibold">Dra. Mariana Souza</strong> já receberão o seu caso mastigado para orientação direta.
+                Seus dados foram organizados. A <strong className="text-white font-semibold">Dra. Samara Selly</strong> e a <strong className="text-white font-semibold">Dra. Maria Souza</strong> já receberão o seu caso mastigado para orientação direta.
               </p>
 
               {/* Comprehensive Summary Card */}

@@ -12,7 +12,7 @@ export const FAQS: FaqItem[] = [
     category: "Atendimento no CE",
     categoryKey: "atendimento",
     question: "Moro no interior do Ceará. Como funciona o atendimento sem ir a Fortaleza?",
-    answer: "Esse é o maior diferencial da Souza & Selly: além de atendimento 100% digital seguro por WhatsApp e chamadas de vídeo, a Dra. Samara e a Dra. Mariana viajam regularmente pelo interior do Ceará para visitar clientes, coletar documentos e prestar apoio presencial humanizado."
+    answer: "Esse é o maior diferencial da Souza & Selly: além de atendimento 100% digital seguro por WhatsApp e chamadas de vídeo, a Dra. Samara e a Dra. Maria viajam regularmente pelo interior do Ceará para visitar clientes, coletar documentos e prestar apoio presencial humanizado."
   },
   {
     id: "faq-inss-negado",

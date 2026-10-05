@@ -18,7 +18,7 @@ export const OFFICE_INFO = {
 };
 
 export function getWhatsAppUrl(customMessage?: string) {
-  const defaultMsg = "Olá, Dra. Samara e Dra. Mariana! Vi o site do escritório Souza & Selly Advocacia e gostaria de tirar uma dúvida sobre o meu caso.";
+  const defaultMsg = "Olá, Dra. Samara e Dra. Maria! Vi o site do escritório Souza & Selly Advocacia e gostaria de tirar uma dúvida sobre o meu caso.";
   const msg = encodeURIComponent(customMessage || defaultMsg);
   return `https://wa.me/${OFFICE_INFO.whatsappNumber}?text=${msg}`;
 }
