@@ -110,9 +110,9 @@ export const Footer: React.FC = () => {
                 href={getWhatsAppUrl("Olá! Gostaria de falar com as advogadas.")}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full inline-flex items-center justify-center gap-1.5 px-3 py-2 rounded-lg text-[11px] font-bold uppercase tracking-wider text-black bg-gold-metallic hover:opacity-95 transition-all shadow-sm"
+                className="btn-gold w-full inline-flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-lg text-[11px] font-bold uppercase tracking-wider text-black group"
               >
-                <WhatsAppIcon className="w-3.5 h-3.5 fill-black/80" />
+                <WhatsAppIcon className="w-3.5 h-3.5 fill-black/80 group-hover:scale-110 transition-transform duration-200" />
                 <span>Falar no WhatsApp</span>
               </a>
             </div>
@@ -131,10 +131,10 @@ export const Footer: React.FC = () => {
             </p>
             <button
               onClick={scrollToTop}
-              className="inline-flex items-center gap-1 hover:text-gold-400 transition-colors text-neutral-400"
+              className="inline-flex items-center gap-1.5 hover:text-gold-300 hover:-translate-y-0.5 active:translate-y-0 transition-all text-neutral-400 px-2.5 py-1 rounded-md hover:bg-neutral-900 group"
             >
               <span>Voltar ao topo</span>
-              <ArrowUp className="w-3 h-3" />
+              <ArrowUp className="w-3 h-3 group-hover:-translate-y-0.5 transition-transform" />
             </button>
           </div>
         </div>

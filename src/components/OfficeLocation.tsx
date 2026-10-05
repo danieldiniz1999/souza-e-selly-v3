@@ -111,9 +111,9 @@ export const OfficeLocation: React.FC = () => {
                 href={OFFICE_INFO.googleMapsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 sm:py-3 rounded-xl text-xs font-bold uppercase tracking-wider text-neutral-200 bg-[#1D1D26] hover:bg-[#252535] border border-neutral-700 hover:border-gold-500/60 hover:text-white hover:scale-[1.02] active:scale-[0.98] transition-all duration-300"
+                className="btn-dark-luxury w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 sm:py-3 rounded-xl text-xs font-bold uppercase tracking-wider text-neutral-200 group"
               >
-                <ExternalLink className="w-3.5 h-3.5 text-gold-400" />
+                <ExternalLink className="w-3.5 h-3.5 text-gold-400 group-hover:scale-110 transition-transform duration-200" />
                 <span>Traçar Rota no Google Maps</span>
               </a>
 
@@ -121,7 +121,7 @@ export const OfficeLocation: React.FC = () => {
                 href={getWhatsAppUrl("Olá! Gostaria de agendar um horário para atendimento presencial na sede da Parquelândia.")}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 sm:py-3 rounded-xl text-xs font-bold uppercase tracking-wider text-black bg-gold-metallic hover:scale-[1.02] hover:shadow-[0_0_25px_rgba(197,160,89,0.5)] active:scale-[0.98] transition-all duration-300"
+                className="btn-gold w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 sm:py-3 rounded-xl text-xs font-bold uppercase tracking-wider text-black group"
               >
                 <span>Agendar Horário na Sede</span>
               </a>

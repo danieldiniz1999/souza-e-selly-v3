@@ -91,18 +91,18 @@ export const Hero: React.FC = () => {
                 href={getWhatsAppUrl("Olá! Gostaria de uma avaliação gratuita do meu caso com a Dra. Samara e Dra. Mariana.")}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-4 sm:px-6 py-3 sm:py-3.5 rounded-xl text-xs font-bold uppercase tracking-wider text-black bg-gold-metallic shadow-lg shadow-gold-500/20 hover:shadow-gold-500/35 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 group"
+                className="btn-gold inline-flex items-center justify-center gap-2 px-4 sm:px-6 py-3 sm:py-3.5 rounded-xl text-xs font-bold uppercase tracking-wider text-black group"
               >
                 <WhatsAppIcon className="w-4 h-4 fill-black/80 group-hover:scale-110 transition-transform shrink-0" />
                 <span>Avaliar Meu Caso no WhatsApp</span>
-                <ArrowRight className="w-3.5 h-3.5 ml-0.5 group-hover:translate-x-1 transition-transform shrink-0" />
+                <ArrowRight className="w-3.5 h-3.5 ml-0.5 group-hover:translate-x-1.5 transition-transform shrink-0" />
               </a>
 
               <a
                 href="#triagem"
-                className="inline-flex items-center justify-center gap-2 px-4 sm:px-5 py-3 sm:py-3.5 rounded-xl text-xs font-semibold text-neutral-200 bg-[#16161A] hover:bg-[#202026] border border-gold-500/30 hover:border-gold-500/50 transition-all duration-300"
+                className="btn-dark-luxury inline-flex items-center justify-center gap-2 px-4 sm:px-5 py-3 sm:py-3.5 rounded-xl text-xs font-semibold text-neutral-200 group"
               >
-                <Scale className="w-3.5 h-3.5 text-gold-400 shrink-0" />
+                <Scale className="w-3.5 h-3.5 text-gold-400 group-hover:scale-110 transition-transform shrink-0" />
                 <span>Simular Meu Direito Online</span>
               </a>
             </div>

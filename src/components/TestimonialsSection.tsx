@@ -105,11 +105,11 @@ export const TestimonialsSection: React.FC = () => {
             href={getWhatsAppUrl("Olá! Li os depoimentos de clientes do Ceará no site de vocês e gostaria de contar a minha situação.")}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider text-black bg-gold-metallic hover:opacity-95 shadow-md shadow-gold-500/20 transition-all w-full sm:w-auto"
+            className="btn-gold inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl text-xs font-bold uppercase tracking-wider text-black w-full sm:w-auto group"
           >
-            <WhatsAppIcon className="w-3.5 h-3.5 fill-black/80" />
+            <WhatsAppIcon className="w-3.5 h-3.5 fill-black/80 group-hover:scale-110 transition-transform duration-200" />
             <span>Quero Uma Avaliação do Meu Caso</span>
-            <ArrowRight className="w-3.5 h-3.5" />
+            <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1.5 transition-transform" />
           </a>
         </div>
 

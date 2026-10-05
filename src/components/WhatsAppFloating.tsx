@@ -62,9 +62,9 @@ export const WhatsAppFloating: React.FC = () => {
             href={getWhatsAppUrl("Olá, advogadas! Vi o aviso no site e gostaria de tirar uma dúvida sobre meus direitos.")}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-1.5 w-full py-1.5 px-2.5 rounded-lg text-[11px] font-bold uppercase tracking-wider text-black bg-gold-metallic hover:opacity-95 shadow transition-all"
+            className="btn-gold inline-flex items-center justify-center gap-1.5 w-full py-2 px-3 rounded-lg text-[11px] font-bold uppercase tracking-wider text-black group"
           >
-            <WhatsAppIcon className="w-3.5 h-3.5 fill-black/80" />
+            <WhatsAppIcon className="w-3.5 h-3.5 fill-black/80 group-hover:scale-110 transition-transform duration-200" />
             <span>Falar no WhatsApp</span>
           </a>
         </div>
@@ -76,16 +76,16 @@ export const WhatsAppFloating: React.FC = () => {
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Falar no WhatsApp com as advogadas"
-        className="pointer-events-auto relative group flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-[#25D366] hover:bg-[#20bd5a] text-white shadow-xl shadow-[#25D366]/40 hover:scale-105 active:scale-95 transition-all duration-300 border-2 border-white/20"
+        className="pointer-events-auto relative group flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-[#25D366] hover:bg-[#20bd5a] text-white shadow-2xl shadow-[#25D366]/40 hover:scale-110 active:scale-95 hover:shadow-[0_0_35px_rgba(37,211,102,0.6)] transition-all duration-300 border-2 border-white/20"
       >
         {/* Pulsing ring */}
         <span className="absolute -inset-1 rounded-full bg-[#25D366]/40 animate-ping opacity-75 pointer-events-none" />
 
         {/* Authentic WhatsApp Icon */}
-        <WhatsAppIcon className="w-6 h-6 sm:w-7 sm:h-7 text-white fill-current" />
+        <WhatsAppIcon className="w-6 h-6 sm:w-7 sm:h-7 text-white fill-current group-hover:scale-110 transition-transform duration-200" />
 
         {/* Unread notification badge */}
-        <span className="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-red-600 text-white text-[9px] font-extrabold flex items-center justify-center border-2 border-[#09090B] shadow">
+        <span className="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-red-600 text-white text-[9px] font-extrabold flex items-center justify-center border-2 border-[#09090B] shadow animate-pulse">
           1
         </span>
       </a>

@@ -123,11 +123,11 @@ export const PracticeAreas: React.FC = () => {
                   href={getWhatsAppUrl(`Olá, advogadas! Gostaria de conversar com vocês sobre um caso de ${activeArea.title}.`)}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full inline-flex items-center justify-center gap-1.5 sm:gap-2 px-3.5 sm:px-4 py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider text-black bg-gold-metallic hover:scale-105 hover:shadow-[0_0_20px_rgba(197,160,89,0.4)] active:scale-95 transition-all duration-300 group"
+                  className="btn-gold w-full inline-flex items-center justify-center gap-1.5 sm:gap-2 px-3.5 sm:px-4 py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider text-black group"
                 >
-                  <WhatsAppIcon className="w-3.5 h-3.5 fill-black/80 shrink-0" />
+                  <WhatsAppIcon className="w-3.5 h-3.5 fill-black/80 group-hover:scale-110 transition-transform shrink-0" />
                   <span className="truncate">Consultar {activeArea.title}</span>
-                  <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform shrink-0" />
+                  <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1.5 transition-transform shrink-0" />
                 </a>
                 <p className="text-[10px] text-center text-neutral-400 mt-1">
                   Atendimento sigiloso direto com a equipe jurídica especializada

@@ -107,10 +107,10 @@ export const ProcessTimeline: React.FC = () => {
             href={getWhatsAppUrl("Olá! Gostaria de dar o primeiro passo e enviar meu caso para avaliação.")}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-3 rounded-xl text-xs font-bold uppercase tracking-wider text-black bg-gold-metallic hover:opacity-95 shadow-md shadow-gold-500/20 transition-all w-full sm:w-auto"
+            className="btn-gold inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl text-xs font-bold uppercase tracking-wider text-black w-full sm:w-auto group"
           >
             <span>Dar o Primeiro Passo Agora</span>
-            <ArrowRight className="w-3.5 h-3.5" />
+            <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1.5 transition-transform" />
           </a>
         </div>
 

@@ -242,18 +242,18 @@ Gostaria de uma orientação jurídica personalizada sobre a viabilidade do meu 
                   <button
                     key={a.id}
                     onClick={() => handleNextStep1(a.id)}
-                    className="flex items-center gap-3 p-3 rounded-xl bg-[#181820] border border-neutral-800 hover:border-gold-500/50 hover:bg-[#1E1E28] transition-all text-left group"
+                    className="flex items-center gap-3 p-3 sm:p-3.5 rounded-xl bg-[#181820] border border-neutral-800/90 hover:border-gold-500/60 hover:bg-[#1E1E28] hover:-translate-y-0.5 hover:shadow-lg hover:shadow-black/50 active:scale-[0.98] transition-all duration-300 text-left group"
                   >
-                    <span className="text-xl shrink-0 p-1 rounded-lg bg-neutral-800/80">{a.icon}</span>
+                    <span className="text-xl shrink-0 p-1.5 rounded-lg bg-neutral-800/80 group-hover:scale-110 group-hover:bg-gold-500/15 transition-all">{a.icon}</span>
                     <div className="flex-1 min-w-0">
-                      <h4 className="text-xs sm:text-sm font-bold text-white group-hover:text-gold-300 transition-colors">
+                      <h4 className="text-xs sm:text-sm font-bold text-white group-hover:text-gold-200 transition-colors">
                         {a.id}
                       </h4>
                       <p className="text-[11px] text-neutral-400 mt-0.5 font-light truncate sm:whitespace-normal">
                         {a.label}
                       </p>
                     </div>
-                    <ArrowRight className="w-4 h-4 text-neutral-500 group-hover:text-gold-400 group-hover:translate-x-1 transition-all shrink-0" />
+                    <ArrowRight className="w-4 h-4 text-neutral-500 group-hover:text-gold-400 group-hover:translate-x-1.5 transition-all shrink-0" />
                   </button>
                 ))}
               </div>
@@ -266,7 +266,7 @@ Gostaria de uma orientação jurídica personalizada sobre a viabilidade do meu 
               <div className="flex items-center justify-between mb-3">
                 <button 
                   onClick={() => setStep(1)}
-                  className="text-xs text-gold-400 hover:underline flex items-center gap-1"
+                  className="text-xs text-gold-400 hover:text-gold-300 hover:-translate-x-0.5 transition-all flex items-center gap-1"
                 >
                   ← Voltar à etapa anterior
                 </button>
@@ -287,12 +287,12 @@ Gostaria de uma orientação jurídica personalizada sobre a viabilidade do meu 
                   <button
                     key={idx}
                     onClick={() => handleNextStep2(item)}
-                    className="flex items-center justify-between gap-3 p-3 rounded-xl bg-[#181820] border border-neutral-800 hover:border-gold-500/50 hover:bg-[#1E1E28] transition-all text-left group"
+                    className="flex items-center justify-between gap-3 p-3 sm:p-3.5 rounded-xl bg-[#181820] border border-neutral-800/90 hover:border-gold-500/60 hover:bg-[#1E1E28] hover:-translate-y-0.5 hover:shadow-lg hover:shadow-black/50 active:scale-[0.98] transition-all duration-300 text-left group"
                   >
                     <span className="text-xs text-neutral-200 group-hover:text-white font-medium leading-relaxed">
                       {item}
                     </span>
-                    <ArrowRight className="w-4 h-4 text-neutral-500 group-hover:text-gold-400 group-hover:translate-x-1 transition-all shrink-0" />
+                    <ArrowRight className="w-4 h-4 text-neutral-500 group-hover:text-gold-400 group-hover:translate-x-1.5 transition-all shrink-0" />
                   </button>
                 ))}
               </div>
@@ -326,18 +326,18 @@ Gostaria de uma orientação jurídica personalizada sobre a viabilidade do meu 
                   <button
                     key={idx}
                     onClick={() => handleNextStep3(doc.title)}
-                    className="flex items-start gap-3 p-3 rounded-xl bg-[#181820] border border-neutral-800 hover:border-gold-500/50 hover:bg-[#1E1E28] transition-all text-left group"
+                    className="flex items-start gap-3 p-3 sm:p-3.5 rounded-xl bg-[#181820] border border-neutral-800/90 hover:border-gold-500/60 hover:bg-[#1E1E28] hover:-translate-y-0.5 hover:shadow-lg hover:shadow-black/50 active:scale-[0.98] transition-all duration-300 text-left group"
                   >
-                    <FileText className="w-4 h-4 text-gold-400 shrink-0 mt-0.5" />
+                    <FileText className="w-4 h-4 text-gold-400 group-hover:scale-110 transition-transform shrink-0 mt-0.5" />
                     <div className="flex-1">
-                      <h4 className="text-xs font-bold text-white group-hover:text-gold-300 transition-colors">
+                      <h4 className="text-xs font-bold text-white group-hover:text-gold-200 transition-colors">
                         {doc.title}
                       </h4>
                       <p className="text-[11px] text-neutral-400 mt-0.5 font-light">
                         {doc.desc}
                       </p>
                     </div>
-                    <ArrowRight className="w-4 h-4 text-neutral-500 group-hover:text-gold-400 group-hover:translate-x-1 transition-all shrink-0 mt-1" />
+                    <ArrowRight className="w-4 h-4 text-neutral-500 group-hover:text-gold-400 group-hover:translate-x-1.5 transition-all shrink-0 mt-1" />
                   </button>
                 ))}
               </div>
@@ -350,7 +350,7 @@ Gostaria de uma orientação jurídica personalizada sobre a viabilidade do meu 
               <div className="flex items-center justify-between mb-3">
                 <button 
                   onClick={() => setStep(3)}
-                  className="text-xs text-gold-400 hover:underline flex items-center gap-1"
+                  className="text-xs text-gold-400 hover:text-gold-300 hover:-translate-x-0.5 transition-all flex items-center gap-1"
                 >
                   ← Voltar à etapa anterior
                 </button>
@@ -371,12 +371,12 @@ Gostaria de uma orientação jurídica personalizada sobre a viabilidade do meu 
                   <button
                     key={idx}
                     onClick={() => handleNextStep4(u.title)}
-                    className="flex items-start justify-between gap-3 p-3.5 rounded-xl bg-[#181820] border border-neutral-800 hover:border-gold-500/50 hover:bg-[#1E1E28] transition-all text-left group"
+                    className="flex items-start justify-between gap-3 p-3.5 rounded-xl bg-[#181820] border border-neutral-800/90 hover:border-gold-500/60 hover:bg-[#1E1E28] hover:-translate-y-0.5 hover:shadow-lg hover:shadow-black/50 active:scale-[0.98] transition-all duration-300 text-left group"
                   >
                     <div className="flex items-start gap-3">
-                      <Clock className="w-4 h-4 text-gold-400 shrink-0 mt-0.5" />
+                      <Clock className="w-4 h-4 text-gold-400 group-hover:scale-110 transition-transform shrink-0 mt-0.5" />
                       <div>
-                        <h4 className="text-xs font-bold text-white group-hover:text-gold-300 transition-colors">
+                        <h4 className="text-xs font-bold text-white group-hover:text-gold-200 transition-colors">
                           {u.title}
                         </h4>
                         <p className="text-[11px] text-neutral-400 mt-0.5 font-light">
@@ -384,7 +384,7 @@ Gostaria de uma orientação jurídica personalizada sobre a viabilidade do meu 
                         </p>
                       </div>
                     </div>
-                    <span className={`text-[10px] font-bold px-2 py-0.5 rounded-md border shrink-0 ${u.badgeColor}`}>
+                    <span className={`text-[10px] font-bold px-2 py-0.5 rounded-md border shrink-0 transition-transform group-hover:scale-105 ${u.badgeColor}`}>
                       {u.badge}
                     </span>
                   </button>
@@ -399,7 +399,7 @@ Gostaria de uma orientação jurídica personalizada sobre a viabilidade do meu 
               <div className="flex items-center justify-between mb-3">
                 <button 
                   onClick={() => setStep(4)}
-                  className="text-xs text-gold-400 hover:underline flex items-center gap-1"
+                  className="text-xs text-gold-400 hover:text-gold-300 hover:-translate-x-0.5 transition-all flex items-center gap-1"
                 >
                   ← Voltar à etapa anterior
                 </button>
@@ -420,10 +420,10 @@ Gostaria de uma orientação jurídica personalizada sobre a viabilidade do meu 
                   <button
                     key={idx}
                     onClick={() => handleFinish(loc)}
-                    className="flex items-center gap-2.5 p-3 rounded-xl bg-[#181820] border border-neutral-800 hover:border-gold-500/50 hover:bg-[#1E1E28] transition-all text-left group"
+                    className="flex items-center gap-2.5 p-3 rounded-xl bg-[#181820] border border-neutral-800/90 hover:border-gold-500/60 hover:bg-[#1E1E28] hover:-translate-y-0.5 hover:shadow-md active:scale-[0.98] transition-all duration-300 text-left group"
                   >
-                    <MapPin className="w-3.5 h-3.5 text-gold-400 shrink-0" />
-                    <span className="text-xs text-neutral-200 group-hover:text-white font-medium">
+                    <MapPin className="w-3.5 h-3.5 text-gold-400 group-hover:scale-110 transition-transform shrink-0" />
+                    <span className="text-xs text-neutral-200 group-hover:text-gold-200 font-medium transition-colors">
                       {loc}
                     </span>
                   </button>
@@ -486,18 +486,18 @@ Gostaria de uma orientação jurídica personalizada sobre a viabilidade do meu 
                   href={getWhatsAppUrl(generatedWhatsAppMsg)}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full inline-flex items-center justify-center gap-2.5 px-6 py-3 rounded-xl text-xs font-bold uppercase tracking-wider text-black bg-gold-metallic hover:opacity-95 shadow-xl shadow-gold-500/25 transition-all group"
+                  className="btn-gold w-full inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl text-xs font-bold uppercase tracking-wider text-black group"
                 >
-                  <WhatsAppIcon className="w-4 h-4 fill-black/80" />
+                  <WhatsAppIcon className="w-4 h-4 fill-black/80 group-hover:scale-110 transition-transform" />
                   <span>Enviar Diagnóstico para as Advogadas</span>
-                  <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1.5 transition-transform" />
                 </a>
 
                 <button
                   onClick={handleReset}
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-1.5 px-4 py-3 rounded-xl text-xs font-semibold text-neutral-400 hover:text-white bg-[#181820] border border-neutral-800 transition-colors shrink-0"
+                  className="btn-dark-luxury w-full sm:w-auto inline-flex items-center justify-center gap-1.5 px-4 py-3.5 rounded-xl text-xs font-semibold text-neutral-300 shrink-0 group"
                 >
-                  <RotateCcw className="w-3.5 h-3.5" />
+                  <RotateCcw className="w-3.5 h-3.5 group-hover:-rotate-45 transition-transform" />
                   <span>Refazer</span>
                 </button>
               </div>

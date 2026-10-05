@@ -120,9 +120,9 @@ export const LawyersSection: React.FC = () => {
                     href={getWhatsAppUrl(`Olá! Gostaria de falar especificamente com a ${lawyer.name} sobre meu caso.`)}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full inline-flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider text-black bg-gold-metallic hover:opacity-95 shadow-md shadow-gold-500/20 transition-all"
+                    className="btn-gold w-full inline-flex items-center justify-center gap-2 px-4 py-3 rounded-xl text-xs font-bold uppercase tracking-wider text-black group"
                   >
-                    <WhatsAppIcon className="w-3.5 h-3.5 fill-black/80" />
+                    <WhatsAppIcon className="w-3.5 h-3.5 fill-black/80 group-hover:scale-110 transition-transform duration-200" />
                     <span>Falar com {lawyer.name.split(' ')[0]} {lawyer.name.split(' ')[1]}</span>
                   </a>
                 </div>

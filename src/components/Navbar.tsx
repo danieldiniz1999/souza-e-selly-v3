@@ -74,10 +74,9 @@ export const Navbar: React.FC = () => {
               href={getWhatsAppUrl()}
               target="_blank"
               rel="noopener noreferrer"
-              className="relative inline-flex items-center justify-center gap-2 px-3.5 xl:px-5 py-2 sm:py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider text-black bg-gold-metallic hover:opacity-95 transition-all duration-300 shadow-lg shadow-gold-500/20 hover:shadow-gold-500/40 hover:-translate-y-0.5 active:translate-y-0 overflow-hidden group shrink-0"
+              className="btn-gold relative inline-flex items-center justify-center gap-2 px-3.5 xl:px-5 py-2 sm:py-2.5 rounded-full text-xs font-bold uppercase tracking-wider text-black group shrink-0"
             >
-              <span className="absolute inset-0 w-1/2 h-full bg-white/20 skew-x-12 -translate-x-full group-hover:translate-x-[300%] transition-transform duration-1000 ease-out" />
-              <WhatsAppIcon className="w-3.5 h-3.5 sm:w-4 sm:h-4 fill-black/80" />
+              <WhatsAppIcon className="w-3.5 h-3.5 sm:w-4 sm:h-4 fill-black/80 group-hover:scale-110 transition-transform duration-200" />
               <span className="hidden xl:inline">Consulta no WhatsApp</span>
               <span className="xl:hidden">WhatsApp</span>
             </a>
@@ -86,7 +85,7 @@ export const Navbar: React.FC = () => {
           {/* Mobile/Tablet Menu Button */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden p-2 rounded-lg text-neutral-300 hover:text-gold-400 hover:bg-neutral-900 border border-neutral-800 transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center shrink-0"
+            className="lg:hidden p-2 rounded-lg text-neutral-300 hover:text-gold-400 hover:bg-neutral-900 border border-neutral-800 hover:border-gold-500/50 hover:scale-105 active:scale-95 transition-all min-h-[44px] min-w-[44px] flex items-center justify-center shrink-0"
             aria-label="Menu principal"
           >
             {mobileMenuOpen ? <X className="w-5 h-5 sm:w-6 sm:h-6" /> : <Menu className="w-5 h-5 sm:w-6 sm:h-6" />}
@@ -115,9 +114,9 @@ export const Navbar: React.FC = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="w-full inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl text-xs font-semibold uppercase tracking-wider text-black bg-gold-metallic shadow-lg shadow-gold-500/20 active:scale-95 transition-transform"
+                  className="btn-gold w-full inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl text-xs font-bold uppercase tracking-wider text-black group"
                 >
-                  <WhatsAppIcon className="w-4 h-4 fill-black/80" />
+                  <WhatsAppIcon className="w-4 h-4 fill-black/80 group-hover:scale-110 transition-transform duration-200" />
                   <span>Falar com as Advogadas no WhatsApp</span>
                 </a>
               </div>
