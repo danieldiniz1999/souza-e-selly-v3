@@ -183,44 +183,46 @@ Gostaria de uma orientação jurídica personalizada sobre a viabilidade do meu 
 
   return (
     <section id="triagem" className="py-16 bg-[#0B0B0E] relative overflow-hidden">
-      {/* Background glow */}
+      {/* Background glow & luxury spotlight */}
+      <div className="ambient-gold-spotlight top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[400px]" />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[350px] bg-gold-500/10 rounded-full blur-[160px] pointer-events-none" />
 
       <div className="max-w-3xl mx-auto px-3.5 sm:px-6 lg:px-8 relative z-10">
         
         {/* Header */}
         <div className="text-center mb-6 sm:mb-8">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold-500/10 border border-gold-500/30 text-gold-400 text-[10px] font-semibold uppercase tracking-wider mb-2.5">
-            <img src="/logo.jpg" alt="Souza & Selly" className="w-3.5 h-3.5 rounded-full object-cover border border-gold-500/50" />
-            <span>Triagem Jurídica Completa • Passo a Passo</span>
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-gradient-to-r from-[#1C1812] to-[#141419] border border-gold-500/40 text-gold-300 text-[10px] font-semibold uppercase tracking-wider mb-2.5 shadow-md shadow-gold-500/5">
+            <img src="/logo.jpg" alt="Souza & Selly" className="w-3.5 h-3.5 rounded-full object-cover border border-gold-400/60" />
+            <span>Triagem Jurídica Digital • 100% Gratuita</span>
           </div>
 
           <h2 className="font-serif text-2xl sm:text-3xl font-bold text-white mb-2 leading-tight">
             Descubra a Viabilidade do seu <span className="text-gold-metallic">Direito</span>
           </h2>
           
-          <p className="text-neutral-400 text-xs sm:text-sm font-light max-w-lg mx-auto">
+          <p className="text-neutral-300 text-xs sm:text-sm font-light max-w-lg mx-auto">
             Siga as 5 etapas guiadas para mapear sua situação e receber um atendimento totalmente mastigado e direto com as advogadas.
           </p>
         </div>
 
         {/* Card Container */}
-        <div className="rounded-2xl bg-[#121217] border border-gold-500/30 p-4 sm:p-6 lg:p-7 shadow-xl relative transition-all duration-300">
+        <div className="card-radiant-gold p-4 sm:p-6 lg:p-8 shadow-2xl relative transition-all duration-300">
           
           {/* Progress Indicator */}
           {step <= TOTAL_STEPS && (
             <div className="mb-6">
-              <div className="flex justify-between items-center text-xs text-neutral-400 mb-1.5">
-                <span className="font-medium text-neutral-300">
-                  Etapa <strong className="text-white font-bold">{step}</strong> de {TOTAL_STEPS}
+              <div className="flex justify-between items-center text-xs text-neutral-300 mb-2">
+                <span className="font-semibold text-white flex items-center gap-1.5">
+                  <span className="w-2 h-2 rounded-full bg-gold-400 animate-pulse" />
+                  Etapa <strong className="text-gold-300 font-bold">{step}</strong> de {TOTAL_STEPS}
                 </span>
-                <span className="text-gold-400 font-semibold text-[11px]">
+                <span className="text-gold-400 font-bold text-[11px] px-2 py-0.5 rounded-full bg-gold-500/10 border border-gold-500/20">
                   {Math.round((step / TOTAL_STEPS) * 100)}% concluído
                 </span>
               </div>
-              <div className="w-full h-1.5 bg-neutral-800 rounded-full overflow-hidden">
+              <div className="w-full h-2 bg-neutral-900 rounded-full overflow-hidden p-[1px] border border-neutral-800">
                 <div 
-                  className="h-full bg-gold-metallic transition-all duration-500 ease-out"
+                  className="h-full bg-gradient-to-r from-gold-600 via-gold-400 to-amber-200 rounded-full transition-all duration-500 ease-out shadow-[0_0_12px_rgba(197,160,89,0.5)]"
                   style={{ width: `${(step / TOTAL_STEPS) * 100}%` }}
                 />
               </div>

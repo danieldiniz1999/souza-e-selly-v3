@@ -7,7 +7,8 @@ import { getWhatsAppUrl } from '@/lib/utils';
 export const LawyersSection: React.FC = () => {
   return (
     <section id="advogadas" className="py-12 sm:py-16 lg:py-20 bg-[#09090B] relative overflow-hidden">
-      {/* Background accents */}
+      {/* Background accents & luxury spotlight */}
+      <div className="ambient-gold-spotlight top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px]" />
       <div className="absolute top-1/2 right-10 w-80 h-80 bg-gold-500/5 rounded-full blur-[140px] pointer-events-none" />
       <div className="absolute bottom-10 left-10 w-72 h-72 bg-gold-600/5 rounded-full blur-[130px] pointer-events-none" />
 
@@ -16,7 +17,7 @@ export const LawyersSection: React.FC = () => {
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-10">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-gold-500/10 border border-gold-500/30 text-gold-400 text-[10px] font-semibold uppercase tracking-wider mb-2.5">
-            <Award className="w-3 h-3" />
+            <Award className="w-3 h-3 text-gold-400" />
             <span>Sócias Fundadoras</span>
           </div>
 
@@ -35,7 +36,7 @@ export const LawyersSection: React.FC = () => {
           {LAWYERS.map((lawyer) => (
             <div 
               key={lawyer.id}
-              className="rounded-2xl bg-[#111116] border border-gold-500/30 overflow-hidden shadow-xl flex flex-col sm:flex-row group hover:border-gold-500/50 transition-all duration-300"
+              className="card-radiant-gold overflow-hidden shadow-2xl flex flex-col sm:flex-row group hover:border-gold-400/80 transition-all duration-300"
             >
               {/* Photo Column on Left */}
               <div className="relative w-full sm:w-44 md:w-52 lg:w-40 xl:w-48 shrink-0 overflow-hidden bg-neutral-900 h-64 sm:h-auto sm:min-h-full">

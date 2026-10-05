@@ -92,15 +92,16 @@ export const FaqSection: React.FC = () => {
 
   return (
     <section id="faq" className="py-12 sm:py-16 bg-[#09090B] relative overflow-hidden">
-      {/* Background accents */}
+      {/* Background accents & luxury spotlight */}
+      <div className="ambient-gold-spotlight bottom-10 left-10 w-[600px] h-[350px]" />
       <div className="absolute bottom-10 left-10 w-72 h-72 bg-gold-500/5 rounded-full blur-[140px] pointer-events-none" />
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 relative z-10">
         
         {/* Header Compact */}
         <div className="text-center mb-6 sm:mb-8">
-          <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-gold-500/10 border border-gold-500/30 text-gold-400 text-[10px] font-semibold uppercase tracking-wider mb-2">
-            <HelpCircle className="w-3 h-3" />
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-gold-500/10 border border-gold-500/30 text-gold-400 text-[10px] font-semibold uppercase tracking-wider mb-2">
+            <HelpCircle className="w-3 h-3 text-gold-400" />
             <span>Tire Suas Dúvidas</span>
           </div>
 
@@ -108,7 +109,7 @@ export const FaqSection: React.FC = () => {
             Perguntas Frequentes & <span className="text-gold-metallic">Respostas Claras</span>
           </h2>
 
-          <p className="text-neutral-400 text-xs sm:text-sm font-light leading-relaxed max-w-lg mx-auto mb-4">
+          <p className="text-neutral-300 text-xs sm:text-sm font-light leading-relaxed max-w-lg mx-auto mb-4">
             Respostas diretas sobre o INSS, ações trabalhistas, inventários e atendimento no Ceará.
           </p>
 

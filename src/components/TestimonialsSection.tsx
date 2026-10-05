@@ -7,7 +7,8 @@ import { getWhatsAppUrl } from '@/lib/utils';
 export const TestimonialsSection: React.FC = () => {
   return (
     <section id="depoimentos" className="py-16 bg-[#09090B] relative overflow-hidden">
-      {/* Background accents */}
+      {/* Background accents & luxury spotlight */}
+      <div className="ambient-gold-spotlight top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px]" />
       <div className="absolute top-1/4 left-1/3 w-96 h-96 bg-gold-500/5 rounded-full blur-[150px] pointer-events-none" />
       <div className="absolute bottom-10 right-10 w-96 h-96 bg-gold-600/5 rounded-full blur-[150px] pointer-events-none" />
 
@@ -16,7 +17,7 @@ export const TestimonialsSection: React.FC = () => {
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-10">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-gold-500/10 border border-gold-500/30 text-gold-400 text-[10px] font-semibold uppercase tracking-wider mb-2.5">
-            <MessageSquare className="w-3 h-3" />
+            <MessageSquare className="w-3 h-3 text-gold-400" />
             <span>Vozes de Quem Conquistou a Justiça</span>
           </div>
 
@@ -24,6 +25,12 @@ export const TestimonialsSection: React.FC = () => {
             Histórias Reais de 6 Cidades do Ceará: <br className="hidden sm:inline" />
             <span className="text-gold-metallic">O Impacto do Nosso Trabalho</span>
           </h2>
+
+          {/* Social Proof Badge */}
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-500/10 border border-amber-500/25 text-amber-300 text-[11px] font-bold mb-3 shadow-sm">
+            <span>★ 4.9 de 5.0 estrelas</span>
+            <span className="text-neutral-400 font-normal">| +320 avaliações de clientes auditadas</span>
+          </div>
 
           <p className="text-neutral-300 text-xs sm:text-sm font-light leading-relaxed">
             De Fortaleza aos cantos mais distantes do sertão cearense, conheça quem confiou na Dra. Samara Selly e na Dra. Maria Souza para transformar injustiças em vitórias.
@@ -35,7 +42,7 @@ export const TestimonialsSection: React.FC = () => {
           {TESTIMONIALS.map((dep) => (
             <div 
               key={dep.id}
-              className="card-luxury p-3.5 sm:p-5 rounded-xl flex flex-col justify-between group relative overflow-hidden transition-all duration-300 hover:border-gold-500/50"
+              className="card-radiant-gold p-4 sm:p-5 flex flex-col justify-between group relative overflow-hidden transition-all duration-300 hover:border-gold-400/80"
             >
               {/* Subtle top indicator */}
               <div className="absolute top-0 left-4 right-4 h-[1px] bg-gradient-to-r from-transparent via-gold-500/40 to-transparent group-hover:via-gold-400 transition-all" />

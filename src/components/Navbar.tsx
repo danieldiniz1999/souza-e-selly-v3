@@ -32,27 +32,38 @@ export const Navbar: React.FC = () => {
       <nav 
         className={`px-3.5 sm:px-6 lg:px-8 transition-all duration-300 ${
           isScrolled 
-            ? 'bg-[#09090B]/95 backdrop-blur-md py-2.5 sm:py-3 shadow-xl shadow-black/50 border-b border-gold-500/20' 
-            : 'bg-gradient-to-b from-black/85 to-transparent py-3.5 sm:py-5'
+            ? 'bg-[#09090B]/90 backdrop-blur-xl py-2.5 sm:py-3 shadow-2xl shadow-black/80 border-b border-gold-500/25' 
+            : 'bg-gradient-to-b from-black/90 via-black/40 to-transparent py-3.5 sm:py-5'
         }`}
       >
         <div className="max-w-7xl mx-auto flex items-center justify-between">
-          {/* Brand Logo */}
-          <a href="#inicio" className="flex items-center gap-2.5 sm:gap-3 group shrink-0 mr-4 lg:mr-6 xl:mr-8">
-            <img 
-              src="/logo.jpg" 
-              alt="Souza & Selly Advocacia" 
-              className="w-9 h-9 sm:w-10 sm:h-10 rounded-full object-cover border border-gold-500/50 shadow-md shadow-gold-500/10 group-hover:border-gold-400 group-hover:scale-105 transition-all" 
-            />
-            <div className="flex flex-col">
-              <span className="font-serif text-sm sm:text-base lg:text-lg font-bold tracking-tight text-white group-hover:text-gold-300 transition-colors leading-tight whitespace-nowrap">
-                Souza & Selly
-              </span>
-              <span className="text-[9px] sm:text-[10px] tracking-widest uppercase font-semibold text-gold-500 whitespace-nowrap">
-                Advocacia Especializada
-              </span>
+          {/* Brand Logo & Status */}
+          <div className="flex items-center gap-3 shrink-0 mr-4 lg:mr-6 xl:mr-8">
+            <a href="#inicio" className="flex items-center gap-2.5 sm:gap-3 group">
+              <div className="relative">
+                <img 
+                  src="/logo.jpg" 
+                  alt="Souza & Selly Advocacia" 
+                  className="w-9 h-9 sm:w-10 sm:h-10 rounded-full object-cover border-2 border-gold-400/60 shadow-lg shadow-gold-500/20 group-hover:border-gold-300 group-hover:scale-105 group-hover:shadow-[0_0_20px_rgba(197,160,89,0.4)] transition-all duration-300" 
+                />
+                <span className="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-emerald-500 border-2 border-[#09090B] ring-1 ring-emerald-400/50" />
+              </div>
+              <div className="flex flex-col">
+                <span className="font-serif text-sm sm:text-base lg:text-lg font-bold tracking-tight text-white group-hover:text-gold-300 transition-colors leading-tight whitespace-nowrap">
+                  Souza & Selly
+                </span>
+                <span className="text-[9px] sm:text-[10px] tracking-widest uppercase font-semibold text-gold-400 whitespace-nowrap">
+                  Advocacia Especializada
+                </span>
+              </div>
+            </a>
+
+            {/* Plantão status pill for wider screens */}
+            <div className="hidden 2xl:inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/25 text-[10px] font-semibold text-emerald-300/90">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+              <span>Plantão CE Ativo</span>
             </div>
-          </a>
+          </div>
 
           {/* Desktop Navigation Links - Centered with balanced margins on both sides */}
           <div className="hidden lg:flex items-center justify-center gap-1.5 lg:gap-2.5 xl:gap-5 2xl:gap-6 flex-1 px-4 lg:px-6 xl:px-8">

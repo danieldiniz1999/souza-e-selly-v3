@@ -33,18 +33,15 @@ export const Hero: React.FC = () => {
 
   return (
     <section id="inicio" className="relative min-h-[85vh] flex items-center pt-28 pb-16 overflow-hidden bg-mesh-dark">
-      {/* Background Glows & Accent Gradients */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-gold-500/10 rounded-full blur-[140px] pointer-events-none" />
-      <div className="absolute top-10 right-10 w-72 h-72 bg-amber-600/5 rounded-full blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-10 left-10 w-80 h-80 bg-gold-500/5 rounded-full blur-[130px] pointer-events-none" />
+      {/* Background Glows & Luxury Spotlights */}
+      <div className="ambient-gold-spotlight -top-20 left-1/2 -translate-x-1/2 w-[750px] h-[500px]" />
+      <div className="absolute top-1/4 left-1/3 -translate-x-1/2 -translate-y-1/2 w-[450px] h-[450px] bg-gold-500/10 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute top-10 right-10 w-80 h-80 bg-amber-600/5 rounded-full blur-[130px] pointer-events-none" />
+      <div className="absolute bottom-10 left-10 w-96 h-96 bg-gold-500/5 rounded-full blur-[140px] pointer-events-none" />
 
       {/* Grid Pattern overlay */}
       <div 
-        className="absolute inset-0 opacity-[0.03] pointer-events-none"
-        style={{
-          backgroundImage: `radial-gradient(circle at 1px 1px, #C5A059 1px, transparent 0)`,
-          backgroundSize: '36px 36px',
-        }}
+        className="absolute inset-0 opacity-[0.035] pointer-events-none bg-grid-pattern"
       />
 
       <div className="max-w-6xl mx-auto px-3.5 sm:px-6 lg:px-8 relative z-10 w-full">
@@ -53,11 +50,12 @@ export const Hero: React.FC = () => {
           {/* Left Column: Headlines & Call to Actions */}
           <div className="lg:col-span-7 flex flex-col items-start text-left">
             
-            {/* Top Authority Pill */}
-            <div className="inline-flex items-center gap-2 px-2.5 sm:px-3 py-1 rounded-full bg-[#18181D] border border-gold-500/35 shadow-md shadow-gold-500/5 mb-4 sm:mb-5 max-w-full">
-              <img src="/logo.jpg" alt="Souza & Selly" className="w-4 h-4 rounded-full object-cover border border-gold-500/50 shrink-0" />
+            {/* Top Authority Pill with Live Status */}
+            <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-gradient-to-r from-[#1F1B14] via-[#16161D] to-[#121216] border border-gold-500/40 shadow-lg shadow-gold-500/10 mb-4 sm:mb-5 max-w-full">
+              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse shadow-[0_0_10px_rgba(52,211,153,0.8)] shrink-0" />
+              <img src="/logo.jpg" alt="Souza & Selly" className="w-4 h-4 rounded-full object-cover border border-gold-400/60 shrink-0" />
               <span className="text-[10px] sm:text-[11px] font-semibold text-neutral-200 tracking-wide leading-tight truncate sm:whitespace-normal">
-                8 Anos de Excelência Jurídica • Atendimento em Todo o Ceará
+                8 Anos de Atuação • Atendimento Presencial em Todo o Ceará
               </span>
             </div>
 
@@ -76,9 +74,9 @@ export const Hero: React.FC = () => {
             </p>
 
             {/* Human Touch Highlight Callout */}
-            <div className="w-full p-3 sm:p-3.5 rounded-xl bg-gradient-to-r from-[#17171C] to-[#121215] border-l-4 border-l-gold-500 border border-neutral-800/80 mb-5 sm:mb-6 flex items-start gap-2.5 sm:gap-3">
-              <div className="p-1.5 rounded-lg bg-gold-500/10 text-gold-400 shrink-0">
-                <MapPin className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+            <div className="w-full p-3 sm:p-3.5 rounded-xl bg-gradient-to-r from-[#17171C] to-[#121215] border-l-4 border-l-gold-500 border border-neutral-800/80 mb-5 sm:mb-6 flex items-start gap-2.5 sm:gap-3 shadow-md">
+              <div className="p-1.5 rounded-lg bg-gold-500/15 text-gold-400 shrink-0">
+                <MapPin className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-gold-400" />
               </div>
               <p className="text-[11px] sm:text-xs text-neutral-300 leading-relaxed">
                 <strong className="text-gold-300 font-semibold">Nosso diferencial de coração:</strong> Não atendemos você como mais um número. Viajamos regularmente pelo interior do estado para visitar clientes e coletar documentos pessoalmente.
@@ -108,18 +106,18 @@ export const Hero: React.FC = () => {
             </div>
 
             {/* Micro Trust Seals */}
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5 sm:gap-4 pt-4 border-t border-neutral-800/80 w-full text-[11px] sm:text-xs text-neutral-400">
-              <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-gold-400 shrink-0" />
-                <span>Análise Inicial Sem Custo</span>
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-3 pt-4 border-t border-neutral-800/80 w-full text-[11px] sm:text-xs text-neutral-400">
+              <div className="flex items-center gap-2 p-2 rounded-lg bg-[#14141A]/60 border border-neutral-800/80">
+                <CheckCircle2 className="w-3.5 h-3.5 text-gold-400 shrink-0" />
+                <span className="text-neutral-300 font-medium">Análise Sem Custo</span>
               </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-gold-400 shrink-0" />
-                <span>Honorários no Êxito</span>
+              <div className="flex items-center gap-2 p-2 rounded-lg bg-[#14141A]/60 border border-neutral-800/80">
+                <CheckCircle2 className="w-3.5 h-3.5 text-gold-400 shrink-0" />
+                <span className="text-neutral-300 font-medium">Honorários no Êxito</span>
               </div>
-              <div className="flex items-center gap-2 col-span-2 sm:col-span-1">
-                <CheckCircle2 className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-gold-400 shrink-0" />
-                <span>Sigilo e Ética OAB</span>
+              <div className="flex items-center gap-2 p-2 rounded-lg bg-[#14141A]/60 border border-neutral-800/80 col-span-2 sm:col-span-1">
+                <CheckCircle2 className="w-3.5 h-3.5 text-gold-400 shrink-0" />
+                <span className="text-neutral-300 font-medium">Sigilo e Ética OAB</span>
               </div>
             </div>
 
@@ -177,29 +175,40 @@ export const Hero: React.FC = () => {
                       <img
                         src="/logo.jpg"
                         alt="Logo Souza & Selly Advocacia"
-                        className="w-10 h-10 rounded-full object-cover border border-gold-500/60 shadow-md shadow-gold-500/10 group-hover:scale-105 group-hover:border-gold-400 group-hover:shadow-[0_0_20px_rgba(197,160,89,0.4)] transition-all duration-300"
+                        className="w-10 h-10 rounded-full object-cover border-2 border-gold-400/60 shadow-md shadow-gold-500/20 group-hover:scale-105 group-hover:border-gold-300 group-hover:shadow-[0_0_20px_rgba(197,160,89,0.4)] transition-all duration-300"
                       />
                       <div>
                         <h3 className="font-serif text-base font-bold text-white group-hover:text-gold-200 transition-colors duration-300">Souza & Selly</h3>
                         <p className="text-[11px] text-gold-400 font-medium">Banca Jurídica Especializada</p>
                       </div>
                     </div>
-                    <span className="text-[10px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-gold-500/15 text-gold-300 border border-gold-500/30 group-hover:bg-gold-500/25 group-hover:border-gold-400/80 group-hover:text-gold-200 transition-all duration-300 shadow-sm">
-                      OAB / CE
-                    </span>
+                    <div className="flex items-center gap-1.5">
+                      <span className="hidden sm:inline-flex items-center gap-1 text-[10px] font-semibold text-amber-300 bg-amber-500/10 px-2 py-0.5 rounded-full border border-amber-500/20">
+                        ★ 4.9/5.0
+                      </span>
+                      <span className="text-[10px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-gold-500/15 text-gold-300 border border-gold-500/30 group-hover:bg-gold-500/25 group-hover:border-gold-400/80 group-hover:text-gold-200 transition-all duration-300 shadow-sm">
+                        OAB / CE
+                      </span>
+                    </div>
                   </div>
 
                   {/* Partners Mini Profile Preview */}
                   <div className="py-4 space-y-3">
                     {/* Dra Samara */}
                     <div className="group/subcard p-3 rounded-xl bg-[#17171C] border border-neutral-800/80 hover:border-gold-500/60 hover:bg-[#1a1a23] hover:translate-x-1.5 hover:shadow-lg hover:shadow-black/50 transition-all duration-300 flex items-center gap-3 cursor-pointer">
-                      <img
-                        src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=120&q=80"
-                        alt="Dra. Samara Selly"
-                        className="w-11 h-11 rounded-lg object-cover border border-gold-500/40 group-hover/subcard:border-gold-400 group-hover/subcard:scale-105 shrink-0 transition-all duration-300 shadow-sm"
-                      />
+                      <div className="relative shrink-0">
+                        <img
+                          src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=120&q=80"
+                          alt="Dra. Samara Selly"
+                          className="w-11 h-11 rounded-lg object-cover border border-gold-500/40 group-hover/subcard:border-gold-400 group-hover/subcard:scale-105 transition-all duration-300 shadow-sm"
+                        />
+                        <span className="absolute -bottom-1 -right-1 w-3 h-3 rounded-full bg-emerald-500 border-2 border-[#17171C]" />
+                      </div>
                       <div className="flex-1 min-w-0">
-                        <h4 className="text-xs font-bold text-white group-hover/subcard:text-gold-300 transition-colors duration-200 truncate">Dra. Samara Selly</h4>
+                        <div className="flex items-center justify-between gap-1">
+                          <h4 className="text-xs font-bold text-white group-hover/subcard:text-gold-300 transition-colors duration-200 truncate">Dra. Samara Selly</h4>
+                          <span className="text-[9px] px-1.5 py-0.5 rounded bg-gold-500/15 text-gold-300 font-bold shrink-0">OAB/CE Ativa</span>
+                        </div>
                         <p className="text-[11px] text-gold-400 truncate">Pós em Previdenciário & Trabalho</p>
                         <p className="text-[10px] text-neutral-400">8 anos de atuação combativa</p>
                       </div>
@@ -207,13 +216,19 @@ export const Hero: React.FC = () => {
 
                     {/* Dra Maria */}
                     <div className="group/subcard p-3 rounded-xl bg-[#17171C] border border-neutral-800/80 hover:border-gold-500/60 hover:bg-[#1a1a23] hover:translate-x-1.5 hover:shadow-lg hover:shadow-black/50 transition-all duration-300 flex items-center gap-3 cursor-pointer">
-                      <img
-                        src="https://images.unsplash.com/photo-1580894732444-8ecded7900cd?auto=format&fit=crop&w=120&q=80"
-                        alt="Dra. Maria Souza"
-                        className="w-11 h-11 rounded-lg object-cover border border-gold-500/40 group-hover/subcard:border-gold-400 group-hover/subcard:scale-105 shrink-0 transition-all duration-300 shadow-sm"
-                      />
+                      <div className="relative shrink-0">
+                        <img
+                          src="https://images.unsplash.com/photo-1580894732444-8ecded7900cd?auto=format&fit=crop&w=120&q=80"
+                          alt="Dra. Maria Souza"
+                          className="w-11 h-11 rounded-lg object-cover border border-gold-500/40 group-hover/subcard:border-gold-400 group-hover/subcard:scale-105 transition-all duration-300 shadow-sm"
+                        />
+                        <span className="absolute -bottom-1 -right-1 w-3 h-3 rounded-full bg-emerald-500 border-2 border-[#17171C]" />
+                      </div>
                       <div className="flex-1 min-w-0">
-                        <h4 className="text-xs font-bold text-white group-hover/subcard:text-gold-300 transition-colors duration-200 truncate">Dra. Maria Souza</h4>
+                        <div className="flex items-center justify-between gap-1">
+                          <h4 className="text-xs font-bold text-white group-hover/subcard:text-gold-300 transition-colors duration-200 truncate">Dra. Maria Souza</h4>
+                          <span className="text-[9px] px-1.5 py-0.5 rounded bg-gold-500/15 text-gold-300 font-bold shrink-0">OAB/CE Ativa</span>
+                        </div>
                         <p className="text-[11px] text-gold-400 truncate">Pós em Previdenciário & Tributário</p>
                         <p className="text-[10px] text-neutral-400">Estratégia jurídica e patrimonial</p>
                       </div>

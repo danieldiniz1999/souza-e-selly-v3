@@ -41,58 +41,58 @@ export const HumanTouchSection: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-3.5 sm:gap-4 lg:gap-5 mb-8 sm:mb-12">
           
           {/* Card 1 */}
-          <div className="card-luxury p-4 sm:p-5 lg:p-6 rounded-xl flex flex-col justify-between group hover:-translate-y-1.5 hover:border-gold-500/60 hover:shadow-[0_15px_35px_-10px_rgba(197,160,89,0.22)] transition-all duration-300">
+          <div className="card-radiant-gold p-4 sm:p-5 lg:p-6 flex flex-col justify-between group hover:-translate-y-1.5 hover:border-gold-400/80 transition-all duration-300">
             <div>
-              <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-lg bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-gold-400 mb-3 sm:mb-4 group-hover:scale-110 group-hover:bg-gold-500/20 group-hover:border-gold-400/50 transition-all duration-300">
-                <Car className="w-4 h-4 sm:w-5 sm:h-5" />
+              <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-gold-500/15 border border-gold-500/30 flex items-center justify-center text-gold-300 mb-3 sm:mb-4 group-hover:scale-110 group-hover:bg-gold-500/25 group-hover:border-gold-400/60 group-hover:shadow-[0_0_15px_rgba(197,160,89,0.3)] transition-all duration-300">
+                <Car className="w-4 h-4 sm:w-5 sm:h-5 text-gold-400" />
               </div>
               <h3 className="font-serif text-sm sm:text-base font-bold text-white mb-1.5 sm:mb-2 group-hover:text-gold-200 transition-colors">
                 Visitas Presenciais no Interior
               </h3>
-              <p className="text-neutral-400 text-xs leading-relaxed mb-3 font-light">
+              <p className="text-neutral-300 text-xs leading-relaxed mb-3 font-light">
                 Não deixamos a distância ser um obstáculo. Realizamos roteiros periódicos pelo interior cearense para coletar documentos, conversar com os clientes e entender a realidade de cada família.
               </p>
             </div>
             <div className="pt-2.5 sm:pt-3 border-t border-neutral-800/80 flex items-center gap-1.5 text-[11px] text-gold-300 font-medium">
-              <CheckCircle2 className="w-3.5 h-3.5 text-gold-500 shrink-0" />
+              <CheckCircle2 className="w-3.5 h-3.5 text-gold-400 shrink-0" />
               <span>Acolhimento no seu município</span>
             </div>
           </div>
 
           {/* Card 2 */}
-          <div className="card-luxury p-4 sm:p-5 lg:p-6 rounded-xl flex flex-col justify-between group border-gold-500/40 shadow-md shadow-gold-500/5 hover:-translate-y-1.5 hover:border-gold-400 hover:shadow-[0_20px_40px_-10px_rgba(197,160,89,0.3)] transition-all duration-300">
+          <div className="card-radiant-gold p-4 sm:p-5 lg:p-6 flex flex-col justify-between group hover:-translate-y-1.5 hover:border-gold-400/80 transition-all duration-300 ring-1 ring-gold-500/20">
             <div>
-              <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-lg bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-gold-400 mb-3 sm:mb-4 group-hover:scale-110 group-hover:bg-gold-500/20 group-hover:border-gold-400/50 transition-all duration-300">
-                <HeartHandshake className="w-4 h-4 sm:w-5 sm:h-5" />
+              <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-gold-500/15 border border-gold-500/30 flex items-center justify-center text-gold-300 mb-3 sm:mb-4 group-hover:scale-110 group-hover:bg-gold-500/25 group-hover:border-gold-400/60 group-hover:shadow-[0_0_15px_rgba(197,160,89,0.3)] transition-all duration-300">
+                <HeartHandshake className="w-4 h-4 sm:w-5 sm:h-5 text-gold-400" />
               </div>
               <h3 className="font-serif text-sm sm:text-base font-bold text-white mb-1.5 sm:mb-2 group-hover:text-gold-200 transition-colors">
                 Escuta Sem "Juridiquês"
               </h3>
-              <p className="text-neutral-400 text-xs leading-relaxed mb-3 font-light">
+              <p className="text-neutral-300 text-xs leading-relaxed mb-3 font-light">
                 Nada de termos difíceis ou promessas vazias. Explicamos cada etapa do processo de maneira transparente e carinhosa, para que você entenda exatamente o que está acontecendo com sua causa.
               </p>
             </div>
             <div className="pt-2.5 sm:pt-3 border-t border-neutral-800/80 flex items-center gap-1.5 text-[11px] text-gold-300 font-medium">
-              <CheckCircle2 className="w-3.5 h-3.5 text-gold-500 shrink-0" />
+              <CheckCircle2 className="w-3.5 h-3.5 text-gold-400 shrink-0" />
               <span>Transparência do início ao fim</span>
             </div>
           </div>
 
           {/* Card 3 */}
-          <div className="card-luxury p-4 sm:p-5 lg:p-6 rounded-xl flex flex-col justify-between group hover:-translate-y-1.5 hover:border-gold-500/60 hover:shadow-[0_15px_35px_-10px_rgba(197,160,89,0.22)] transition-all duration-300">
+          <div className="card-radiant-gold p-4 sm:p-5 lg:p-6 flex flex-col justify-between group hover:-translate-y-1.5 hover:border-gold-400/80 transition-all duration-300">
             <div>
-              <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-lg bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-gold-400 mb-3 sm:mb-4 group-hover:scale-110 group-hover:bg-gold-500/20 group-hover:border-gold-400/50 transition-all duration-300">
-                <Users2 className="w-4 h-4 sm:w-5 sm:h-5" />
+              <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-gold-500/15 border border-gold-500/30 flex items-center justify-center text-gold-300 mb-3 sm:mb-4 group-hover:scale-110 group-hover:bg-gold-500/25 group-hover:border-gold-400/60 group-hover:shadow-[0_0_15px_rgba(197,160,89,0.3)] transition-all duration-300">
+                <Users2 className="w-4 h-4 sm:w-5 sm:h-5 text-gold-400" />
               </div>
               <h3 className="font-serif text-sm sm:text-base font-bold text-white mb-1.5 sm:mb-2 group-hover:text-gold-200 transition-colors">
                 Busca Ativa de Provas
               </h3>
-              <p className="text-neutral-400 text-xs leading-relaxed mb-3 font-light">
+              <p className="text-neutral-300 text-xs leading-relaxed mb-3 font-light">
                 Aposentadoria rural, BPC/LOAS ou horas extras exigem provas robustas. Nós ajudamos você a localizar certidões antigas, contratos, testemunhas e laudos médicos necessários.
               </p>
             </div>
             <div className="pt-2.5 sm:pt-3 border-t border-neutral-800/80 flex items-center gap-1.5 text-[11px] text-gold-300 font-medium">
-              <CheckCircle2 className="w-3.5 h-3.5 text-gold-500 shrink-0" />
+              <CheckCircle2 className="w-3.5 h-3.5 text-gold-400 shrink-0" />
               <span>Construção de prova sólida</span>
             </div>
           </div>

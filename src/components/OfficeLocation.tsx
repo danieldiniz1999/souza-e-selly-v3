@@ -5,7 +5,8 @@ import { OFFICE_INFO, getWhatsAppUrl } from '@/lib/utils';
 export const OfficeLocation: React.FC = () => {
   return (
     <section id="localizacao" className="py-12 sm:py-16 bg-[#0B0B0E] border-t border-neutral-800/80 relative overflow-hidden">
-      {/* Background radial glow */}
+      {/* Background radial glow & luxury spotlight */}
+      <div className="ambient-gold-spotlight top-1/2 right-10 w-[600px] h-[350px]" />
       <div className="absolute top-1/2 right-10 w-80 h-80 bg-gold-500/5 rounded-full blur-[140px] pointer-events-none" />
 
       <div className="max-w-6xl mx-auto px-3.5 sm:px-6 lg:px-8 relative z-10">
@@ -13,7 +14,7 @@ export const OfficeLocation: React.FC = () => {
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-12">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-gold-500/10 border border-gold-500/30 text-gold-400 text-[10px] font-semibold uppercase tracking-wider mb-2.5 sm:mb-3">
-            <MapPin className="w-3 h-3" />
+            <MapPin className="w-3 h-3 text-gold-400" />
             <span>Sede Física & Atendimento Presencial</span>
           </div>
 
@@ -31,7 +32,7 @@ export const OfficeLocation: React.FC = () => {
         <div className="grid lg:grid-cols-12 gap-5 sm:gap-6 items-stretch">
           
           {/* Left: Office Details */}
-          <div className="group/sede relative lg:col-span-5 rounded-2xl bg-[#121217] border border-gold-500/30 hover:border-gold-400/80 p-4 sm:p-6 flex flex-col justify-between shadow-xl hover:shadow-[0_20px_50px_-10px_rgba(197,160,89,0.25)] hover:-translate-y-1.5 transition-all duration-500 ease-out overflow-hidden">
+          <div className="group/sede relative lg:col-span-5 card-radiant-gold hover:border-gold-400/80 p-4 sm:p-6 flex flex-col justify-between shadow-2xl hover:shadow-[0_20px_50px_-10px_rgba(197,160,89,0.25)] hover:-translate-y-1.5 transition-all duration-500 ease-out overflow-hidden">
             {/* Subtle luxury shimmer sweep on hover */}
             <div className="pointer-events-none absolute -inset-full top-0 block -skew-x-12 bg-gradient-to-r from-transparent via-white/[0.05] to-transparent opacity-0 group-hover/sede:opacity-100 group-hover/sede:animate-shimmer transition-opacity duration-700 z-0" />
 
