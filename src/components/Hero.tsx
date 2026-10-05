@@ -1,36 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { ArrowRight, MapPin, CheckCircle2, Scale } from 'lucide-react';
 import { WhatsAppIcon } from './WhatsAppIcon';
+import { CearaMap } from './CearaMap';
 import { getWhatsAppUrl } from '@/lib/utils';
 
 export const Hero: React.FC = () => {
-  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
-  const [rotate, setRotate] = useState({ x: 0, y: 0 });
-  const [isHovered, setIsHovered] = useState(false);
-
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    const rect = e.currentTarget.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-    setMousePos({ x, y });
-
-    // Subtle 3D tilt calculation (-4 to +4 degrees)
-    const centerX = rect.width / 2;
-    const centerY = rect.height / 2;
-    const rotX = ((y - centerY) / centerY) * -4.5;
-    const rotY = ((x - centerX) / centerX) * 4.5;
-    setRotate({ x: rotX, y: rotY });
-  };
-
-  const handleMouseEnter = () => {
-    setIsHovered(true);
-  };
-
-  const handleMouseLeave = () => {
-    setIsHovered(false);
-    setRotate({ x: 0, y: 0 });
-  };
-
   return (
     <section id="inicio" className="relative min-h-[85vh] flex items-center pt-28 pb-16 overflow-hidden bg-mesh-dark">
       {/* Background Glows & Luxury Spotlights */}
@@ -123,135 +97,9 @@ export const Hero: React.FC = () => {
 
           </div>
 
-          {/* Right Column: Visual Prestige Card & Founders Showcase */}
-          <div className="lg:col-span-5 relative w-full mt-4 lg:mt-0" style={{ perspective: '1200px' }}>
-            <div
-              className="relative mx-auto max-w-md md:max-w-lg lg:max-w-none group cursor-default"
-              onMouseMove={handleMouseMove}
-              onMouseEnter={handleMouseEnter}
-              onMouseLeave={handleMouseLeave}
-            >
-              
-              {/* Decorative Frame Glow Halo behind Card */}
-              <div 
-                className={`absolute -inset-1.5 rounded-3xl bg-gradient-to-b from-gold-500/40 via-gold-600/25 to-gold-700/10 transition-all duration-500 ease-out pointer-events-none ${
-                  isHovered ? 'opacity-100 blur-2xl scale-[1.03]' : 'opacity-65 blur-lg scale-100'
-                }`} 
-              />
-
-              {/* Main Visual Container with 3D Tilt & Floating Elevation */}
-              <div 
-                className="relative rounded-2xl bg-[#101014] border border-gold-500/30 group-hover:border-gold-400/80 p-4 sm:p-5 lg:p-6 shadow-2xl group-hover:shadow-[0_25px_60px_-12px_rgba(197,160,89,0.32)] overflow-hidden"
-                style={{
-                  transform: isHovered
-                    ? `rotateX(${rotate.x.toFixed(2)}deg) rotateY(${rotate.y.toFixed(2)}deg) translateY(-8px) scale(1.015)`
-                    : 'rotateX(0deg) rotateY(0deg) translateY(0px) scale(1)',
-                  transition: isHovered
-                    ? 'transform 0.12s ease-out, border-color 0.4s ease-out, box-shadow 0.4s ease-out'
-                    : 'transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.5s ease-out, box-shadow 0.5s ease-out',
-                  transformStyle: 'preserve-3d',
-                }}
-              >
-
-                {/* Spotlight follower directly under the mouse pointer */}
-                <div
-                  className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-0"
-                  style={{
-                    background: isHovered
-                      ? `radial-gradient(380px circle at ${mousePos.x}px ${mousePos.y}px, rgba(197, 160, 89, 0.18), transparent 70%)`
-                      : 'none',
-                  }}
-                />
-
-                {/* Luxury Shimmer Light Beam sweep on hover */}
-                <div className="pointer-events-none absolute -inset-full top-0 block -skew-x-12 bg-gradient-to-r from-transparent via-white/[0.08] to-transparent opacity-0 group-hover:opacity-100 group-hover:animate-shimmer transition-opacity duration-700 z-0" />
-
-                {/* Content with z-10 positioning */}
-                <div className="relative z-10">
-                  
-                  {/* Header of the Card */}
-                  <div className="flex items-center justify-between pb-3.5 sm:pb-4 border-b border-neutral-800">
-                    <div className="flex items-center gap-2 sm:gap-2.5">
-                      <img
-                        src="/logo.jpg"
-                        alt="Logo Souza & Selly Advocacia"
-                        className="w-10 h-10 rounded-full object-cover border-2 border-gold-400/60 shadow-md shadow-gold-500/20 group-hover:scale-105 group-hover:border-gold-300 group-hover:shadow-[0_0_20px_rgba(197,160,89,0.4)] transition-all duration-300"
-                      />
-                      <div>
-                        <h3 className="font-serif text-base font-bold text-white group-hover:text-gold-200 transition-colors duration-300">Souza & Selly</h3>
-                        <p className="text-[11px] text-gold-400 font-medium">Banca Jurídica Especializada</p>
-                      </div>
-                    </div>
-                    <div className="flex items-center gap-1.5">
-                      <span className="hidden sm:inline-flex items-center gap-1 text-[10px] font-semibold text-amber-300 bg-amber-500/10 px-2 py-0.5 rounded-full border border-amber-500/20">
-                        ★ 4.9/5.0
-                      </span>
-                      <span className="text-[10px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-gold-500/15 text-gold-300 border border-gold-500/30 group-hover:bg-gold-500/25 group-hover:border-gold-400/80 group-hover:text-gold-200 transition-all duration-300 shadow-sm">
-                        OAB / CE
-                      </span>
-                    </div>
-                  </div>
-
-                  {/* Partners Mini Profile Preview */}
-                  <div className="py-4 space-y-3">
-                    {/* Dra Samara */}
-                    <div className="group/subcard p-3 rounded-xl bg-[#17171C] border border-neutral-800/80 hover:border-gold-500/60 hover:bg-[#1a1a23] hover:translate-x-1.5 hover:shadow-lg hover:shadow-black/50 transition-all duration-300 flex items-center gap-3 cursor-pointer">
-                      <div className="relative shrink-0">
-                        <img
-                          src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=120&q=80"
-                          alt="Dra. Samara Selly"
-                          className="w-11 h-11 rounded-lg object-cover border border-gold-500/40 group-hover/subcard:border-gold-400 group-hover/subcard:scale-105 transition-all duration-300 shadow-sm"
-                        />
-                        <span className="absolute -bottom-1 -right-1 w-3 h-3 rounded-full bg-emerald-500 border-2 border-[#17171C]" />
-                      </div>
-                      <div className="flex-1 min-w-0">
-                        <div className="flex items-center justify-between gap-1">
-                          <h4 className="text-xs font-bold text-white group-hover/subcard:text-gold-300 transition-colors duration-200 truncate">Dra. Samara Selly</h4>
-                          <span className="text-[9px] px-1.5 py-0.5 rounded bg-gold-500/15 text-gold-300 font-bold shrink-0">OAB/CE Ativa</span>
-                        </div>
-                        <p className="text-[11px] text-gold-400 truncate">Pós em Previdenciário & Trabalho</p>
-                        <p className="text-[10px] text-neutral-400">8 anos de atuação combativa</p>
-                      </div>
-                    </div>
-
-                    {/* Dra Maria */}
-                    <div className="group/subcard p-3 rounded-xl bg-[#17171C] border border-neutral-800/80 hover:border-gold-500/60 hover:bg-[#1a1a23] hover:translate-x-1.5 hover:shadow-lg hover:shadow-black/50 transition-all duration-300 flex items-center gap-3 cursor-pointer">
-                      <div className="relative shrink-0">
-                        <img
-                          src="https://images.unsplash.com/photo-1580894732444-8ecded7900cd?auto=format&fit=crop&w=120&q=80"
-                          alt="Dra. Maria Souza"
-                          className="w-11 h-11 rounded-lg object-cover border border-gold-500/40 group-hover/subcard:border-gold-400 group-hover/subcard:scale-105 transition-all duration-300 shadow-sm"
-                        />
-                        <span className="absolute -bottom-1 -right-1 w-3 h-3 rounded-full bg-emerald-500 border-2 border-[#17171C]" />
-                      </div>
-                      <div className="flex-1 min-w-0">
-                        <div className="flex items-center justify-between gap-1">
-                          <h4 className="text-xs font-bold text-white group-hover/subcard:text-gold-300 transition-colors duration-200 truncate">Dra. Maria Souza</h4>
-                          <span className="text-[9px] px-1.5 py-0.5 rounded bg-gold-500/15 text-gold-300 font-bold shrink-0">OAB/CE Ativa</span>
-                        </div>
-                        <p className="text-[11px] text-gold-400 truncate">Pós em Previdenciário & Tributário</p>
-                        <p className="text-[10px] text-neutral-400">Estratégia jurídica e patrimonial</p>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Direct Help Prompt */}
-                  <div className="pt-3 border-t border-neutral-800/90 text-center">
-                    <a
-                      href={getWhatsAppUrl("Olá! Gostaria de agendar uma conversa com as advogadas.")}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="group/btn w-full inline-flex items-center justify-center gap-2 px-3 py-2.5 rounded-lg text-xs font-bold uppercase tracking-wider text-neutral-200 bg-[#212128] hover:bg-gold-500 hover:text-black border border-gold-500/30 hover:border-gold-400 hover:shadow-[0_0_25px_rgba(197,160,89,0.45)] hover:scale-[1.02] active:scale-[0.98] transition-all duration-300"
-                    >
-                      <WhatsAppIcon className="w-3.5 h-3.5 fill-current group-hover/btn:scale-110 transition-transform duration-200" />
-                      <span>Iniciar Atendimento Humanizado</span>
-                    </a>
-                  </div>
-
-                </div>
-
-              </div>
-            </div>
+          {/* Right Column: Animated Ceará Map */}
+          <div className="lg:col-span-5 relative w-full mt-6 lg:mt-0 flex items-center justify-center">
+            <CearaMap />
           </div>
 
         </div>
