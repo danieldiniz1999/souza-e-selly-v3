@@ -6,12 +6,31 @@ import { getWhatsAppUrl } from '@/lib/utils';
 export const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('inicio');
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
+
+      // Section scrollspy
+      const sections = ['inicio', 'diferencial', 'areas', 'advogadas', 'numeros', 'depoimentos', 'localizacao', 'faq'];
+      const scrollPosition = window.scrollY + 120;
+
+      for (const sectionId of sections) {
+        const el = document.getElementById(sectionId);
+        if (el) {
+          const top = el.offsetTop;
+          const height = el.offsetHeight;
+          if (scrollPosition >= top && scrollPosition < top + height) {
+            setActiveSection(sectionId);
+            break;
+          }
+        }
+      }
     };
-    window.addEventListener('scroll', handleScroll);
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -67,16 +86,32 @@ export const Navbar: React.FC = () => {
 
           {/* Desktop Navigation Links - Centered with balanced margins on both sides */}
           <div className="hidden lg:flex items-center justify-center gap-1.5 lg:gap-2.5 xl:gap-5 2xl:gap-6 flex-1 px-4 lg:px-6 xl:px-8">
-            {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className="text-xs xl:text-sm font-medium text-neutral-300 hover:text-gold-400 transition-colors relative py-1 px-1 xl:px-1.5 after:content-[''] after:absolute after:bottom-0 after:left-1 after:right-1 after:w-0 hover:after:w-[calc(100%-8px)] after:h-[2px] after:bg-gold-500 after:transition-all after:duration-300 whitespace-nowrap"
-              >
-                <span className="hidden xl:inline">{link.label}</span>
-                <span className="xl:hidden">{link.shortLabel}</span>
-              </a>
-            ))}
+            {navLinks.map((link) => {
+              const linkSection = link.href.replace('#', '');
+              const isActive = activeSection === linkSection;
+              return (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className={`text-xs xl:text-sm font-medium transition-all relative py-1 px-1.5 whitespace-nowrap ${
+                    isActive
+                      ? 'text-gold-300 font-semibold'
+                      : 'text-neutral-300 hover:text-gold-400'
+                  }`}
+                >
+                  <span className="hidden xl:inline">{link.label}</span>
+                  <span className="xl:hidden">{link.shortLabel}</span>
+                  {/* Active indicator dot or underline */}
+                  <span
+                    className={`absolute bottom-0 left-1 right-1 h-[2px] rounded-full transition-all duration-300 ${
+                      isActive 
+                        ? 'bg-gradient-to-r from-gold-400 to-amber-200 shadow-[0_0_8px_rgba(197,160,89,0.8)] opacity-100' 
+                        : 'bg-transparent opacity-0'
+                    }`}
+                  />
+                </a>
+              );
+            })}
           </div>
 
           {/* Desktop CTA Button with protected left margin */}
@@ -108,16 +143,25 @@ export const Navbar: React.FC = () => {
           <div className="lg:hidden mt-3 p-4 sm:p-6 rounded-2xl bg-[#0F0F12]/98 border border-gold-500/30 shadow-2xl backdrop-blur-xl animate-fade-in-up max-h-[calc(100vh-80px)] overflow-y-auto">
             <div className="flex flex-col gap-2">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-1 sm:gap-x-4">
-                {navLinks.map((link) => (
-                  <a
-                    key={link.href}
-                    href={link.href}
-                    onClick={() => setMobileMenuOpen(false)}
-                    className="min-h-[44px] flex items-center text-xs sm:text-sm font-medium text-neutral-300 hover:text-gold-400 py-1.5 px-2 rounded-lg hover:bg-neutral-900/60 border-b border-neutral-800/50 sm:border-b-0 transition-colors"
-                  >
-                    {link.label}
-                  </a>
-                ))}
+                {navLinks.map((link) => {
+                  const linkSection = link.href.replace('#', '');
+                  const isActive = activeSection === linkSection;
+                  return (
+                    <a
+                      key={link.href}
+                      href={link.href}
+                      onClick={() => setMobileMenuOpen(false)}
+                      className={`min-h-[44px] flex items-center justify-between text-xs sm:text-sm font-medium py-2 px-3 rounded-lg border-b border-neutral-800/50 sm:border-b-0 transition-colors ${
+                        isActive
+                          ? 'bg-gold-500/15 text-gold-300 font-semibold border-l-2 border-l-gold-400'
+                          : 'text-neutral-300 hover:text-gold-400 hover:bg-neutral-900/60'
+                      }`}
+                    >
+                      <span>{link.label}</span>
+                      {isActive && <span className="w-1.5 h-1.5 rounded-full bg-gold-400 animate-pulse" />}
+                    </a>
+                  );
+                })}
               </div>
               <div className="pt-3 border-t border-neutral-800/80">
                 <a

@@ -58,8 +58,12 @@ export const ProcessTimeline: React.FC = () => {
           </p>
         </div>
 
-        {/* Steps Grid: 1 col on mobile, 2 cols on tablet, 4 cols on desktop */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5 sm:gap-4 lg:gap-5 mb-8 sm:mb-12">
+        {/* Steps Grid with Connected Timeline Line */}
+        <div className="relative mb-8 sm:mb-12">
+          {/* Subtle connected gold beam line behind steps on desktop */}
+          <div className="hidden lg:block absolute top-[4.5rem] left-12 right-12 h-[1px] bg-gradient-to-r from-transparent via-gold-500/30 to-transparent pointer-events-none z-0" />
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5 sm:gap-4 lg:gap-5 relative z-10">
           {steps.map((s, idx) => {
             const Icon = s.icon;
             return (
@@ -101,6 +105,7 @@ export const ProcessTimeline: React.FC = () => {
             );
           })}
         </div>
+      </div>
 
         {/* Action Button */}
         <div className="text-center">

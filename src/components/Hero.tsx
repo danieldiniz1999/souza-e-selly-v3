@@ -34,38 +34,38 @@ export const Hero: React.FC = () => {
             </div>
 
             {/* Main Title */}
-            <h1 className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-white leading-[1.2] tracking-tight mb-4 sm:mb-5">
+            <h1 className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-white leading-[1.18] tracking-tight mb-4 sm:mb-5">
               O seu direito não pode esperar. Nossa dedicação{' '}
-              <span className="text-gold-metallic">vai até você.</span>
+              <span className="text-gold-metallic">vai até você em todo o Ceará.</span>
             </h1>
 
             {/* Subtitle with core message */}
             <p className="text-xs sm:text-sm lg:text-base text-neutral-300 leading-relaxed mb-5 sm:mb-6 max-w-xl font-light">
-              Com sede em Fortaleza e atuação próxima em todo o interior do Ceará, a{' '}
+              Com sede em Fortaleza e atuação presencial em todo o interior cearense, a{' '}
               <strong className="text-white font-semibold">Dra. Samara Selly</strong> e a{' '}
               <strong className="text-white font-semibold">Dra. Maria Souza</strong>{' '}
-              lutam incansavelmente por quem teve seu benefício do INSS negado, sofreu injustiça no trabalho ou necessita de defesa cível segura.
+              lutam incansavelmente por quem teve seu benefício do INSS negado, sofreu injustiça no trabalho ou necessita de defesa cível e familiar segura.
             </p>
 
             {/* Human Touch Highlight Callout */}
-            <div className="w-full p-3 sm:p-3.5 rounded-xl bg-gradient-to-r from-[#17171C] to-[#121215] border-l-4 border-l-gold-500 border border-neutral-800/80 mb-5 sm:mb-6 flex items-start gap-2.5 sm:gap-3 shadow-md">
-              <div className="p-1.5 rounded-lg bg-gold-500/15 text-gold-400 shrink-0">
-                <MapPin className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-gold-400" />
+            <div className="w-full p-3.5 sm:p-4 rounded-xl bg-gradient-to-r from-[#171720] via-[#14141A] to-[#121216] border-l-4 border-l-gold-500 border border-neutral-800/80 mb-5 sm:mb-6 flex items-start gap-3 shadow-lg shadow-black/40 group hover:border-gold-500/40 transition-all duration-300">
+              <div className="p-2 rounded-lg bg-gold-500/15 text-gold-400 shrink-0 group-hover:scale-110 group-hover:bg-gold-500/25 transition-all">
+                <MapPin className="w-4 h-4 text-gold-400" />
               </div>
-              <p className="text-[11px] sm:text-xs text-neutral-300 leading-relaxed">
-                <strong className="text-gold-300 font-semibold">Nosso diferencial de coração:</strong> Não atendemos você como mais um número. Viajamos regularmente pelo interior do estado para visitar clientes e coletar documentos pessoalmente.
+              <p className="text-xs sm:text-[13px] text-neutral-300 leading-relaxed">
+                <strong className="text-gold-300 font-semibold">Nosso diferencial de coração:</strong> Não atendemos você como mais um número. Viajamos regularmente pelo interior do estado para visitar clientes, ouvir cada história de perto e coletar documentos pessoalmente.
               </p>
             </div>
 
             {/* Action Buttons */}
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 sm:gap-3 w-full sm:w-auto mb-6 sm:mb-8">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full sm:w-auto mb-6 sm:mb-8">
               <a
                 href={getWhatsAppUrl("Olá! Gostaria de uma avaliação gratuita do meu caso com a Dra. Samara e Dra. Maria.")}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-gold inline-flex items-center justify-center gap-2 px-4 sm:px-6 py-3 sm:py-3.5 rounded-xl text-xs font-bold uppercase tracking-wider text-black group"
+                className="btn-gold inline-flex items-center justify-center gap-2.5 px-5 sm:px-6 py-3 sm:py-3.5 rounded-xl text-xs font-bold uppercase tracking-wider text-black group"
               >
-                <WhatsAppIcon className="w-4 h-4 fill-black/80 group-hover:scale-110 transition-transform shrink-0" />
+                <WhatsAppIcon className="w-4 h-4 fill-black/85 group-hover:scale-110 transition-transform shrink-0" />
                 <span>Avaliar Meu Caso no WhatsApp</span>
                 <ArrowRight className="w-3.5 h-3.5 ml-0.5 group-hover:translate-x-1.5 transition-transform shrink-0" />
               </a>
@@ -81,17 +81,17 @@ export const Hero: React.FC = () => {
 
             {/* Micro Trust Seals */}
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-3 pt-4 border-t border-neutral-800/80 w-full text-[11px] sm:text-xs text-neutral-400">
-              <div className="flex items-center gap-2 p-2 rounded-lg bg-[#14141A]/60 border border-neutral-800/80">
+              <div className="flex items-center gap-2 p-2.5 rounded-lg bg-[#14141A]/80 border border-neutral-800/80 hover:border-gold-500/40 hover:bg-[#181822] transition-colors">
                 <CheckCircle2 className="w-3.5 h-3.5 text-gold-400 shrink-0" />
-                <span className="text-neutral-300 font-medium">Análise Sem Custo</span>
+                <span className="text-neutral-200 font-medium">Análise Sem Custo</span>
               </div>
-              <div className="flex items-center gap-2 p-2 rounded-lg bg-[#14141A]/60 border border-neutral-800/80">
+              <div className="flex items-center gap-2 p-2.5 rounded-lg bg-[#14141A]/80 border border-neutral-800/80 hover:border-gold-500/40 hover:bg-[#181822] transition-colors">
                 <CheckCircle2 className="w-3.5 h-3.5 text-gold-400 shrink-0" />
-                <span className="text-neutral-300 font-medium">Honorários no Êxito</span>
+                <span className="text-neutral-200 font-medium">Honorários no Êxito</span>
               </div>
-              <div className="flex items-center gap-2 p-2 rounded-lg bg-[#14141A]/60 border border-neutral-800/80 col-span-2 sm:col-span-1">
+              <div className="flex items-center gap-2 p-2.5 rounded-lg bg-[#14141A]/80 border border-neutral-800/80 hover:border-gold-500/40 hover:bg-[#181822] transition-colors col-span-2 sm:col-span-1">
                 <CheckCircle2 className="w-3.5 h-3.5 text-gold-400 shrink-0" />
-                <span className="text-neutral-300 font-medium">Sigilo e Ética OAB</span>
+                <span className="text-neutral-200 font-medium">Sigilo e Ética OAB</span>
               </div>
             </div>
 

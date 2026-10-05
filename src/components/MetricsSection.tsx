@@ -53,27 +53,27 @@ export const MetricsSection: React.FC = () => {
         </div>
 
         {/* 4 Cards Responsive Grid: 2x2 on mobile/tablet, 4 across on desktop */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-5">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3.5 sm:gap-4 lg:gap-5">
           {metrics.map((item, idx) => {
             const Icon = item.icon;
             return (
               <div 
                 key={idx}
-                className="card-radiant-gold p-4 sm:p-5 flex flex-col justify-between group text-center sm:text-left relative overflow-hidden hover:border-gold-400/80 transition-all duration-300"
+                className="card-radiant-gold p-4 sm:p-5 flex flex-col justify-between group text-center sm:text-left relative overflow-hidden hover:border-gold-400/90 hover:-translate-y-1 hover:shadow-[0_15px_35px_-10px_rgba(197,160,89,0.25)] transition-all duration-300"
               >
                 {/* Number Aura Glow */}
-                <div className="absolute -right-6 -bottom-6 w-24 h-24 bg-gold-500/10 rounded-full blur-2xl group-hover:bg-gold-500/25 transition-all duration-500 pointer-events-none" />
+                <div className="absolute -right-6 -bottom-6 w-28 h-28 bg-gold-500/10 rounded-full blur-2xl group-hover:bg-gold-500/25 transition-all duration-500 pointer-events-none" />
 
                 <div>
-                  <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-br from-gold-500/20 to-gold-700/10 border border-gold-500/30 flex items-center justify-center text-gold-300 mb-3 sm:mb-4 mx-auto sm:mx-0 group-hover:scale-110 group-hover:border-gold-400 group-hover:shadow-[0_0_15px_rgba(197,160,89,0.3)] transition-all duration-300">
-                    <Icon className="w-4 h-4 sm:w-5 sm:h-5" />
+                  <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-gradient-to-br from-gold-500/20 via-gold-600/15 to-transparent border border-gold-500/30 flex items-center justify-center text-gold-300 mb-3 sm:mb-4 mx-auto sm:mx-0 group-hover:scale-110 group-hover:border-gold-400 group-hover:shadow-[0_0_20px_rgba(197,160,89,0.35)] transition-all duration-300">
+                    <Icon className="w-4 h-4 sm:w-5 sm:h-5 text-gold-400" />
                   </div>
 
                   <div className="font-serif text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight mb-1">
                     <span className="text-gold-metallic drop-shadow-sm">{item.value}</span>
                   </div>
 
-                  <div className="text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-gold-400 mb-1.5">
+                  <div className="text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-gold-300 mb-1.5">
                     {item.label}
                   </div>
 
@@ -82,8 +82,9 @@ export const MetricsSection: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="mt-3 sm:mt-4 pt-2.5 sm:pt-3 border-t border-neutral-800/80 text-[9px] sm:text-[10px] text-neutral-400 font-medium">
-                  Dados verificados do escritório
+                <div className="mt-3.5 sm:mt-4 pt-2.5 sm:pt-3 border-t border-neutral-800/80 text-[10px] text-neutral-400 font-medium flex items-center justify-center sm:justify-start gap-1">
+                  <span className="text-gold-400">✓</span>
+                  <span>Dados verificados do escritório</span>
                 </div>
               </div>
             );

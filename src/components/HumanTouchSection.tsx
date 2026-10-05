@@ -124,16 +124,24 @@ export const HumanTouchSection: React.FC = () => {
             {regions.map((reg, idx) => (
               <div 
                 key={idx} 
+                onClick={() => {
+                  const url = getWhatsAppUrl(`Olá! Sou de ${reg.name} e gostaria de agendar um atendimento com a Dra. Samara e Dra. Maria na minha região.`);
+                  window.open(url, '_blank', 'noopener,noreferrer');
+                }}
                 className="group/reg relative overflow-hidden p-3.5 rounded-xl bg-[#1B1B22]/80 border border-neutral-800/90 hover:border-gold-500/70 hover:bg-[#20202c] hover:-translate-y-1 hover:shadow-lg hover:shadow-black/60 transition-all duration-300 ease-out cursor-pointer"
+                title={`Clique para falar sobre atendimento em ${reg.name}`}
               >
                 {/* Subtle shine ray sweep on hover */}
                 <div className="pointer-events-none absolute inset-0 -translate-x-full group-hover/reg:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/[0.06] to-transparent" />
 
-                <div className="flex items-center gap-2 mb-1.5 relative z-10">
-                  <div className="p-1 rounded-md bg-gold-500/10 border border-gold-500/20 group-hover/reg:border-gold-400/50 group-hover/reg:bg-gold-500/20 transition-colors">
-                    <MapPin className="w-3.5 h-3.5 text-gold-400 group-hover/reg:scale-110 transition-transform duration-300 shrink-0" />
+                <div className="flex items-center justify-between mb-1.5 relative z-10">
+                  <div className="flex items-center gap-2">
+                    <div className="p-1 rounded-md bg-gold-500/10 border border-gold-500/20 group-hover/reg:border-gold-400/50 group-hover/reg:bg-gold-500/20 transition-colors">
+                      <MapPin className="w-3.5 h-3.5 text-gold-400 group-hover/reg:scale-110 transition-transform duration-300 shrink-0" />
+                    </div>
+                    <h4 className="text-xs font-bold text-white group-hover/reg:text-gold-200 transition-colors duration-200">{reg.name}</h4>
                   </div>
-                  <h4 className="text-xs font-bold text-white group-hover/reg:text-gold-200 transition-colors duration-200">{reg.name}</h4>
+                  <ArrowRight className="w-3 h-3 text-neutral-500 group-hover/reg:text-gold-400 group-hover/reg:translate-x-1 transition-all shrink-0" />
                 </div>
                 <p className="text-[11px] text-neutral-400 group-hover/reg:text-neutral-300 leading-relaxed pl-7 font-light relative z-10 transition-colors duration-200">
                   {reg.desc}

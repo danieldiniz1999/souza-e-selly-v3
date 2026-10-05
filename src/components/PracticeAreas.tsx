@@ -171,12 +171,16 @@ export const PracticeAreas: React.FC = () => {
             </span>
             <div className="flex flex-wrap gap-1 sm:gap-1.5">
               {activeArea.typicalCases.map((c, i) => (
-                <span 
+                <a 
                   key={i}
-                  className="px-2 py-0.5 rounded-md bg-[#16161C] border border-neutral-800/80 text-neutral-300 text-[10px] hover:border-gold-500/30 hover:text-gold-200 transition-colors"
+                  href={getWhatsAppUrl(`Olá, advogadas! Gostaria de orientações sobre: ${c}.`)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-2 py-0.5 rounded-md bg-[#16161C] border border-neutral-800/80 text-neutral-300 text-[10px] hover:border-gold-500/60 hover:text-gold-200 hover:bg-gold-500/10 hover:scale-105 active:scale-95 transition-all cursor-pointer"
+                  title={`Consultar caso: ${c}`}
                 >
                   {c}
-                </span>
+                </a>
               ))}
             </div>
           </div>

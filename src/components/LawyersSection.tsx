@@ -124,7 +124,7 @@ export const LawyersSection: React.FC = () => {
                     className="btn-gold w-full inline-flex items-center justify-center gap-2 px-4 py-3 rounded-xl text-xs font-bold uppercase tracking-wider text-black group"
                   >
                     <WhatsAppIcon className="w-3.5 h-3.5 fill-black/80 group-hover:scale-110 transition-transform duration-200" />
-                    <span>Falar com {lawyer.name.split(' ')[0]} {lawyer.name.split(' ')[1]}</span>
+                    <span>Falar Diretamente com {lawyer.name}</span>
                   </a>
                 </div>
 

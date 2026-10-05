@@ -172,14 +172,16 @@ export const InteractiveAssessment: React.FC = () => {
   };
 
   // WhatsApp pre-formatted rich message
-  const generatedWhatsAppMsg = `Olá, Dra. Samara e Dra. Maria! Realizei a triagem completa no site oficial de vocês:
-• Área: ${selectedArea}
-• Demanda específica: ${selectedDetail}
-• Documentação: ${selectedDocs}
-• Urgência: ${selectedUrgency}
-• Região no Ceará: ${selectedLocation}
+  const generatedWhatsAppMsg = `*SOUZA & SELLY ADVOCACIA • TRIAGEM DIGITAL*
+Olá, Dra. Samara e Dra. Maria! Concluí a triagem pelo site oficial de vocês:
 
-Gostaria de uma orientação jurídica personalizada sobre a viabilidade do meu caso.`;
+🏛️ *Área Jurídica:* ${selectedArea}
+📋 *Demanda Específica:* ${selectedDetail}
+📁 *Situação Documental:* ${selectedDocs}
+⚡ *Nível de Urgência:* ${selectedUrgency}
+📍 *Região no Ceará:* ${selectedLocation}
+
+Gostaria de uma avaliação jurídica personalizada sobre a viabilidade e os próximos passos do meu caso.`;
 
   return (
     <section id="triagem" className="py-16 bg-[#0B0B0E] relative overflow-hidden">
