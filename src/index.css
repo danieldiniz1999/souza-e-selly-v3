@@ -108,13 +108,19 @@
   background-size: 32px 32px;
 }
 
-/* Subtle luxury ambient spotlight */
+/* Subtle luxury ambient spotlight - Pure GPU Radial Gradient (Zero CPU/GPU blur overhead) */
 .ambient-gold-spotlight {
   position: absolute;
   border-radius: 9999px;
   pointer-events: none;
-  filter: blur(140px);
-  background: radial-gradient(circle, rgba(197, 160, 89, 0.12) 0%, rgba(197, 160, 89, 0.03) 60%, transparent 100%);
+  background: radial-gradient(circle, rgba(197, 160, 89, 0.12) 0%, rgba(197, 160, 89, 0.04) 50%, rgba(197, 160, 89, 0.01) 75%, transparent 100%);
+  transform: translateZ(0);
+}
+
+/* High-performance offscreen rendering */
+.section-perf {
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 650px;
 }
 
 /* Subtle gold noise / mesh effect */

@@ -22,6 +22,8 @@ export const Footer: React.FC = () => {
               <img
                 src="/logo.jpg"
                 alt="Souza & Selly Advocacia"
+                loading="lazy"
+                decoding="async"
                 className="w-8 h-8 rounded-full object-cover border border-gold-500/50 shadow-sm shadow-gold-500/10"
               />
               <div>

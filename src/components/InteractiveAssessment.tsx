@@ -184,10 +184,10 @@ Olá, Dra. Samara e Dra. Maria! Concluí a triagem pelo site oficial de vocês:
 Gostaria de uma avaliação jurídica personalizada sobre a viabilidade e os próximos passos do meu caso.`;
 
   return (
-    <section id="triagem" className="py-16 bg-[#0B0B0E] relative overflow-hidden">
+    <section id="triagem" className="section-perf py-16 bg-[#0B0B0E] relative overflow-hidden">
       {/* Background glow & luxury spotlight */}
       <div className="ambient-gold-spotlight top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[400px]" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[350px] bg-gold-500/10 rounded-full blur-[160px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[350px] bg-[radial-gradient(ellipse_at_center,rgba(197,160,89,0.07)_0%,transparent_70%)] pointer-events-none" />
 
       <div className="max-w-3xl mx-auto px-3.5 sm:px-6 lg:px-8 relative z-10">
         

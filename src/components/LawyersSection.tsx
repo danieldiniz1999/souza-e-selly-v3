@@ -6,11 +6,11 @@ import { getWhatsAppUrl } from '@/lib/utils';
 
 export const LawyersSection: React.FC = () => {
   return (
-    <section id="advogadas" className="py-12 sm:py-16 lg:py-20 bg-[#09090B] relative overflow-hidden">
+    <section id="advogadas" className="section-perf py-12 sm:py-16 lg:py-20 bg-[#09090B] relative overflow-hidden">
       {/* Background accents & luxury spotlight */}
       <div className="ambient-gold-spotlight top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px]" />
-      <div className="absolute top-1/2 right-10 w-80 h-80 bg-gold-500/5 rounded-full blur-[140px] pointer-events-none" />
-      <div className="absolute bottom-10 left-10 w-72 h-72 bg-gold-600/5 rounded-full blur-[130px] pointer-events-none" />
+      <div className="absolute top-1/2 right-10 w-80 h-80 bg-[radial-gradient(circle,rgba(197,160,89,0.06)_0%,transparent_70%)] pointer-events-none" />
+      <div className="absolute bottom-10 left-10 w-72 h-72 bg-[radial-gradient(circle,rgba(197,160,89,0.05)_0%,transparent_70%)] pointer-events-none" />
 
       <div className="max-w-6xl mx-auto px-3.5 sm:px-6 lg:px-8 relative z-10">
         
@@ -43,6 +43,8 @@ export const LawyersSection: React.FC = () => {
                 <img
                   src={lawyer.imageUrl}
                   alt={lawyer.name}
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700 brightness-95 contrast-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#111116]/80 via-transparent to-black/30 sm:bg-gradient-to-r sm:from-transparent sm:to-[#111116]/40" />

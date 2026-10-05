@@ -4,10 +4,10 @@ import { OFFICE_INFO, getWhatsAppUrl } from '@/lib/utils';
 
 export const OfficeLocation: React.FC = () => {
   return (
-    <section id="localizacao" className="py-12 sm:py-16 bg-[#0B0B0E] border-t border-neutral-800/80 relative overflow-hidden">
+    <section id="localizacao" className="section-perf py-12 sm:py-16 bg-[#0B0B0E] border-t border-neutral-800/80 relative overflow-hidden">
       {/* Background radial glow & luxury spotlight */}
       <div className="ambient-gold-spotlight top-1/2 right-10 w-[600px] h-[350px]" />
-      <div className="absolute top-1/2 right-10 w-80 h-80 bg-gold-500/5 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute top-1/2 right-10 w-80 h-80 bg-[radial-gradient(circle,rgba(197,160,89,0.06)_0%,transparent_70%)] pointer-events-none" />
 
       <div className="max-w-6xl mx-auto px-3.5 sm:px-6 lg:px-8 relative z-10">
         
@@ -144,11 +144,11 @@ export const OfficeLocation: React.FC = () => {
             </div>
 
             {/* Embedded Google Map iframe */}
-            <div className="flex-1 w-full h-full min-h-[260px] sm:min-h-[320px] relative bg-neutral-900">
+            <div className="flex-1 w-full h-full min-h-[260px] sm:min-h-[320px] relative bg-neutral-950 overflow-hidden">
               <iframe
                 title="Localização do Escritório Souza & Selly Advocacia"
                 src="https://maps.google.com/maps?q=Av.+Jovita+Feitosa,+3072+-+Parquel%C3%A2ndia,+Fortaleza+-+CE,+60455-410&t=&z=16&ie=UTF8&iwloc=&output=embed"
-                className="w-full h-full absolute inset-0 border-0 filter invert-[90%] hue-rotate-180 contrast-[88%]"
+                className="w-full h-full absolute inset-0 border-0 opacity-85 hover:opacity-100 transition-opacity duration-300"
                 allowFullScreen={false}
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"

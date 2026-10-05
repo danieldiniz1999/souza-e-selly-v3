@@ -13,10 +13,10 @@ export const HumanTouchSection: React.FC = () => {
   ];
 
   return (
-    <section id="diferencial" className="py-16 bg-[#0C0C0F] border-y border-neutral-800/80 relative overflow-hidden">
+    <section id="diferencial" className="section-perf py-16 bg-[#0C0C0F] border-y border-neutral-800/80 relative overflow-hidden">
       {/* Background radial glow */}
-      <div className="absolute top-1/2 left-0 w-80 h-80 bg-gold-500/10 rounded-full blur-[140px] pointer-events-none" />
-      <div className="absolute bottom-0 right-0 w-80 h-80 bg-gold-600/5 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute top-1/2 left-0 w-80 h-80 bg-[radial-gradient(circle,rgba(197,160,89,0.07)_0%,transparent_70%)] pointer-events-none" />
+      <div className="absolute bottom-0 right-0 w-80 h-80 bg-[radial-gradient(circle,rgba(197,160,89,0.05)_0%,transparent_70%)] pointer-events-none" />
 
       <div className="max-w-6xl mx-auto px-3.5 sm:px-6 lg:px-8 relative z-10">
         

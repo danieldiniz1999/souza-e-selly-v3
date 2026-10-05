@@ -6,11 +6,11 @@ import { getWhatsAppUrl } from '@/lib/utils';
 
 export const TestimonialsSection: React.FC = () => {
   return (
-    <section id="depoimentos" className="py-16 bg-[#09090B] relative overflow-hidden">
+    <section id="depoimentos" className="section-perf py-16 bg-[#09090B] relative overflow-hidden">
       {/* Background accents & luxury spotlight */}
       <div className="ambient-gold-spotlight top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px]" />
-      <div className="absolute top-1/4 left-1/3 w-96 h-96 bg-gold-500/5 rounded-full blur-[150px] pointer-events-none" />
-      <div className="absolute bottom-10 right-10 w-96 h-96 bg-gold-600/5 rounded-full blur-[150px] pointer-events-none" />
+      <div className="absolute top-1/4 left-1/3 w-96 h-96 bg-[radial-gradient(circle,rgba(197,160,89,0.06)_0%,transparent_70%)] pointer-events-none" />
+      <div className="absolute bottom-10 right-10 w-96 h-96 bg-[radial-gradient(circle,rgba(197,160,89,0.05)_0%,transparent_70%)] pointer-events-none" />
 
       <div className="max-w-6xl mx-auto px-3.5 sm:px-6 lg:px-8 relative z-10">
         
@@ -77,6 +77,8 @@ export const TestimonialsSection: React.FC = () => {
                   <img
                     src={dep.avatarUrl}
                     alt={dep.name}
+                    loading="lazy"
+                    decoding="async"
                     className="w-7 h-7 sm:w-8 sm:h-8 rounded-full object-cover border border-gold-500/40 shrink-0"
                   />
                   <div className="min-w-0">

@@ -7,11 +7,11 @@ import { getWhatsAppUrl } from '@/lib/utils';
 export const Hero: React.FC = () => {
   return (
     <section id="inicio" className="relative min-h-[85vh] flex items-center pt-28 pb-16 overflow-hidden bg-mesh-dark">
-      {/* Background Glows & Luxury Spotlights */}
+      {/* Background Glows & Luxury Spotlights - Pure Radial Gradients */}
       <div className="ambient-gold-spotlight -top-20 left-1/2 -translate-x-1/2 w-[750px] h-[500px]" />
-      <div className="absolute top-1/4 left-1/3 -translate-x-1/2 -translate-y-1/2 w-[450px] h-[450px] bg-gold-500/10 rounded-full blur-[140px] pointer-events-none" />
-      <div className="absolute top-10 right-10 w-80 h-80 bg-amber-600/5 rounded-full blur-[130px] pointer-events-none" />
-      <div className="absolute bottom-10 left-10 w-96 h-96 bg-gold-500/5 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute top-1/4 left-1/3 -translate-x-1/2 -translate-y-1/2 w-[450px] h-[450px] bg-[radial-gradient(circle,rgba(197,160,89,0.12)_0%,transparent_70%)] pointer-events-none" />
+      <div className="absolute top-10 right-10 w-80 h-80 bg-[radial-gradient(circle,rgba(217,119,6,0.06)_0%,transparent_70%)] pointer-events-none" />
+      <div className="absolute bottom-10 left-10 w-96 h-96 bg-[radial-gradient(circle,rgba(197,160,89,0.06)_0%,transparent_70%)] pointer-events-none" />
 
       {/* Grid Pattern overlay */}
       <div 

@@ -34,10 +34,10 @@ export const MetricsSection: React.FC = () => {
   ];
 
   return (
-    <section id="numeros" className="py-14 bg-[#0B0B0E] border-y border-neutral-800/80 relative overflow-hidden">
+    <section id="numeros" className="section-perf py-14 bg-[#0B0B0E] border-y border-neutral-800/80 relative overflow-hidden">
       {/* Background glow & luxury spotlight */}
       <div className="ambient-gold-spotlight top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[300px]" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-5xl h-56 bg-gold-500/5 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-5xl h-56 bg-[radial-gradient(ellipse_at_center,rgba(197,160,89,0.06)_0%,transparent_70%)] pointer-events-none" />
 
       <div className="max-w-6xl mx-auto px-4 lg:px-8 relative z-10">
         

@@ -112,8 +112,8 @@ export const CearaMap: React.FC = () => {
 
   return (
     <div className="relative w-full max-w-xl mx-auto flex flex-col items-center select-none">
-      {/* Subtle background ambient glow behind the map */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 rounded-full bg-gold-500/10 blur-[110px] pointer-events-none" />
+      {/* Subtle background ambient glow behind the map - Pure GPU radial gradient */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 rounded-full bg-[radial-gradient(circle,rgba(197,160,89,0.12)_0%,transparent_70%)] pointer-events-none" />
 
       {/* SVG Interactive Map (Without Card Borders or Container Box) */}
       <div 
@@ -126,28 +126,10 @@ export const CearaMap: React.FC = () => {
       >
         <svg
           viewBox="0 0 500 480"
-          className="w-full h-full overflow-visible select-none drop-shadow-[0_12px_40px_rgba(0,0,0,0.85)]"
+          className="w-full h-full overflow-visible select-none drop-shadow-[0_8px_25px_rgba(0,0,0,0.7)]"
           aria-label="Mapa do Ceará com rotas de atendimento"
         >
             <defs>
-              {/* Outer Glow filter for glowing dots and rings */}
-              <filter id="ceara-glow" x="-50%" y="-50%" width="200%" height="200%">
-                <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="blur" />
-                <feMerge>
-                  <feMergeNode in="blur" />
-                  <feMergeNode in="SourceGraphic" />
-                </feMerge>
-              </filter>
-
-              {/* Intense particle blur */}
-              <filter id="particle-glow" x="-100%" y="-100%" width="300%" height="300%">
-                <feGaussianBlur stdDeviation="2.5" result="blur" />
-                <feMerge>
-                  <feMergeNode in="blur" />
-                  <feMergeNode in="SourceGraphic" />
-                </feMerge>
-              </filter>
-
               {/* Map background fill gradient */}
               <radialGradient id="ceara-fill" cx="56%" cy="24%" r="65%">
                 <stop offset="0%" stopColor="#C5A059" stopOpacity="0.12" />
@@ -190,8 +172,8 @@ export const CearaMap: React.FC = () => {
                     className="transition-all duration-300"
                   />
 
-                  {/* Traveling Light Pulse (Glowing Packet) */}
-                  <circle r="3" fill="#FFFFFF" filter="url(#particle-glow)">
+                  {/* Traveling Light Pulse (Glowing Packet - Zero CPU Filter Passes) */}
+                  <circle r="2.5" fill="#FFFFFF">
                     <animateMotion
                       path={city.path}
                       dur={city.duration}
@@ -199,7 +181,7 @@ export const CearaMap: React.FC = () => {
                       repeatCount="indefinite"
                     />
                   </circle>
-                  <circle r="5" fill="#E6C878" opacity="0.6" filter="url(#particle-glow)">
+                  <circle r="5" fill="#E6C878" opacity="0.45">
                     <animateMotion
                       path={city.path}
                       dur={city.duration}
@@ -278,7 +260,6 @@ export const CearaMap: React.FC = () => {
                     cy={city.y}
                     r={isSelected ? 4 : 3.2}
                     fill={isSelected ? '#FFFFFF' : '#E6C878'}
-                    filter="url(#ceara-glow)"
                     className="transition-all duration-300"
                   />
 
@@ -357,7 +338,6 @@ export const CearaMap: React.FC = () => {
                 fill="rgba(197, 160, 89, 0.12)"
                 stroke="#C5A059"
                 strokeWidth="1.5"
-                filter="url(#ceara-glow)"
               />
 
               {/* Diamond Center Icon (◆ Rotated 45deg) */}
@@ -370,7 +350,6 @@ export const CearaMap: React.FC = () => {
                 fill="#E6C878"
                 stroke="#FFFFFF"
                 strokeWidth="0.8"
-                filter="url(#ceara-glow)"
               />
 
               {/* Fortaleza Label */}

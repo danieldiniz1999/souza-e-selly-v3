@@ -91,10 +91,10 @@ export const FaqSection: React.FC = () => {
   };
 
   return (
-    <section id="faq" className="py-12 sm:py-16 bg-[#09090B] relative overflow-hidden">
+    <section id="faq" className="section-perf py-12 sm:py-16 bg-[#09090B] relative overflow-hidden">
       {/* Background accents & luxury spotlight */}
       <div className="ambient-gold-spotlight bottom-10 left-10 w-[600px] h-[350px]" />
-      <div className="absolute bottom-10 left-10 w-72 h-72 bg-gold-500/5 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute bottom-10 left-10 w-72 h-72 bg-[radial-gradient(circle,rgba(197,160,89,0.05)_0%,transparent_70%)] pointer-events-none" />
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 relative z-10">
         

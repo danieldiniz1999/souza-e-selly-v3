@@ -23,10 +23,10 @@ export const PracticeAreas: React.FC = () => {
   };
 
   return (
-    <section id="areas" className="py-16 bg-[#09090B] relative overflow-hidden">
+    <section id="areas" className="section-perf py-16 bg-[#09090B] relative overflow-hidden">
       {/* Background accents & luxury spotlight */}
       <div className="ambient-gold-spotlight top-1/3 right-1/4 w-[600px] h-[350px]" />
-      <div className="absolute top-1/3 right-1/4 w-80 h-80 bg-gold-500/5 rounded-full blur-[150px] pointer-events-none" />
+      <div className="absolute top-1/3 right-1/4 w-80 h-80 bg-[radial-gradient(circle,rgba(197,160,89,0.06)_0%,transparent_70%)] pointer-events-none" />
 
       <div className="max-w-6xl mx-auto px-3.5 sm:px-6 lg:px-8 relative z-10">
         
