@@ -97,25 +97,17 @@ export const CearaMap: React.FC = () => {
   const HUB = { x: 280, y: 115, name: 'Fortaleza' };
 
   return (
-    <div className="relative w-full max-w-lg mx-auto flex flex-col items-center">
-      {/* Glow Halo behind map container */}
-      <div className="absolute -inset-2 rounded-3xl bg-gradient-to-b from-gold-500/20 via-gold-600/10 to-transparent blur-2xl pointer-events-none" />
+    <div className="relative w-full max-w-xl mx-auto flex flex-col items-center select-none">
+      {/* Subtle background ambient glow behind the map */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 rounded-full bg-gold-500/10 blur-[100px] pointer-events-none" />
 
-      {/* Main Map Card */}
-      <div className="relative w-full rounded-2xl bg-[#0D0D11]/90 border border-gold-500/30 hover:border-gold-400/60 p-4 sm:p-6 shadow-2xl backdrop-blur-xl transition-all duration-500 overflow-hidden group">
-        
-        {/* Subtle radial lighting centered on Fortaleza */}
-        <div 
-          className="absolute top-16 right-16 w-56 h-56 rounded-full bg-gold-500/10 blur-[80px] pointer-events-none"
-        />
-
-        {/* SVG Interactive Map */}
-        <div className="relative w-full aspect-square max-h-[440px]">
-          <svg
-            viewBox="0 0 500 480"
-            className="w-full h-full overflow-visible select-none"
-            aria-label="Mapa do Ceará com rotas de atendimento"
-          >
+      {/* SVG Interactive Map (Without Card Borders or Container Box) */}
+      <div className="relative w-full aspect-square max-h-[460px] flex items-center justify-center">
+        <svg
+          viewBox="0 0 500 480"
+          className="w-full h-full overflow-visible select-none drop-shadow-[0_10px_35px_rgba(0,0,0,0.8)]"
+          aria-label="Mapa do Ceará com rotas de atendimento"
+        >
             <defs>
               {/* Outer Glow filter for glowing dots and rings */}
               <filter id="ceara-glow" x="-50%" y="-50%" width="200%" height="200%">
@@ -369,31 +361,17 @@ export const CearaMap: React.FC = () => {
               </text>
             </g>
           </svg>
-        </div>
+      </div>
 
-        {/* Dynamic Interactive City Information Toast */}
-        <div className="mt-2 min-h-[32px] flex items-center justify-center text-center">
-          {activeCity ? (
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-gold-500/15 border border-gold-400/50 text-gold-200 text-xs font-semibold animate-fade-in-up shadow-sm">
-              <MapPin className="w-3 h-3 text-gold-400 shrink-0" />
-              <span>{activeCity.name}: {activeCity.region}</span>
-              <ArrowRight className="w-3 h-3 text-gold-400 shrink-0 ml-1" />
-            </div>
-          ) : (
-            <div className="text-[11px] text-neutral-400/90 font-light flex items-center gap-1.5">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-              <span>Passe o mouse ou toque nas cidades para ver rotas</span>
-            </div>
-          )}
-        </div>
-
-        {/* Caption from User Reference Image */}
-        <div className="mt-4 pt-3.5 border-t border-neutral-800/80 text-center">
-          <p className="text-xs sm:text-sm text-neutral-300 font-light tracking-wide leading-relaxed">
-            Sede em Fortaleza. Visitas ao interior sempre que o caso exigir.
-          </p>
-        </div>
-
+      {/* Dynamic Interactive City Information Toast (Subtle pill, only when city active or clean hint) */}
+      <div className="mt-3 min-h-[30px] flex items-center justify-center text-center">
+        {activeCity && (
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#16161D]/90 border border-gold-500/40 text-gold-300 text-xs font-semibold animate-fade-in-up shadow-lg backdrop-blur-md">
+            <MapPin className="w-3 h-3 text-gold-400 shrink-0" />
+            <span>{activeCity.name}: {activeCity.region}</span>
+            <ArrowRight className="w-3 h-3 text-gold-400 shrink-0 ml-1" />
+          </div>
+        )}
       </div>
     </div>
   );
